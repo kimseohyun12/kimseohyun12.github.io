@@ -3,31 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="styles.css"> <!-- 나중에 스타일 파일 연결 -->
+    <title>Your Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Welcome to My Portfolio</h1>
-        <p>Hi, I'm [Your Name], a passionate web developer.</p>
+        <div class="container">
+            <h1>Your Name</h1>
+            <p>Frontend Developer</p>
+        </div>
     </header>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I am a developer with a focus on front-end technologies. I love building beautiful, responsive websites.</p>
+    <section class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>Hello! I'm [Your Name], a passionate frontend developer with expertise in creating responsive, user-friendly websites and web applications.</p>
+        </div>
     </section>
 
-    <section id="projects">
-        <h2>Projects</h2>
-        <ul>
-            <li><a href="https://github.com/username/project1">Project 1</a></li>
-            <li><a href="https://github.com/username/project2">Project 2</a></li>
-            <li><a href="https://github.com/username/project3">Project 3</a></li>
-        </ul>
+    <section class="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="project-card">
+                <h3>Project 1</h3>
+                <p>A brief description of the project.</p>
+                <a href="https://github.com/username/project1" target="_blank">View on GitHub</a>
+            </div>
+            <div class="project-card">
+                <h3>Project 2</h3>
+                <p>A brief description of the project.</p>
+                <a href="https://github.com/username/project2" target="_blank">View on GitHub</a>
+            </div>
+            <div class="project-card">
+                <h3>Project 3</h3>
+                <p>A brief description of the project.</p>
+                <a href="https://github.com/username/project3" target="_blank">View on GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact">
+        <div class="container">
+            <h2>Contact</h2>
+            <p>If you'd like to get in touch, feel free to send me an email at <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+        </div>
     </section>
 
     <footer>
-        <p>Contact me: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+        <div class="container">
+            <p>&copy; 2024 Your Name. All rights reserved.</p>
+        </div>
     </footer>
 </body>
 </html>
