@@ -3,29 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kim Seohyun Portfolio</title>
+  <meta name="description" content="Kim Seohyun's Front-End Developer Portfolio">
+  <title>Kim Seohyun - Front-End Developer</title>
   <style>
-    /* 페이지 스타일 초기화 */
-    body, html {
+    /* 기본 스타일 */
+    body {
+      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      height: 100%;
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       background-color: #f4f4f4;
+      color: #333;
     }
 
     /* 타자 효과를 위한 스타일 */
     .typing {
-      font-size: 4em;  /* 글씨 크기를 1.5배 더 크게 수정 */
+      font-size: 4em;  /* 글씨 크기를 1.5배 더 크게 수정 */ 
       color: #333;
       font-weight: bold;
       border-right: 2px solid #333; /* 커서처럼 보이도록 */
       white-space: nowrap;  /* 텍스트가 한 줄로 유지되도록 설정 */
       overflow: hidden;     /* 텍스트가 화면 밖으로 나가지 않게 설정 */
       display: inline-block;
+      text-align: center;
+      margin-top: 100px; /* 상단 여백 */
     }
 
     /* 타자 효과 애니메이션 */
@@ -55,14 +55,149 @@
         border-color: transparent;
       }
     }
+
+    /* 네비게이션 바 */
+    nav {
+      background-color: #444;
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline;
+      margin-right: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2em;
+      padding: 10px;
+    }
+
+    nav ul li a:hover {
+      color: #f39c12;
+    }
+
+    section {
+      padding: 60px 20px;
+      margin: 0 auto;
+      max-width: 1200px;
+    }
+
+    section h2 {
+      text-align: center;
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    .about, .projects, .skills {
+      margin-bottom: 40px;
+    }
+
+    .project-item {
+      display: inline-block;
+      margin-right: 20px;
+      margin-bottom: 20px;
+      width: calc(33% - 20px);
+      box-sizing: border-box;
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .project-item h3 {
+      margin-top: 0;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
   </style>
 </head>
 <body>
 
-  <!-- 타자 효과 적용될 텍스트 -->
+  <!-- 타자 효과 적용될 텍스트 (메인페이지) -->
   <div class="typing typing-effect">
     Kim Seohyun Portfolio
   </div>
+
+  <!-- 네비게이션 바 -->
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- 홈 섹션 -->
+  <section id="home">
+    <h2>Welcome to my Portfolio</h2>
+    <p>Hello! I'm Kim Seohyun, a passionate Front-End Developer. Welcome to my portfolio website where you can learn more about me, my skills, and the projects I've worked on.</p>
+  </section>
+
+  <!-- About Me 섹션 -->
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>I'm a front-end developer with experience in building responsive, user-friendly websites. I have a strong understanding of HTML, CSS, and JavaScript, and I'm always eager to learn new technologies to improve my skills.</p>
+  </section>
+
+  <!-- Projects 섹션 -->
+  <section id="projects" class="projects">
+    <h2>My Projects</h2>
+    <div class="project-item">
+      <h3>Project 1: Portfolio Website</h3>
+      <p>A responsive portfolio website that showcases my work and skills as a front-end developer. Built using HTML, CSS, and JavaScript.</p>
+    </div>
+    <div class="project-item">
+      <h3>Project 2: E-commerce Website</h3>
+      <p>An e-commerce website with a modern design and functionality. Includes product listings, cart, and checkout. Built with HTML, CSS, JavaScript, and React.</p>
+    </div>
+    <div class="project-item">
+      <h3>Project 3: To-Do List App</h3>
+      <p>A simple yet functional to-do list app to help users keep track of their tasks. Built using JavaScript and local storage for data persistence.</p>
+    </div>
+  </section>
+
+  <!-- Skills 섹션 -->
+  <section id="skills" class="skills">
+    <h2>My Skills</h2>
+    <ul>
+      <li>HTML5</li>
+      <li>CSS3</li>
+      <li>JavaScript</li>
+      <li>React</li>
+      <li>Git & GitHub</li>
+      <li>Responsive Web Design</li>
+    </ul>
+  </section>
+
+  <!-- 연락처 섹션 -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>If you're interested in working with me, feel free to reach out!</p>
+    <p>Email: <a href="mailto:kimseohyun@example.com">kimseohyun@example.com</a></p>
+  </section>
+
+  <!-- 푸터 -->
+  <footer>
+    <p>© 2024 Kim Seohyun - All Rights Reserved</p>
+  </footer>
 
 </body>
 </html>
