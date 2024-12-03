@@ -13,11 +13,16 @@
       padding: 0;
       background-color: #f4f4f4;
       color: #333;
+      height: 100vh; /* 화면 높이를 100%로 설정 */
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* 콘텐츠를 수직 중앙 정렬 */
+      align-items: center; /* 콘텐츠를 수평 중앙 정렬 */
     }
 
     /* 타자 효과를 위한 스타일 */
     .typing {
-      font-size: 4em;  /* 글씨 크기를 1.5배 더 크게 수정 */
+      font-size: 5em;  /* 글씨 크기를 좀 더 크게 설정 */
       color: #333;
       font-weight: bold;
       border-right: 2px solid #333; /* 커서처럼 보이도록 */
@@ -25,7 +30,6 @@
       overflow: hidden;     /* 텍스트가 화면 밖으로 나가지 않게 설정 */
       display: inline-block;
       text-align: center;
-      margin-top: 30px; /* 타자 효과 상단 여백을 줄여서 header 바로 아래 위치시킴 */
     }
 
     /* 타자 효과 애니메이션 */
@@ -75,14 +79,14 @@
     }
 
     nav ul li a {
-      color: gray;
+      color: white;
       text-decoration: none;
       font-size: 1.2em;
       padding: 10px;
     }
 
     nav ul li a:hover {
-      color: white;
+      color: #f39c12;
     }
 
     section {
@@ -195,4 +199,3 @@
 
 </body>
 </html>
-
