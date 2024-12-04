@@ -308,7 +308,8 @@ h2 span {
       event.preventDefault();
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
-     // 커서가 따라 움직이는 원을 생성
+
+      // 커서가 따라 움직이는 원을 생성
     const cursor = document.createElement("div");
     cursor.classList.add("cursor");
     document.body.appendChild(cursor);
@@ -317,6 +318,14 @@ h2 span {
     document.addEventListener("mousemove", (event) => {
       cursor.style.left = `${event.pageX}px`;
       cursor.style.top = `${event.pageY}px`;
+
+      // 커서의 크기와 투명도 조절 (번지는 효과)
+      cursor.classList.add("cursor-active");
+
+      // 원 효과가 끝나면 원 크기를 원래대로 되돌림
+      setTimeout(() => {
+        cursor.classList.remove("cursor-active");
+      }, 300); // 효과 지속 시간
     });
   </script>
 
