@@ -71,20 +71,6 @@
     }
 
     /* 텍스트 주변에 작은 원들이 나타나는 애니메이션 */
-    h2::after {
-      content: '';
-      position: absolute;
-      top: -20px;
-      left: -20px;
-      right: -20px;
-      bottom: -20px;
-      border-radius: 50%;
-      z-index: -1;
-      background: radial-gradient(circle, rgba(255, 99, 71, 0.4), rgba(0, 0, 0, 0));
-      animation: pulse 2s ease-in-out infinite;
-    }
-
-    /* 작은 원들이 흩어지는 효과 */
     h2::before {
       content: '';
       position: absolute;
@@ -99,21 +85,6 @@
     }
 
     /* 작은 원들이 천천히 움직이며 애니메이션 */
-    @keyframes pulse {
-      0% {
-        transform: scale(0.8);
-        opacity: 0.6;
-      }
-      50% {
-        transform: scale(1.2);
-        opacity: 1;
-      }
-      100% {
-        transform: scale(0.8);
-        opacity: 0.6;
-      }
-    }
-
     @keyframes snow {
       0% {
         transform: translate(0, 0) scale(0.5);
@@ -281,6 +252,9 @@
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   </script>
+
+</body>
+</html>
 
 </body>
 </html>
