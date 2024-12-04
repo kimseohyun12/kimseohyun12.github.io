@@ -219,8 +219,8 @@ body {
 /* 커서 기본 스타일 */
 .cursor {
   position: absolute;
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   background-color: #D2B48C;
   border-radius: 50%;
   pointer-events: none;
@@ -228,18 +228,6 @@ body {
   transform: translate(-50%, -50%);
 }
 
-/* 커서 잔상 효과 */
-.cursor-trail {
-  position: absolute;
-  pointer-events: none;
-  z-index: 9998;
-  width: 200px;
-  height: 20px;
-  background: linear-gradient(90deg, rgba(210, 180, 140, 1) 0%, rgba(210, 180, 140, 0) 100%);
-  border-radius: 20px;
-  opacity: 0.5;
-  transition: all 0.1s ease-out;
-}
 
   </style>
 </head>
@@ -331,45 +319,17 @@ body {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
-const cursor = document.createElement('div');
-cursor.classList.add('cursor');
-document.body.appendChild(cursor);
 
-// 커서 잔상 선 생성
-const cursorTrail = document.createElement('div');
-cursorTrail.classList.add('cursor-trail');
-document.body.appendChild(cursorTrail);
+ // 커서가 따라 움직이는 원을 생성
+    const cursor = document.createElement("div");
+    cursor.classList.add("cursor");
+    document.body.appendChild(cursor);
 
-let lastX = 0;
-let lastY = 0;
-
-// 마우스 이동 추적
-document.addEventListener('mousemove', (e) => {
-  const mouseX = e.pageX;
-  const mouseY = e.pageY;
-
-  // 커서 위치 업데이트
-  cursor.style.left = `${mouseX}px`;
-  cursor.style.top = `${mouseY}px`;
-
-  // 잔상 선 위치와 크기 업데이트
-  const distance = Math.sqrt(Math.pow(mouseX - lastX, 2) + Math.pow(mouseY - lastY, 2));
-  const angle = Math.atan2(mouseY - lastY, mouseX - lastX);
-
-  cursorTrail.style.width = `${distance * 2}px`; // 선의 길이 조정
-  cursorTrail.style.left = `${lastX}px`;
-  cursorTrail.style.top = `${lastY}px`;
-  cursorTrail.style.transform = `rotate(${angle}rad)`; // 잔상 선이 마우스를 따라가도록
-
-  // 잔상이 자연스럽게 사라지는 효과
-  setTimeout(() => {
-    cursorTrail.style.opacity = '0'; // 잔상이 서서히 사라짐
-  }, 50); // 잔상의 사라지는 타이밍
-
-  // 마지막 마우스 위치 업데이트
-  lastX = mouseX;
-  lastY = mouseY;
-});
+    // 마우스 이동에 따라 커서 위치 조정
+    document.addEventListener("mousemove", (event) => {
+      cursor.style.left = `${event.pageX}px`;
+      cursor.style.top = `${event.pageY}px`;
+    });
 
   </script>
 
