@@ -198,6 +198,18 @@ h2 span {
       position: absolute;
       top: 0;
     }
+      /* 커서를 따라 움직이는 원 */
+    .cursor {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #D2B48C;
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+      transition: all 0.1s ease;
+    }
   </style>
 </head>
 <body>
