@@ -199,17 +199,27 @@ h2 span {
       top: 0;
     }
       /* 커서를 따라 움직이는 원 */
-    .cursor {
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background-color: #D2B48C;
-      border-radius: 50%;
-      pointer-events: none;
-      transform: translate(-50%, -50%);
-      z-index: 9999;
-      transition: all 0.1s ease;
+         .cursor {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #D2B48C;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+  opacity: 0.6;
+  z-index: 9999; /* 다른 요소들 위에 표시되도록 */
+}
+
+/* 번지는 원 효과 */
+.cursor-active {
+  width: 60px; /* 커지면서 번지는 크기 */
+  height: 60px; /* 커지면서 번지는 크기 */
+  opacity: 0; /* 원이 점점 사라짐 */
+}
     }
+ 
   </style>
 </head>
 <body>
