@@ -71,20 +71,34 @@
     }
 
     /* 텍스트 주변에 작은 원들이 나타나는 애니메이션 */
-    h2::before, h2::after {
+    h2::after {
       content: '';
       position: absolute;
-      top: -15px;
-      left: -15px;
-      right: -15px;
-      bottom: -15px;
+      top: -20px;
+      left: -20px;
+      right: -20px;
+      bottom: -20px;
       border-radius: 50%;
       z-index: -1;
-      background: radial-gradient(circle, rgba(255, 99, 71, 0.6), rgba(0, 0, 0, 0));
+      background: radial-gradient(circle, rgba(255, 99, 71, 0.4), rgba(0, 0, 0, 0));
       animation: pulse 2s ease-in-out infinite;
     }
 
-    /* 애니메이션: 원들이 커졌다 작아짐 */
+    /* 작은 원들이 흩어지는 효과 */
+    h2::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      width: 6px;
+      height: 6px;
+      background-color: rgba(255, 99, 71, 0.6);
+      border-radius: 50%;
+      z-index: -2;
+      animation: snow 2s ease-in-out infinite;
+    }
+
+    /* 작은 원들이 천천히 움직이며 애니메이션 */
     @keyframes pulse {
       0% {
         transform: scale(0.8);
@@ -97,6 +111,18 @@
       100% {
         transform: scale(0.8);
         opacity: 0.6;
+      }
+    }
+
+    @keyframes snow {
+      0% {
+        transform: translate(0, 0) scale(0.5);
+      }
+      50% {
+        transform: translate(5px, 5px) scale(1);
+      }
+      100% {
+        transform: translate(0, 0) scale(0.5);
       }
     }
 
@@ -258,3 +284,4 @@
 
 </body>
 </html>
+
