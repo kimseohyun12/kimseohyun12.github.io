@@ -55,36 +55,37 @@
       }
     }
 
-    /* 프로필 텍스트 스타일 */
- h2 {
+  /* 프로필 텍스트 스타일 */
+h2 {
   text-align: center;
-  font-size: 4em; /* 크기 크게 */
-  color: #302516; /* 기본 텍스트 색상 */
-  font-weight: bold;
-  letter-spacing: 3px; /* 글자 간격 증가 */
+  font-size: 4.5em; /* 크기 살짝 키움 */
+  color: #4A90E2; /* 기본 색상 */
+  font-weight: 700;
+  letter-spacing: 2px; /* 글자 간격 */
   text-transform: uppercase;
   position: relative;
   display: inline-block;
-  padding: 10px 20px;
-  margin-bottom: 30px;
-  background: linear-gradient(45deg, #ff6347, #ff9900); /* 그라데이션 배경 */
-  -webkit-background-clip: text; /* 텍스트에만 배경색 적용 */
+  padding: 20px 40px;
+  margin-bottom: 50px;
+  background: linear-gradient(135deg, #6e7dff, #3c8fff); /* 부드럽고 세련된 그라데이션 */
+  -webkit-background-clip: text; /* 텍스트에만 그라데이션 색상 적용 */
   color: transparent; /* 텍스트 색상 투명화 */
   text-shadow: 
-    3px 3px 6px rgba(0, 0, 0, 0.2), /* 부드러운 그림자 */
-    0 0 15px rgba(255, 99, 71, 0.6), /* 빨간 발광 효과 */
-    0 0 25px rgba(255, 99, 71, 0.8); /* 더 넓은 빨간 발광 효과 */
-  transform: skewY(-5deg); /* 3D 느낌을 위한 기울기 */
-  transition: all 0.4s ease-in-out;
+    2px 2px 4px rgba(0, 0, 0, 0.2), /* 기본 그림자 */
+    0 0 20px rgba(60, 143, 255, 0.6), /* 파란 발광 효과 */
+    0 0 30px rgba(60, 143, 255, 0.8); /* 더 넓은 발광 효과 */
+  transform: skewY(-5deg); /* 텍스트 기울기 */
+  transition: all 0.3s ease-in-out;
 }
 
+/* hover 효과 */
 h2:hover {
-  color: #ff6347; /* 텍스트가 하이라이트될 때 기본 색상으로 변함 */
+  color: #4A90E2; /* 기본 색상으로 변함 */
   text-shadow: 
     5px 5px 10px rgba(0, 0, 0, 0.3), /* 더 강한 그림자 */
-    0 0 25px rgba(255, 99, 71, 1), /* 강한 빨간 발광 효과 */
-    0 0 35px rgba(255, 99, 71, 1); /* 더 강한 발광 효과 */
-  transform: skewY(0deg) scale(1.05); /* 마우스를 올리면 크기가 커지며 기울기 복원 */
+    0 0 30px rgba(60, 143, 255, 1), /* 강한 파란 발광 효과 */
+    0 0 40px rgba(60, 143, 255, 1); /* 더 넓은 발광 효과 */
+  transform: skewY(0deg) scale(1.1); /* 마우스를 올리면 크기가 커짐 */
 }
 
     /* 네비게이션 바 */
