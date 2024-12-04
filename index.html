@@ -199,22 +199,27 @@ h2 span {
       top: 0;
     }
 
-    /* 커서를 따라 움직이는 원 스타일 */
+    /* 커서를 나타내는 원 스타일 */
 .cursor {
   position: absolute;
-  width: 10px;  /* 고정된 크기 */
-  height: 10px; /* 고정된 크기 */
+  width: 20px;  /* 기본 원 크기 */
+  height: 20px; /* 기본 원 크기 */
+  background-color: #D2B48C; /* 색상 */
   border-radius: 50%;
-  background-color: #D2B48C;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
+  pointer-events: none; /* 원이 클릭을 방해하지 않도록 */
+  transition: transform 0.1s ease-out; /* 부드럽게 이동 */
   z-index: 9999;
-  transition: width 0.1s ease-out, height 0.1s ease-out;
+  transform: translate(-50%, -50%); /* 중앙 정렬 */
 }
 
-/* 길게 늘어나는 효과 */
-.cursor-expanding {
-  transition: width 0.3s ease-out, height 0.3s ease-out;
+/* 원이 커서 따라 움직이면서 길어지는 효과 */
+.cursor-trail {
+  position: absolute;
+  background-color: #D2B48C;
+  height: 4px; /* 선의 두께 */
+  border-radius: 2px; /* 선의 모서리를 부드럽게 */
+  pointer-events: none;
+  transition: all 0.1s ease-out;
 }
   </style>
 </head>
@@ -306,24 +311,43 @@ h2 span {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
-// 커서의 원 생성
+// 커서 원 생성
 const cursor = document.createElement("div");
 cursor.classList.add("cursor");
 document.body.appendChild(cursor);
 
-// 마우스 움직임에 따라 커서 위치 업데이트
+// 커서의 길이를 표현할 선 생성
+const cursorTrail = document.createElement("div");
+cursorTrail.classList.add("cursor-trail");
+document.body.appendChild(cursorTrail);
+
+let lastX = 0;
+let lastY = 0;
+
+// 마우스 이동 이벤트
 document.addEventListener("mousemove", (event) => {
-  cursor.style.left = `${event.pageX}px`;
-  cursor.style.top = `${event.pageY}px`;
+  const mouseX = event.pageX;
+  const mouseY = event.pageY;
 
-  // 커서가 이동할 때 원의 길이가 늘어나는 느낌을 주기 위해 
-  cursor.classList.add("cursor-expanding");
+  // 원(커서)의 위치 업데이트
+  cursor.style.left = `${mouseX}px`;
+  cursor.style.top = `${mouseY}px`;
 
-  // 커서가 원래 크기로 돌아가게 하기 위해 클래스 제거
-  setTimeout(() => {
-    cursor.classList.remove("cursor-expanding");
-  }, 300); // 늘어나는 애니메이션 끝나는 시간
+  // 커서가 움직일 때, 선의 길이와 위치를 계산
+  const distance = Math.sqrt(Math.pow(mouseX - lastX, 2) + Math.pow(mouseY - lastY, 2)); // 두 지점 사이 거리
+  const angle = Math.atan2(mouseY - lastY, mouseX - lastX); // 각도 계산
+
+  // 선의 위치와 길이 업데이트
+  cursorTrail.style.width = `${distance}px`;
+  cursorTrail.style.left = `${lastX}px`;
+  cursorTrail.style.top = `${lastY}px`;
+  cursorTrail.style.transform = `rotate(${angle}rad)`; // 선이 마우스를 따라가도록 각도 맞추기
+
+  // 마지막 마우스 위치 업데이트
+  lastX = mouseX;
+  lastY = mouseY;
 });
+
   </script>
 
 </body>
