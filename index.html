@@ -198,26 +198,17 @@ h2 span {
       position: absolute;
       top: 0;
     }
-      /* 커서를 따라 움직이는 원 */
-         .cursor {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: #D2B48C;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
-  opacity: 0.6;
-  z-index: 9999; /* 다른 요소들 위에 표시되도록 */
-}
-
-/* 번지는 원 효과 */
-.cursor-active {
-  width: 60px; /* 커지면서 번지는 크기 */
-  height: 60px; /* 커지면서 번지는 크기 */
-  opacity: 0; /* 원이 점점 사라짐 */
-}
+     /* 커서를 따라 움직이는 원 */
+    .cursor {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #D2B48C;
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+      transition: all 0.1s ease;
     }
  
   </style>
@@ -310,6 +301,7 @@ h2 span {
     });
 
       // 커서가 따라 움직이는 원을 생성
+     // 커서가 따라 움직이는 원을 생성
     const cursor = document.createElement("div");
     cursor.classList.add("cursor");
     document.body.appendChild(cursor);
@@ -318,14 +310,6 @@ h2 span {
     document.addEventListener("mousemove", (event) => {
       cursor.style.left = `${event.pageX}px`;
       cursor.style.top = `${event.pageY}px`;
-
-      // 커서의 크기와 투명도 조절 (번지는 효과)
-      cursor.classList.add("cursor-active");
-
-      // 원 효과가 끝나면 원 크기를 원래대로 되돌림
-      setTimeout(() => {
-        cursor.classList.remove("cursor-active");
-      }, 300); // 효과 지속 시간
     });
   </script>
 
