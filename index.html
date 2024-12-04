@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Kim Seohyun Portfolio">
   <title>Kim Seohyun - Front-End Developer</title>
-  <style>
+  <style>  
     /* 기본 스타일 */
     body {
       font-family: Arial, sans-serif;
@@ -55,52 +55,50 @@
       }
     }
 
-/* 프로필 텍스트 스타일 */
-h2 {
-  text-align: center;
-  font-size: 4em;
-  color: #3E2723;
-  font-weight: 700;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  position: relative;
-  display: inline-block;
-  padding: 20px 30px;
-  margin-bottom: 50px;
-  z-index: 1;
-}
+    /* 프로필 텍스트 스타일 */
+    h2 {
+      text-align: center;
+      font-size: 4em;
+      color: #3E2723;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      position: relative;
+      display: inline-block;
+      padding: 20px 30px;
+      margin-bottom: 50px;
+      z-index: 1;
+    }
 
-/* 텍스트 주변에 작은 원들이 나타나는 애니메이션 */
-h2::before, h2::after {
-  content: '';
-  position: absolute;
-  top: -15px;
-  left: -15px;
-  right: -15px;
-  bottom: -15px;
-  border-radius: 50%;
-  z-index: -1;
-  background: radial-gradient(circle, rgba(255, 99, 71, 0.6), rgba(0, 0, 0, 0));
-  animation: pulse 2s ease-in-out infinite;
-}
+    /* 텍스트 주변에 작은 원들이 나타나는 애니메이션 */
+    h2::before, h2::after {
+      content: '';
+      position: absolute;
+      top: -15px;
+      left: -15px;
+      right: -15px;
+      bottom: -15px;
+      border-radius: 50%;
+      z-index: -1;
+      background: radial-gradient(circle, rgba(255, 99, 71, 0.6), rgba(0, 0, 0, 0));
+      animation: pulse 2s ease-in-out infinite;
+    }
 
-/* 애니메이션: 원들이 커졌다 작아짐 */
-@keyframes pulse {
-  0% {
-    transform: scale(0.8);
-    opacity: 0.6;
-  }
-  50% {
-    transform: scale(1.2);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(0.8);
-    opacity: 0.6;
-  }
-}
-
-
+    /* 애니메이션: 원들이 커졌다 작아짐 */
+    @keyframes pulse {
+      0% {
+        transform: scale(0.8);
+        opacity: 0.6;
+      }
+      50% {
+        transform: scale(1.2);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(0.8);
+        opacity: 0.6;
+      }
+    }
 
     /* 네비게이션 바 */
     nav {
