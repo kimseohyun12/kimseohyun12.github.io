@@ -199,7 +199,15 @@ h2 span {
       top: 0;
     }
 
-    /* 기본 커서 원 스타일 */
+    /* 기본 스타일 */
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+/* 커서 원 */
 .cursor {
   position: absolute;
   width: 20px;
@@ -211,15 +219,17 @@ h2 span {
   transform: translate(-50%, -50%);
 }
 
-/* 커서 길게 늘어나는 선 */
+/* 그라데이션 잔상 효과 */
 .cursor-trail {
   position: absolute;
-  background-color: #D2B48C;
-  height: 4px; /* 선의 두께 */
-  border-radius: 2px;
+  background: linear-gradient(90deg, rgba(210, 180, 140, 1) 0%, rgba(210, 180, 140, 0) 100%);
+  height: 4px; /* 선 두께 */
   pointer-events: none;
-  transition: transform 0.2s ease-out;
   z-index: 9998;
+  border-radius: 2px;
+  opacity: 0.6;
+  transform-origin: center;
+  transition: all 0.1s ease-out;
 }
 
   </style>
@@ -317,7 +327,7 @@ const cursor = document.createElement('div');
 cursor.classList.add('cursor');
 document.body.appendChild(cursor);
 
-// 커서의 길이를 표현할 선을 생성
+// 커서 잔상을 위한 그라데이션 선
 const cursorTrail = document.createElement('div');
 cursorTrail.classList.add('cursor-trail');
 document.body.appendChild(cursorTrail);
@@ -334,11 +344,11 @@ function trackMouse(event) {
   cursor.style.left = `${mouseX}px`;
   cursor.style.top = `${mouseY}px`;
 
-  // 마우스 이동에 따라 선의 길이 계산
+  // 잔상(그라데이션 선) 길이와 위치 계산
   const distance = Math.sqrt(Math.pow(mouseX - lastX, 2) + Math.pow(mouseY - lastY, 2));
   const angle = Math.atan2(mouseY - lastY, mouseX - lastX);
 
-  // 선의 길이와 위치를 업데이트
+  // 그라데이션 잔상 선 길이와 위치, 각도 업데이트
   cursorTrail.style.width = `${distance}px`;
   cursorTrail.style.left = `${lastX}px`;
   cursorTrail.style.top = `${lastY}px`;
@@ -347,6 +357,11 @@ function trackMouse(event) {
   // 마지막 마우스 위치 업데이트
   lastX = mouseX;
   lastY = mouseY;
+
+  // 일정 시간 후 그라데이션 잔상 사라지게 하기 (fade effect)
+  setTimeout(() => {
+    cursorTrail.style.opacity = '0';
+  }, 50);
 }
 
 // 부드럽게 커서를 따라가도록 requestAnimationFrame 사용
