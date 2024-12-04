@@ -70,7 +70,7 @@
       z-index: 1;
     }
 
-  /* 프로필 텍스트 스타일 */
+/* 프로필 텍스트 스타일 */
 h2 {
   text-align: center;
   font-size: 4em;
@@ -91,27 +91,27 @@ h2::before, h2::after, h2 span {
   position: absolute;
   border-radius: 50%;
   z-index: -1;
-  background: rgba(255, 99, 71, 0.6);
-  width: 10px;
-  height: 10px;
+  background: #D2B48C; /* 색상 변경 */
+  width: 8px;  /* 원 크기 조정 */
+  height: 8px; /* 원 크기 조정 */
   animation: pulse 2s ease-in-out infinite;
 }
 
 h2::before {
-  top: -20px;
-  left: -20px;
+  top: 5px; /* 글씨에 가까운 위치로 수정 */
+  left: -10px; /* 글씨에 가까운 위치로 수정 */
   animation-delay: 0s;
 }
 
 h2::after {
-  top: -20px;
-  right: -20px;
+  top: 5px; /* 글씨에 가까운 위치로 수정 */
+  right: -10px; /* 글씨에 가까운 위치로 수정 */
   animation-delay: 0.5s;
 }
 
 h2 span {
-  top: 15px;
-  left: 15px;
+  top: 5px; /* 글씨에 가까운 위치로 수정 */
+  left: 10px; /* 글씨에 가까운 위치로 수정 */
   animation-delay: 1s;
 }
 
@@ -130,7 +130,6 @@ h2 span {
     opacity: 0.6;
   }
 }
-
 
     /* 네비게이션 바 */
     nav {
