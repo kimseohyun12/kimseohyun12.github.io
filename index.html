@@ -55,38 +55,38 @@
       }
     }
 
-  /* 프로필 텍스트 스타일 */
+/* 프로필 텍스트 스타일 */
 h2 {
   text-align: center;
-  font-size: 4.5em; /* 크기 살짝 키움 */
-  color: #4A90E2; /* 기본 색상 */
-  font-weight: 700;
+  font-size: 4em; /* 크기 조정 */
+  color: #3E2723; /* 기본 텍스트 색상 */
+  font-weight: 600; /* 굵기 조정 */
   letter-spacing: 2px; /* 글자 간격 */
   text-transform: uppercase;
   position: relative;
   display: inline-block;
-  padding: 20px 40px;
-  margin-bottom: 50px;
-  background: linear-gradient(135deg, #6e7dff, #3c8fff); /* 부드럽고 세련된 그라데이션 */
-  -webkit-background-clip: text; /* 텍스트에만 그라데이션 색상 적용 */
+  padding: 10px 20px;
+  margin-bottom: 40px;
+  background: linear-gradient(135deg, #ff8c00, #f44336); /* 부드러운 그라데이션 색상 */
+  -webkit-background-clip: text; /* 텍스트에만 배경색 적용 */
   color: transparent; /* 텍스트 색상 투명화 */
   text-shadow: 
-    2px 2px 4px rgba(0, 0, 0, 0.2), /* 기본 그림자 */
-    0 0 20px rgba(60, 143, 255, 0.6), /* 파란 발광 효과 */
-    0 0 30px rgba(60, 143, 255, 0.8); /* 더 넓은 발광 효과 */
-  transform: skewY(-5deg); /* 텍스트 기울기 */
-  transition: all 0.3s ease-in-out;
+    2px 2px 6px rgba(0, 0, 0, 0.2), /* 미세한 그림자 */
+    0 0 20px rgba(255, 140, 0, 0.6), /* 부드러운 발광 효과 */
+    0 0 30px rgba(255, 99, 71, 0.4); /* 발광 효과 */
+  transition: all 0.3s ease-in-out; /* 부드러운 전환 효과 */
 }
 
-/* hover 효과 */
+/* hover 시 효과 */
 h2:hover {
-  color: #4A90E2; /* 기본 색상으로 변함 */
+  color: #ff8c00; /* 텍스트 색상 변환 */
   text-shadow: 
-    5px 5px 10px rgba(0, 0, 0, 0.3), /* 더 강한 그림자 */
-    0 0 30px rgba(60, 143, 255, 1), /* 강한 파란 발광 효과 */
-    0 0 40px rgba(60, 143, 255, 1); /* 더 넓은 발광 효과 */
-  transform: skewY(0deg) scale(1.1); /* 마우스를 올리면 크기가 커짐 */
+    3px 3px 10px rgba(0, 0, 0, 0.3), /* 강한 그림자 */
+    0 0 30px rgba(255, 140, 0, 1), /* 더 강한 발광 효과 */
+    0 0 50px rgba(255, 99, 71, 0.8); /* 더 넓은 발광 효과 */
+  transform: scale(1.1); /* 텍스트 확대 */
 }
+
 
     /* 네비게이션 바 */
     nav {
