@@ -29,31 +29,32 @@
       margin-bottom: 300px;
     }
 
-    /* 타자 효과 애니메이션 */
-    .typing-effect {
-      animation: typing 4s steps(30) 1s forwards, blink 0.75s step-end infinite;
-    }
+  /* 타자 효과 애니메이션 */
+.typing-effect {
+  animation: typing 4s steps(40) 1s forwards, blink 0.75s step-end infinite;
+}
 
-    @keyframes typing {
-      from {
-        width: 0;
-      }
-      to {
-        width: 100%;
-      }
-    }
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
 
-    @keyframes blink {
-      0% {
-        border-color: transparent;
-      }
-      50% {
-        border-color: #333;
-      }
-      100% {
-        border-color: transparent;
-      }
-    }
+@keyframes blink {
+  0% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #333;
+  }
+  100% {
+    border-color: transparent;
+  }
+}
+
 
     /* 프로필 텍스트 스타일 */
     h2 {
