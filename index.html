@@ -210,5 +210,26 @@
     <p>© 2024 Kim Seohyun - Portfolio</p>
   </footer>
 
+  <script>
+    // Scroll to top 버튼 기능 추가
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+    // 스크롤 위치가 일정 부분을 넘으면 버튼을 표시
+    window.addEventListener("scroll", () => {
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        scrollToTopBtn.style.display = "block";
+      } else {
+        scrollToTopBtn.style.display = "none";
+      }
+    });
+
+    // 버튼 클릭 시 페이지 맨 위로 스크롤
+    scrollToTopBtn.addEventListener("click", (event) => {
+      event.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+
 </body>
 </html>
+
