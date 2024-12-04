@@ -77,7 +77,25 @@ h2 {
   transition: all 0.3s ease-in-out; /* 부드러운 전환 효과 */
 }
 
-/* hover 시 효과 */
+/* 텍스트 주위에 입체적인 효과를 추가 */
+h2::before {
+  content: ""; /* 가상의 요소 */
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  z-index: -1; /* 텍스트 뒤에 배치 */
+  background: rgba(62, 39, 35, 0.2); /* 어두운 그림자 배경 */
+  border-radius: 12px; /* 둥근 테두리 */
+  box-shadow: 
+    0 0 30px rgba(0, 0, 0, 0.5), /* 큰 그림자 */
+    0 0 50px rgba(62, 39, 35, 0.5); /* 갈색 발광 효과 */
+  transform: rotate(-2deg); /* 약간의 회전 효과 */
+  transition: all 0.4s ease-in-out; /* 효과 전환 */
+}
+
+/* hover 시 텍스트 주위 모형과 효과 */
 h2:hover {
   color: #3E2723; /* 텍스트 색상 변환 */
   text-shadow: 
@@ -85,6 +103,14 @@ h2:hover {
     0 0 30px rgba(62, 39, 35, 1), /* 강한 갈색 발광 효과 */
     0 0 45px rgba(62, 39, 35, 0.8); /* 더 넓고 강한 발광 효과 */
   transform: scale(1.1); /* 텍스트 확대 */
+}
+
+/* hover 시 모형 테두리 강화 */
+h2:hover::before {
+  box-shadow: 
+    0 0 50px rgba(0, 0, 0, 0.7), /* 강한 그림자 */
+    0 0 70px rgba(62, 39, 35, 1); /* 더 강한 갈색 발광 효과 */
+  transform: rotate(2deg); /* 회전 효과 */
 }
 
 
