@@ -207,11 +207,20 @@ body {
   position: relative;
 }
 
-/* 커서 원 */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: #f7f7f7;
+  overflow: hidden;
+  position: relative;
+}
+
+/* 커서 기본 스타일 */
 .cursor {
   position: absolute;
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   background-color: #D2B48C;
   border-radius: 50%;
   pointer-events: none;
@@ -219,16 +228,16 @@ body {
   transform: translate(-50%, -50%);
 }
 
-/* 그라데이션 잔상 효과 */
+/* 커서 잔상 효과 */
 .cursor-trail {
   position: absolute;
-  background: linear-gradient(90deg, rgba(210, 180, 140, 1) 0%, rgba(210, 180, 140, 0) 100%);
-  height: 4px; /* 선 두께 */
   pointer-events: none;
   z-index: 9998;
-  border-radius: 2px;
-  opacity: 0.6;
-  transform-origin: center;
+  width: 200px;
+  height: 20px;
+  background: linear-gradient(90deg, rgba(210, 180, 140, 1) 0%, rgba(210, 180, 140, 0) 100%);
+  border-radius: 20px;
+  opacity: 0.5;
   transition: all 0.1s ease-out;
 }
 
@@ -322,12 +331,11 @@ body {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
-// 커서 원을 생성
 const cursor = document.createElement('div');
 cursor.classList.add('cursor');
 document.body.appendChild(cursor);
 
-// 커서 잔상을 위한 그라데이션 선
+// 커서 잔상 선 생성
 const cursorTrail = document.createElement('div');
 cursorTrail.classList.add('cursor-trail');
 document.body.appendChild(cursorTrail);
@@ -335,46 +343,32 @@ document.body.appendChild(cursorTrail);
 let lastX = 0;
 let lastY = 0;
 
-// 마우스 움직임을 추적하는 함수
-function trackMouse(event) {
-  const mouseX = event.pageX;
-  const mouseY = event.pageY;
+// 마우스 이동 추적
+document.addEventListener('mousemove', (e) => {
+  const mouseX = e.pageX;
+  const mouseY = e.pageY;
 
-  // 커서 원 위치 업데이트
+  // 커서 위치 업데이트
   cursor.style.left = `${mouseX}px`;
   cursor.style.top = `${mouseY}px`;
 
-  // 잔상(그라데이션 선) 길이와 위치 계산
+  // 잔상 선 위치와 크기 업데이트
   const distance = Math.sqrt(Math.pow(mouseX - lastX, 2) + Math.pow(mouseY - lastY, 2));
   const angle = Math.atan2(mouseY - lastY, mouseX - lastX);
 
-  // 그라데이션 잔상 선 길이와 위치, 각도 업데이트
-  cursorTrail.style.width = `${distance}px`;
+  cursorTrail.style.width = `${distance * 2}px`; // 선의 길이 조정
   cursorTrail.style.left = `${lastX}px`;
   cursorTrail.style.top = `${lastY}px`;
-  cursorTrail.style.transform = `rotate(${angle}rad)`; // 선이 마우스를 따라가도록 각도 맞추기
+  cursorTrail.style.transform = `rotate(${angle}rad)`; // 잔상 선이 마우스를 따라가도록
+
+  // 잔상이 자연스럽게 사라지는 효과
+  setTimeout(() => {
+    cursorTrail.style.opacity = '0'; // 잔상이 서서히 사라짐
+  }, 50); // 잔상의 사라지는 타이밍
 
   // 마지막 마우스 위치 업데이트
   lastX = mouseX;
   lastY = mouseY;
-
-  // 일정 시간 후 그라데이션 잔상 사라지게 하기 (fade effect)
-  setTimeout(() => {
-    cursorTrail.style.opacity = '0';
-  }, 50);
-}
-
-// 부드럽게 커서를 따라가도록 requestAnimationFrame 사용
-let mouseMoving = false;
-
-document.addEventListener('mousemove', (event) => {
-  if (!mouseMoving) {
-    mouseMoving = true;
-    requestAnimationFrame(() => {
-      trackMouse(event);
-      mouseMoving = false;
-    });
-  }
 });
 
   </script>
