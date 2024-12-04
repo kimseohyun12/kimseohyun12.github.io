@@ -124,15 +124,18 @@
       background-color: #333;
       color: white;
       padding: 15px;
-      border-radius: 50%;
+      border-radius: 50%;  /* 버튼을 둥글게 만듦 */
       cursor: pointer;
       font-size: 24px;
       text-decoration: none;
-      display: none;
+      transition: background-color 0.3s ease, transform 0.3s ease; /* 부드러운 효과 추가 */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 버튼에 그림자 추가 */
     }
 
+    /* 버튼에 호버 효과 */
     .scroll-to-top:hover {
       background-color: #f39c12;
+      transform: scale(1.1); /* 버튼 크기 확대 효과 */
     }
 
     /* 페이지 맨 위 위치에 anchor 추가 */
@@ -232,4 +235,3 @@
 
 </body>
 </html>
-
