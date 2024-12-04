@@ -70,19 +70,33 @@ h2 {
   z-index: 1; /* 텍스트를 최상위로 올림 */
 }
 
-/* 텍스트 주변 그림자 효과 */
-h2::after {
-  content: ''; /* 가상 요소를 생성 */
+/* 텍스트 주변에 그라디언트 라인 애니메이션 */
+h2::before {
+  content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1; /* 텍스트 아래에 배치 */
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2), 0 0 40px rgba(0, 0, 0, 0.3); /* 주변 그림자 */
-  border-radius: 10px; /* 테두리 둥글게 */
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: linear-gradient(45deg, #ff6347, #ff9900, #3E2723, #ff6347);
+  z-index: -1; /* 텍스트 뒤에 배치 */
+  background-size: 400% 400%;
+  animation: move 3s linear infinite; /* 라인 애니메이션 */
+  border-radius: 15px;
 }
 
+/* 애니메이션 */
+@keyframes move {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
 
     /* 네비게이션 바 */
