@@ -198,24 +198,38 @@ h2 span {
       position: absolute;
       top: 0;
     }
-   /* 커서를 따라 움직이는 원 스타일 */
-    .cursor {
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background-color: #D2B48C;
-      pointer-events: none;
-      transform: translate(-50%, -50%);
-      transition: transform 0.1s ease-in-out, opacity 0.3s ease-out;
-      opacity: 0.5;
-      z-index: 9999; /* 다른 요소들 위에 표시되도록 */
-    }
 
-    /* 번지는 느낌을 주는 효과 */
-    .cursor-active {
-      opacity: 0.3;  /* 점차 투명해짐 */
-    }
+    /* 커서를 따라 움직이는 원 스타일 */
+   .cursor {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #D2B48C;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999; /* 다른 요소들 위에 표시되도록 */
+  transition: all 0.2s ease-out; /* 부드럽게 변화하는 트랜지션 */
+  opacity: 0.5;
+}
+
+/* 번지면서 퍼지는 애니메이션 */
+.cursor-expanding {
+  animation: spread 0.5s ease-out forwards;
+}
+
+@keyframes spread {
+  0% {
+    width: 20px;
+    height: 20px;
+    opacity: 0.5;
+  }
+  100% {
+    width: 80px;  /* 확장된 크기 */
+    height: 80px;  /* 확장된 크기 */
+    opacity: 0;  /* 투명도 */
+  }
+}
  
   </style>
 </head>
@@ -306,24 +320,24 @@ h2 span {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
-     // 커서가 따라 움직이는 원을 생성
-    const cursor = document.createElement("div");
-    cursor.classList.add("cursor");
-    document.body.appendChild(cursor);
+   // 커서가 따라 움직이는 원을 생성
+const cursor = document.createElement("div");
+cursor.classList.add("cursor");
+document.body.appendChild(cursor);
 
-    // 마우스 이동에 따라 커서 위치 조정
-    document.addEventListener("mousemove", (event) => {
-      cursor.style.left = `${event.pageX}px`;
-      cursor.style.top = `${event.pageY}px`;
+// 마우스 이동에 따라 커서 위치 조정
+document.addEventListener("mousemove", (event) => {
+  cursor.style.left = `${event.pageX}px`;
+  cursor.style.top = `${event.pageY}px`;
 
-      // 번지는 느낌을 주는 효과 적용
-      cursor.classList.add("cursor-active");
+  // 번지는 느낌을 주는 효과 추가
+  cursor.classList.add("cursor-expanding");
 
-      // 원이 다시 원래 상태로 돌아오게끔 일정 시간 후에 효과 제거
-      setTimeout(() => {
-        cursor.classList.remove("cursor-active");
-      }, 100); // 효과의 지속 시간
-    });
+  // 0.5초 후에 애니메이션 클래스 제거 (다시 원래 상태로 돌아가도록)
+  setTimeout(() => {
+    cursor.classList.remove("cursor-expanding");
+  }, 500); // 0.5초는 애니메이션 시간
+});
   </script>
 
 </body>
