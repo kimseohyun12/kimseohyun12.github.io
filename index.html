@@ -298,6 +298,16 @@ h2 span {
       event.preventDefault();
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
+     // 커서가 따라 움직이는 원을 생성
+    const cursor = document.createElement("div");
+    cursor.classList.add("cursor");
+    document.body.appendChild(cursor);
+
+    // 마우스 이동에 따라 커서 위치 조정
+    document.addEventListener("mousemove", (event) => {
+      cursor.style.left = `${event.pageX}px`;
+      cursor.style.top = `${event.pageY}px`;
+    });
   </script>
 
 </body>
