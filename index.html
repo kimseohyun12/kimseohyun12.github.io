@@ -56,31 +56,36 @@
     }
 
     /* 프로필 텍스트 스타일 */
-    h2 {
-      text-align: center;
-      font-size: 4em; /* 크기 크게 */
-      color: #4CAF50; /* 텍스트 색상 */
-      font-weight: bold;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      position: relative;
-      display: inline-block;
-      padding: 10px;
-      margin-bottom: 30px;
-      text-shadow: 
-        3px 3px 4px rgba(0, 0, 0, 0.1), /* 그림자 */
-        0 0 25px rgba(0, 255, 0, 0.3); /* 녹색 발광 효과 */
-      background: linear-gradient(45deg, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.2)); /* 배경에 광택 효과 */
-      transition: all 0.3s ease-in-out;
-    }
+ h2 {
+  text-align: center;
+  font-size: 4em; /* 크기 크게 */
+  color: #ff6347; /* 기본 텍스트 색상 */
+  font-weight: bold;
+  letter-spacing: 3px; /* 글자 간격 증가 */
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  margin-bottom: 30px;
+  background: linear-gradient(45deg, #ff6347, #ff9900); /* 그라데이션 배경 */
+  -webkit-background-clip: text; /* 텍스트에만 배경색 적용 */
+  color: transparent; /* 텍스트 색상 투명화 */
+  text-shadow: 
+    3px 3px 6px rgba(0, 0, 0, 0.2), /* 부드러운 그림자 */
+    0 0 15px rgba(255, 99, 71, 0.6), /* 빨간 발광 효과 */
+    0 0 25px rgba(255, 99, 71, 0.8); /* 더 넓은 빨간 발광 효과 */
+  transform: skewY(-5deg); /* 3D 느낌을 위한 기울기 */
+  transition: all 0.4s ease-in-out;
+}
 
-    /* 텍스트에 호버 효과 */
-    h2:hover {
-      transform: translateY(-5px); /* 마우스를 올리면 텍스트가 위로 올라감 */
-      text-shadow: 
-        5px 5px 7px rgba(0, 0, 0, 0.3), /* 그림자 강하게 */
-        0 0 30px rgba(0, 255, 0, 0.5); /* 발광 효과 강화 */
-    }
+h2:hover {
+  color: #ff6347; /* 텍스트가 하이라이트될 때 기본 색상으로 변함 */
+  text-shadow: 
+    5px 5px 10px rgba(0, 0, 0, 0.3), /* 더 강한 그림자 */
+    0 0 25px rgba(255, 99, 71, 1), /* 강한 빨간 발광 효과 */
+    0 0 35px rgba(255, 99, 71, 1); /* 더 강한 발광 효과 */
+  transform: skewY(0deg) scale(1.05); /* 마우스를 올리면 크기가 커지며 기울기 복원 */
+}
 
     /* 네비게이션 바 */
     nav {
