@@ -198,17 +198,23 @@ h2 span {
       position: absolute;
       top: 0;
     }
-     /* 커서를 따라 움직이는 원 */
+   /* 커서를 따라 움직이는 원 스타일 */
     .cursor {
       position: absolute;
       width: 20px;
       height: 20px;
-      background-color: #D2B48C;
       border-radius: 50%;
+      background-color: #D2B48C;
       pointer-events: none;
       transform: translate(-50%, -50%);
-      z-index: 9999;
-      transition: all 0.1s ease;
+      transition: transform 0.1s ease-in-out, opacity 0.3s ease-out;
+      opacity: 0.5;
+      z-index: 9999; /* 다른 요소들 위에 표시되도록 */
+    }
+
+    /* 번지는 느낌을 주는 효과 */
+    .cursor-active {
+      opacity: 0.3;  /* 점차 투명해짐 */
     }
  
   </style>
@@ -300,7 +306,6 @@ h2 span {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
-      // 커서가 따라 움직이는 원을 생성
      // 커서가 따라 움직이는 원을 생성
     const cursor = document.createElement("div");
     cursor.classList.add("cursor");
@@ -310,6 +315,14 @@ h2 span {
     document.addEventListener("mousemove", (event) => {
       cursor.style.left = `${event.pageX}px`;
       cursor.style.top = `${event.pageY}px`;
+
+      // 번지는 느낌을 주는 효과 적용
+      cursor.classList.add("cursor-active");
+
+      // 원이 다시 원래 상태로 돌아오게끔 일정 시간 후에 효과 제거
+      setTimeout(() => {
+        cursor.classList.remove("cursor-active");
+      }, 100); // 효과의 지속 시간
     });
   </script>
 
