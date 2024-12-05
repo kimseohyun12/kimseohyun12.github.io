@@ -21,7 +21,7 @@
 
 
 
-  /* 타자 효과 */
+/* 타자 효과 */
 .typing {
   font-size: 5em;
   color: #302516;
@@ -42,11 +42,12 @@
 }
 
 .name {
-  animation: typing 4s steps(40) 1s forwards, blink 0.75s step-end infinite;
+  animation: typing 4s steps(40) 1s forwards, blink 0.75s step-end infinite; /* Kim Seohyun의 타자 효과 */
 }
 
 .portfolio {
-  animation: typing 4s steps(40) 5s forwards, blink 0.75s step-end infinite; /* 5초 후에 Portfolio가 타자치는 효과 */
+  animation: typing 4s steps(40) 1s forwards, blink 0.75s step-end infinite; /* Portfolio 타자 효과 */
+  animation-delay: 5s; /* 5초 뒤에 Portfolio가 타자치는 효과 */
 }
 
 @keyframes typing {
