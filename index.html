@@ -16,37 +16,58 @@
       background-color: #FFF5E1;
       color: #3E2723;
     }
-/* 홈 섹션 스타일 */
-#home {
-  font-size: 1.2em; /* 기본 글자 크기 조정 */
-  color: #3E2723;   /* 텍스트 색상 */
-  text-align: center; /* 텍스트 중앙 정렬 */
-  line-height: 1.8; /* 줄 간격 조정 */
-  margin-top: 50px; /* 상단 여백 */
-}
+  /* 기본 스타일 */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #FFF5E1;
+      color: #3E2723;
+    }
 
-#home h2 {
-  font-size: 3em; /* PROFILE 제목 크기 크게 */
-  color: #D2B48C; /* 색상 변경 */
-  font-weight: bold;
-  margin-bottom: 30px;
-}
+    /* 홈 섹션 스타일 */
+    #home {
+      font-size: 2em; /* 기본 글자 크기 조정 */
+      color: #3E2723;
+      text-align: center;
+      line-height: 1.8;
+      margin-top: 50px;
+    }
 
-#home .name {
-  font-size: 2.5em; /* 이름 부분 더 크게 */
-  font-weight: bold;
-  color: #302516; /* 이름 텍스트 색상 */
-  margin-bottom: 20px;
-}
+    #home h2 {
+      font-size: 4em; /* PROFILE 제목 크기 크게 */
+      color: #D2B48C;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
 
-#home p {
-  font-size: 1.5em; /* 일반 텍스트 크기 */
-  margin-bottom: 10px;
-}
+    #home .name {
+      font-size: 5em; /* 이름 부분 더 크게 */
+      font-weight: bold;
+      color: #302516;
+      margin-bottom: 20px;
+      animation: fadeIn 2s ease-in-out; /* 이름에 페이드 인 효과 추가 */
+    }
 
-#home i {
-  margin-right: 10px; /* 아이콘과 텍스트 사이에 여백 추가 */
-}
+    #home p {
+      font-size: 2em; /* 일반 텍스트 크기 */
+      margin-bottom: 10px;
+    }
+
+    #home i {
+      margin-right: 10px;
+    }
+
+    /* 이름 부분에 페이드 인 효과 */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
 
  /* 타자 효과 */
 .typing {
