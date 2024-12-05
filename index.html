@@ -19,7 +19,21 @@
 
 
 
- /* 타자 효과 애니메이션 */
+  /* 타자 효과 */
+    .typing {
+      font-size: 5em;
+      color: #302516;
+      font-weight: bold;
+      border-right: 2px solid #333;
+      white-space: nowrap;
+      overflow: hidden;
+      display: inline-block;
+      text-align: center;
+      margin-top: 250px;
+      margin-bottom: 300px;
+    }
+
+  /* 타자 효과 애니메이션 */
 .typing-effect {
   animation: typing 4s steps(40) 1s forwards, blink 0.75s step-end infinite;
 }
@@ -44,20 +58,6 @@
     border-color: transparent;
   }
 }
-
-    /* 프로필 텍스트 스타일 */
-    h2 {
-      text-align: center;
-      font-size: 3em;
-      color: #3E2723;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      position: relative;
-      display: inline-block;
-      padding: 20px 30px;
-      margin-bottom: 50px;
-    }
 
 /* 텍스트 주변에 작은 원들이 나타나는 애니메이션 */
 h2::before, h2::after, h2 span {
