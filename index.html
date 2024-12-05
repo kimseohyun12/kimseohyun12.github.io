@@ -36,8 +36,7 @@
 
 /* 타자 효과 애니메이션 */
 .typing-effect {
-  animation: typing 4s steps(40) 1s forwards, erase 4s steps(40) 5s forwards;
-  animation-iteration-count: infinite; /* 반복하도록 설정 */
+  animation: typing 4s steps(40) 1s forwards, erase 4s steps(40) 5s forwards, blink 0.75s step-end infinite;
 }
 
 @keyframes typing {
@@ -55,6 +54,18 @@
   }
   to {
     width: 0;
+  }
+}
+
+@keyframes blink {
+  0% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #333;
+  }
+  100% {
+    border-color: transparent;
   }
 }
 
