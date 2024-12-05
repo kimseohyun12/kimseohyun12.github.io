@@ -7,6 +7,8 @@
   <title>Kim Seohyun - Front-End Developer</title>
   <!-- Font Awesome 링크 추가 (아이콘을 사용하기 위해) -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
   <style>  
     /* 기본 스타일 */
     body {
@@ -313,17 +315,17 @@ h2 span {
       const mouseY = e.pageY;
 
       // 커서 위치 업데이트
-      cursor.style.left = `${mouseX}px`;
-      cursor.style.top = `${mouseY}px`;
+      cursor.style.left = ${mouseX}px;
+      cursor.style.top = ${mouseY}px;
 
       // 잔상 선 위치와 크기 업데이트
       const distance = Math.sqrt(Math.pow(mouseX - lastX, 2) + Math.pow(mouseY - lastY, 2));
       const angle = Math.atan2(mouseY - lastY, mouseX - lastX);
 
-      cursorTrail.style.width = `${distance * 2}px`; // 선의 길이 조정
-      cursorTrail.style.left = `${lastX}px`;
-      cursorTrail.style.top = `${lastY}px`;
-      cursorTrail.style.transform = `rotate(${angle}rad)`; // 잔상 선이 마우스를 따라가도록
+      cursorTrail.style.width = ${distance * 2}px; // 선의 길이 조정
+      cursorTrail.style.left = ${lastX}px;
+      cursorTrail.style.top = ${lastY}px;
+      cursorTrail.style.transform = rotate(${angle}rad); // 잔상 선이 마우스를 따라가도록
 
       // 잔상이 자연스럽게 사라지는 효과
       cursorTrail.style.opacity = '1'; // 잔상 활성화
