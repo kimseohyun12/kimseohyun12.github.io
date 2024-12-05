@@ -11,15 +11,13 @@
   <style>  
     /* 기본 스타일 */
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Poppins', sans-serif; /* 기본 폰트 Poppins */
       margin: 0;
       padding: 0;
       background-color: #f5ebe5;
       color: #3E2723;
     }
- body {
-    font-family: 'Poppins', sans-serif; /* 귀여운 글꼴 Poppins 사용 */
-  }
+ 
 
   /* 프로필 텍스트 스타일 */
   h2 {
@@ -27,6 +25,7 @@
   }
    /* 타자 효과 */
 .typing {
+  font-family: 'Baloo 2', cursive; /* 타자 효과 글꼴 Baloo */
   font-size: 5em;
   color: #302516;
   font-weight: bold;
@@ -67,6 +66,7 @@
 }
     /* 프로필 텍스트 스타일 */
     h2 {
+      font-family: 'Dancing Script', cursive; /* 헤더 폰트 Dancing Script */
       text-align: center;
       font-size: 4em;
       color: #3E2723;
@@ -79,21 +79,6 @@
       margin-bottom: 50px;
       z-index: 1;
     }
-
-/* 프로필 텍스트 스타일 */
-h2 {
-  text-align: center;
-  font-size: 4em;
-  color: #3E2723;
-  font-weight: 700;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  position: relative;
-  display: inline-block;
-  padding: 20px 30px;
-  margin-bottom: 50px;
-  z-index: 1;
-}
 
 /* 텍스트 주변에 작은 원들이 나타나는 애니메이션 */
 h2::before, h2::after, h2 span {
@@ -160,6 +145,7 @@ h2 span {
     }
 
     nav ul li a {
+      font-family: 'Poppins', sans-serif; /* 네비게이션 바 글꼴 Poppins */
       color: #3d3020;
       text-decoration: none;
       font-size: 1.2em;
@@ -171,10 +157,14 @@ h2 span {
     }
 
     section {
+     font-family: 'Poppins', sans-serif; /* About 섹션에 Poppins 폰트 적용 */
       padding: 60px 20px;
       margin: 0 auto;
       max-width: 1200px;
     }
+     p, li {
+    font-family: 'Poppins', sans-serif; /* 모든 본문 텍스트에 Poppins 폰트 적용 */
+  }
 
     footer {
       background-color: #302516;
