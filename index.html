@@ -34,41 +34,41 @@
       left: 50%; /* 화면 가운데로 위치 */
     }
 
-    /* 타자 효과 애니메이션 */
-    .typing-effect {
-      animation: typing 6s steps(40) 1s forwards, blink 0.75s step-end infinite, erase 6s steps(40) 7s forwards;
-      animation-iteration-count: infinite; /* 반복하도록 설정 */
-    }
+  /* 타자 효과 애니메이션 */
+.typing-effect {
+  animation: typing 4s steps(40) 1s forwards, erase 4s steps(40) 5s forwards, blink 0.75s step-end infinite;
+  animation-iteration-count: infinite; /* 반복하도록 설정 */
+}
 
-    @keyframes typing {
-      from {
-        width: 0;
-      }
-      to {
-        width: 100%;
-      }
-    }
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
 
-    @keyframes blink {
-      0% {
-        border-color: transparent;
-      }
-      50% {
-        border-color: #333;
-      }
-      100% {
-        border-color: transparent;
-      }
-    }
+@keyframes erase {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0;
+  }
+}
 
-    @keyframes erase {
-      from {
-        width: 100%;
-      }
-      to {
-        width: 0;
-      }
-    }
+@keyframes blink {
+  0% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #333;
+  }
+  100% {
+    border-color: transparent;
+  }
+}
 
     /* 프로필 텍스트 스타일 */
     h2 {
