@@ -19,32 +19,16 @@
 
 
 
-/* 타자 효과 텍스트 스타일 */
-.typing {
-  font-size: 4em;
-  color: #302516;
-  font-weight: bold;
-  border-right: 2px solid #333;
-  white-space: nowrap;
-  overflow: hidden;
-  display: inline-block;
-  text-align: center;
-  margin-top: 250px;
-  margin-bottom: 300px;
-}
-
+ /* 타자 효과 애니메이션 */
 .typing-effect {
   animation: typing 4s steps(40) 1s forwards, blink 0.75s step-end infinite;
 }
 
 @keyframes typing {
-  0% {
+  from {
     width: 0;
   }
-  50% {
-    width: 100%;
-  }
-  100% {
+  to {
     width: 100%;
   }
 }
@@ -58,28 +42,6 @@
   }
   100% {
     border-color: transparent;
-  }
-}
-
-.name {
-  display: inline-block;
-}
-
-.portfolio {
-  display: inline-block;
-  opacity: 0; /* 처음에는 숨기기 */
-  animation: fadeInPortfolio 4s 1s forwards; /* 1초 지연 후 나타남 */
-  margin-left: 30px; /* 오른쪽으로 약간 띄움 */
-}
-
-@keyframes fadeInPortfolio {
-  0% {
-    opacity: 0;
-    transform: translateX(50px); /* 오른쪽에서 시작 */
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0); /* 원래 위치로 */
   }
 }
 
