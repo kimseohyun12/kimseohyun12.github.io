@@ -13,7 +13,7 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f5ebe0;
+      background-color: #FFF5E1;
       color: #3E2723;
     }
 
@@ -31,77 +31,108 @@
       margin-bottom: 300px;
     }
 
-    /* 타자 효과 애니메이션 */
-    .typing-effect {
-      animation: typing 4s steps(40) 1s forwards, blink 0.75s step-end infinite;
+  /* 타자 효과 애니메이션 */
+.typing-effect {
+  animation: typing 4s steps(40) 1s forwards, blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  0% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #333;
+  }
+  100% {
+    border-color: transparent;
+  }
+}
+
+
+    /* 프로필 텍스트 스타일 */
+    h2 {
+      text-align: center;
+      font-size: 4em;
+      color: #3E2723;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      position: relative;
+      display: inline-block;
+      padding: 20px 30px;
+      margin-bottom: 50px;
+      z-index: 1;
     }
 
-    @keyframes typing {
-      from {
-        width: 0;
-      }
-      to {
-        width: 100%;
-      }
-    }
+/* 프로필 텍스트 스타일 */
+h2 {
+  text-align: center;
+  font-size: 4em;
+  color: #3E2723;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  padding: 20px 30px;
+  margin-bottom: 50px;
+  z-index: 1;
+}
 
-    @keyframes blink {
-      0% {
-        border-color: transparent;
-      }
-      50% {
-        border-color: #333;
-      }
-      100% {
-        border-color: transparent;
-      }
-    }
+/* 텍스트 주변에 작은 원들이 나타나는 애니메이션 */
+h2::before, h2::after, h2 span {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+  background: #D2B48C; /* 색상 변경 */
+  width: 8px;  /* 원 크기 조정 */
+  height: 8px; /* 원 크기 조정 */
+  animation: pulse 2s ease-in-out infinite;
+}
 
-    /* 텍스트 주변에 작은 원들이 나타나는 애니메이션 */
-    h2::before, h2::after, h2 span {
-      content: '';
-      position: absolute;
-      border-radius: 50%;
-      z-index: -1;
-      background: #D2B48C; /* 색상 변경 */
-      width: 8px;  /* 원 크기 조정 */
-      height: 8px; /* 원 크기 조정 */
-      animation: pulse 2s ease-in-out infinite;
-    }
+h2::before {
+  top: 5px; /* 글씨에 가까운 위치로 수정 */
+  left: -10px; /* 글씨에 가까운 위치로 수정 */
+  animation-delay: 0s;
+}
 
-    h2::before {
-      top: 5px; /* 글씨에 가까운 위치로 수정 */
-      left: -10px; /* 글씨에 가까운 위치로 수정 */
-      animation-delay: 0s;
-    }
+h2::after {
+  top: 5px; /* 글씨에 가까운 위치로 수정 */  
+  right: -10px; /* 글씨에 가까운 위치로 수정 */
+  animation-delay: 0.5s;
+}
 
-    h2::after {
-      top: 5px; /* 글씨에 가까운 위치로 수정 */
-      right: -10px; /* 글씨에 가까운 위치로 수정 */
-      animation-delay: 0.5s;
-    }
+h2 span {
+  top: 5px; /* 글씨에 가까운 위치로 수정 */
+  left: 10px; /* 글씨에 가까운 위치로 수정 */
+  animation-delay: 1s;
+}
 
-    h2 span {
-      top: 5px; /* 글씨에 가까운 위치로 수정 */
-      left: 10px; /* 글씨에 가까운 위치로 수정 */
-      animation-delay: 1s;
-    }
-
-    /* 애니메이션: 원들이 커졌다 작아짐 */
-    @keyframes pulse {
-      0% {
-        transform: scale(0.8);
-        opacity: 0.6;
-      }
-      50% {
-        transform: scale(1.2);
-        opacity: 1;
-      }
-      100% {
-        transform: scale(0.8);
-        opacity: 0.6;
-      }
-    }
+/* 애니메이션: 원들이 커졌다 작아짐 */
+@keyframes pulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0.6;
+  }
+}
 
     /* 네비게이션 바 */
     nav {
@@ -169,8 +200,7 @@
       position: absolute;
       top: 0;
     }
-    
-    /* 커서 기본 스타일 */
+     /* 커서 기본 스타일 */
     .cursor {
       position: absolute;
       width: 12px;
@@ -187,10 +217,10 @@
       position: absolute;
       pointer-events: none;
       z-index: 9998;
-      width: 100px;
-      height: 10px;
+      width: 200px;
+      height: 20px;
       background: linear-gradient(90deg, rgba(210, 180, 140, 1) 0%, rgba(210, 180, 140, 0) 100%);
-      border-radius: 10px;
+      border-radius: 20px;
       opacity: 0.5;
       transition: opacity 0.5s ease-out;
     }
@@ -212,22 +242,26 @@
     </ul>
   </nav>
 
- <!-- 타자 효과 부분 -->
-<section>
-  <div class="typing typing-effect">
-    <span class="name">Kim Seohyun</span><br>
-    <span class="portfolio">Portfolio</span>
-  </div>
-</section>
+  <!-- 타자 효과 텍스트 -->
+  <section>
+    <div class="typing typing-effect">
+      Kim Seohyun Portfolio
+    </div>
+  </section>
 
- <!-- 홈 섹션 -->
+
+
+
+<!-- 홈 섹션 -->
 <section id="home">
   <h2>PROFILE</h2>
-  <p class="name" style="font-size: 1.5em; font-weight: bold; color: #302516; margin-bottom: 20px;">김서현 kimseohyun</p> <!-- 이름 부분에 인라인 스타일 추가 -->
-  <!-- 달력 아이콘 및 생일 추가 -->
-  <p><i class="fas fa-calendar"></i> 2002. 11. 12.</p>
+  <p>김서현 kimseohyun</p>
+   <!-- 달력 아이콘 및 생일 추가 -->
+    <p><i class="fas fa-calendar"></i> 2002. 11. 12.</p>
+  
   <!-- 전화 아이콘 및 번호 추가 -->
   <p><i class="fas fa-phone-alt"></i> 010-8423-1363</p>
+  
   <!-- 이메일 아이콘 및 이메일 주소 추가 -->
   <p><i class="fas fa-envelope"></i> ksh021112@naver.com</p>
 </section>
@@ -310,17 +344,17 @@
       const mouseY = e.pageY;
 
       // 커서 위치 업데이트
-      cursor.style.left = `${mouseX}px`;
-      cursor.style.top = `${mouseY}px`;
+      cursor.style.left = ${mouseX}px;
+      cursor.style.top = ${mouseY}px;
 
       // 잔상 선 위치와 크기 업데이트
       const distance = Math.sqrt(Math.pow(mouseX - lastX, 2) + Math.pow(mouseY - lastY, 2));
       const angle = Math.atan2(mouseY - lastY, mouseX - lastX);
 
-      cursorTrail.style.width = `${distance * 2}px`; // 선의 길이 조정
-      cursorTrail.style.left = `${lastX}px`;
-      cursorTrail.style.top = `${lastY}px`;
-      cursorTrail.style.transform = `rotate(${angle}rad)`; // 잔상 선이 마우스를 따라가도록
+      cursorTrail.style.width = ${distance * 2}px; // 선의 길이 조정
+      cursorTrail.style.left = ${lastX}px;
+      cursorTrail.style.top = ${lastY}px;
+      cursorTrail.style.transform = rotate(${angle}rad); // 잔상 선이 마우스를 따라가도록
 
       // 잔상이 자연스럽게 사라지는 효과
       cursorTrail.style.opacity = '1'; // 잔상 활성화
@@ -334,6 +368,9 @@
       lastY = mouseY;
     });
   </script>
+
+</body>
+</html>
 
 </body>
 </html>
