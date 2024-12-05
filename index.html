@@ -34,6 +34,22 @@
       left: 50%; /* 화면 가운데로 위치 */
     }
 
+/* 타자 효과 */
+.typing {
+  font-size: 3em;
+  color: #302516;
+  font-weight: bold;
+  border-right: 2px solid #333;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  text-align: center;
+  margin-top: 150px;
+  transform: translateX(-50%); /* 가운데 정렬 */
+  position: relative;
+  left: 50%; /* 화면 가운데로 위치 */
+}
+
 /* 타자 효과 애니메이션 */
 .typing-effect {
   animation: typing 4s steps(40) 1s forwards, erase 4s steps(40) 5s forwards, restartTyping 8s 1 forwards;
@@ -65,7 +81,7 @@
     border-color: transparent;
   }
   50% {
-    border-color: #302516;
+    border-color: #333;
   }
   100% {
     border-color: transparent;
@@ -81,7 +97,6 @@
     width: 100%;
   }
 }
-
     /* 프로필 텍스트 스타일 */
     h2 {
       text-align: center;
