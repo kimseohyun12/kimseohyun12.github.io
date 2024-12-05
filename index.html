@@ -325,47 +325,47 @@ h2 span {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
-    const cursor = document.createElement('div');
-    cursor.classList.add('cursor');
-    document.body.appendChild(cursor);
+  const cursor = document.createElement('div');
+cursor.classList.add('cursor');
+document.body.appendChild(cursor);
 
-    // 커서 잔상 선 생성
-    const cursorTrail = document.createElement('div');
-    cursorTrail.classList.add('cursor-trail');
-    document.body.appendChild(cursorTrail);
+// 커서 잔상 선 생성
+const cursorTrail = document.createElement('div');
+cursorTrail.classList.add('cursor-trail');
+document.body.appendChild(cursorTrail);
 
-    let lastX = 0;
-    let lastY = 0;
+let lastX = 0;
+let lastY = 0;
 
-    // 마우스 이동 추적
-    document.addEventListener('mousemove', (e) => {
-      const mouseX = e.pageX;
-      const mouseY = e.pageY;
+// 마우스 이동 추적
+document.addEventListener('mousemove', (e) => {
+  const mouseX = e.pageX;
+  const mouseY = e.pageY;
 
-      // 커서 위치 업데이트
-      cursor.style.left = ${mouseX}px;
-      cursor.style.top = ${mouseY}px;
+  // 커서 위치 업데이트
+  cursor.style.left = `${mouseX}px`;  // 템플릿 리터럴로 수정
+  cursor.style.top = `${mouseY}px`;   // 템플릿 리터럴로 수정
 
-      // 잔상 선 위치와 크기 업데이트
-      const distance = Math.sqrt(Math.pow(mouseX - lastX, 2) + Math.pow(mouseY - lastY, 2));
-      const angle = Math.atan2(mouseY - lastY, mouseX - lastX);
+  // 잔상 선 위치와 크기 업데이트
+  const distance = Math.sqrt(Math.pow(mouseX - lastX, 2) + Math.pow(mouseY - lastY, 2));
+  const angle = Math.atan2(mouseY - lastY, mouseX - lastX);
 
-      cursorTrail.style.width = ${distance * 2}px; // 선의 길이 조정
-      cursorTrail.style.left = ${lastX}px;
-      cursorTrail.style.top = ${lastY}px;
-      cursorTrail.style.transform = rotate(${angle}rad); // 잔상 선이 마우스를 따라가도록
+  cursorTrail.style.width = `${distance * 2}px`;  // 템플릿 리터럴로 수정
+  cursorTrail.style.left = `${lastX}px`;          // 템플릿 리터럴로 수정
+  cursorTrail.style.top = `${lastY}px`;           // 템플릿 리터럴로 수정
+  cursorTrail.style.transform = `rotate(${angle}rad)`; // 잔상 선이 마우스를 따라가도록 수정
 
-      // 잔상이 자연스럽게 사라지는 효과
-      cursorTrail.style.opacity = '1'; // 잔상 활성화
+  // 잔상이 자연스럽게 사라지는 효과
+  cursorTrail.style.opacity = '1'; // 잔상 활성화
 
-      setTimeout(() => {
-        cursorTrail.style.opacity = '0'; // 잔상 서서히 사라짐
-      }, 100); // 잔상의 사라지는 타이밍
+  setTimeout(() => {
+    cursorTrail.style.opacity = '0'; // 잔상 서서히 사라짐
+  }, 100); // 잔상의 사라지는 타이밍
 
-      // 마지막 마우스 위치 업데이트
-      lastX = mouseX;
-      lastY = mouseY;
-    });
+  // 마지막 마우스 위치 업데이트
+  lastX = mouseX;
+  lastY = mouseY;
+});
   </script>
 
 </body>
