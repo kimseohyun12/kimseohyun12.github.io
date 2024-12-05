@@ -19,9 +19,9 @@
 
 
 
- /* 타자 효과 */
+/* 타자 효과 텍스트 스타일 */
 .typing {
-  font-size: 5em;
+  font-size: 4em;
   color: #302516;
   font-weight: bold;
   border-right: 2px solid #333;
@@ -31,13 +31,12 @@
   text-align: center;
   margin-top: 250px;
   margin-bottom: 300px;
-  transform: translateX(-50%); /* 가운데 정렬 */
-  position: relative;
-  left: 50%; /* 화면 가운데로 위치 */
-  animation: typing 5s steps(40) 1s 1 normal both, blink 0.75s step-end infinite;
 }
 
-/* 타자 효과 애니메이션 */
+.typing-effect {
+  animation: typing 4s steps(40) 1s forwards, blink 0.75s step-end infinite;
+}
+
 @keyframes typing {
   from {
     width: 0;
@@ -47,7 +46,6 @@
   }
 }
 
-/* 커서 깜빡이는 효과 */
 @keyframes blink {
   0% {
     border-color: transparent;
@@ -59,7 +57,31 @@
     border-color: transparent;
   }
 }
-    
+
+.name {
+  display: inline-block;
+}
+
+.portfolio {
+  display: inline-block;
+  margin-left: 30px; /* "Portfolio"를 오른쪽으로 조금 이동 */
+  position: relative;
+  top: 10px; /* "Portfolio"를 아래로 조금 내림 */
+  opacity: 0; /* 처음에는 안 보이게 설정 */
+  animation: fadeInPortfolio 4s forwards;
+}
+
+@keyframes fadeInPortfolio {
+  0% {
+    opacity: 0;
+    transform: translateX(50px); /* 처음에는 오른쪽으로 이동 */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* 제자리로 돌아오기 */
+  }
+}
+
     /* 프로필 텍스트 스타일 */
     h2 {
       text-align: center;
@@ -228,12 +250,13 @@ h2 span {
     </ul>
   </nav>
 
-  <!-- 타자 효과 텍스트 -->
-  <section>
-    <div class="typing typing-effect">
-      Kim Seohyun Portfolio
-    </div>
-  </section>
+ <!-- 타자 효과 부분 -->
+<section>
+  <div class="typing typing-effect">
+    <span class="name">Kim Seohyun</span><br>
+    <span class="portfolio">Portfolio</span>
+  </div>
+</section>
 
 
 
