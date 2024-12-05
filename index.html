@@ -17,25 +17,24 @@
       color: #3E2723;
     }
 
-    /* 타자 효과 */
-    .typing {
-      font-size: 5em;
-      color: #302516;
-      font-weight: bold;
-      border-right: 2px solid #333;
-      white-space: nowrap;
-      overflow: hidden;
-      display: inline-block;
-      text-align: center;
-      margin-top: 250px;
-      margin-bottom: 300px;
-    }
-
-  /* 타자 효과 애니메이션 */
-.typing-effect {
-  animation: typing 4s steps(40) 1s forwards, blink 0.75s step-end infinite;
+   /* 타자 효과 */
+.typing {
+  font-size: 5em;
+  color: #302516;
+  font-weight: bold;
+  border-right: 2px solid #333;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  text-align: center;
+  margin-top: 150px;
+  transform: translateX(-50%); /* 가운데 정렬 */
+  position: relative;
+  left: 50%; /* 화면 가운데로 위치 */
+  animation: typing 5s steps(40) 1s 1 normal both, blink 0.75s step-end infinite;
 }
 
+/* 타자 효과 애니메이션 */
 @keyframes typing {
   from {
     width: 0;
@@ -45,6 +44,7 @@
   }
 }
 
+/* 커서 깜빡이는 효과 */
 @keyframes blink {
   0% {
     border-color: transparent;
@@ -56,8 +56,6 @@
     border-color: transparent;
   }
 }
-
-
     /* 프로필 텍스트 스타일 */
     h2 {
       text-align: center;
@@ -243,11 +241,11 @@ h2 span {
   </nav>
 
   <!-- 타자 효과 텍스트 -->
-  <section>
-    <div class="typing typing-effect">
-      Kim Seohyun Portfolio
-    </div>
-  </section>
+<section>
+  <div class="typing">
+    Kim Seohyun Portfolio
+  </div>
+</section>
 
 
 
