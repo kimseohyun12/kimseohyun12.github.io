@@ -36,9 +36,10 @@
 
 /* 타자 효과 애니메이션 */
 .typing-effect {
-  animation: typing 4s steps(40) 1s forwards, erase 4s steps(40) 5s forwards, blink 0.75s step-end infinite;
+  animation: typing 4s steps(40) 1s forwards, erase 4s steps(40) 5s forwards, restartTyping 8s 1 forwards;
 }
 
+/* 타자 효과 */
 @keyframes typing {
   from {
     width: 0;
@@ -48,6 +49,7 @@
   }
 }
 
+/* 지우기 효과 */
 @keyframes erase {
   from {
     width: 100%;
@@ -57,6 +59,7 @@
   }
 }
 
+/* 커서 깜빡이는 효과 */
 @keyframes blink {
   0% {
     border-color: transparent;
@@ -66,6 +69,16 @@
   }
   100% {
     border-color: transparent;
+  }
+}
+
+/* 타이핑 다시 시작하는 효과 */
+@keyframes restartTyping {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
   }
 }
 
