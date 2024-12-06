@@ -7,7 +7,7 @@
   <title>Kim Seohyun - Front-End Developer</title>
   <!-- Font Awesome 링크 추가 (아이콘을 사용하기 위해) -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <style>  
+  <style>
     /* 기본 스타일 */
     body {
       font-family: Arial, sans-serif;
@@ -21,11 +21,11 @@
     /* 커서 이미지 스타일 */
     .cursor {
       position: fixed;
-      width: 30px;
+      width: 30px; /* 커서 이미지의 크기 */
       height: 30px;
       background: url('https://raw.githubusercontent.com/kimseohyun12/kimseohyun12.github.io/main/%EB%AA%A8%EB%A3%A8%EC%B9%B4-removebg-preview.png') no-repeat center center;
       background-size: contain;
-      pointer-events: none; /* 마우스 이벤트를 차단하여 커서 이미지가 다른 요소 위에 가려지지 않도록 합니다 */
+      pointer-events: none; /* 마우스 이벤트가 커서 위에 영향을 미치지 않도록 */
       z-index: 9999;
       transition: transform 0.1s ease-in-out;
     }
@@ -218,10 +218,14 @@
   <!-- 스크립트 -->
   <script>
     // 커서 위치 업데이트
+    const cursor = document.createElement('div');
+    cursor.classList.add('cursor');
+    document.body.appendChild(cursor);
+
+    // 커서 위치 추적
     document.addEventListener('mousemove', (e) => {
-      const cursor = document.querySelector('.cursor');
-      cursor.style.left = `${e.pageX - cursor.offsetWidth / 2}px`; // 커서 위치
-      cursor.style.top = `${e.pageY - cursor.offsetHeight / 2}px`; // 커서 위치
+      cursor.style.left = `${e.pageX - cursor.offsetWidth / 2}px`; // 마우스 X 위치
+      cursor.style.top = `${e.pageY - cursor.offsetHeight / 2}px`; // 마우스 Y 위치
     });
 
     // 스크롤 위로 이동하는 버튼
@@ -241,4 +245,5 @@
 
 </body>
 </html>
+
 
