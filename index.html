@@ -119,60 +119,26 @@
       color: #D2B48C; /* 아이콘 색상 설정 */
     }
 
-/* 제목 스타일 */
+/* 홈섹션 제목 */
 #home h2 {
-  font-family: 'Quicksand', sans-serif;
-  font-size: 3em;
+  font-family: 'Quicksand', sans-serif; /* 폰트 설정 */
+  font-size: 3em; /* 텍스트 크기 */
   font-weight: bold;
   color: #302516; /* 텍스트 색상 */
-  text-align: center;
+  text-align: center; /* 가운데 정렬 */
   text-transform: uppercase;
-  margin-bottom: 40px;
-  position: relative; /* 이모티콘이 제목 주위에 배치되도록 설정 */
-  padding: 10px;
+  margin-bottom: 20px;
+  animation: shake 1s ease infinite; /* 흔들림 애니메이션 */
 }
 
-/* 왼쪽 위에 먹는 밤 이모티콘 */
-.night-left {
-  position: absolute;
-  top: -25px; /* 제목 위쪽으로 이동 */
-  left: -40px; /* 제목 왼쪽으로 이동 */
-  font-size: 1.5em; /* 이모티콘 크기 */
-  animation: nightMoveLeft 4s infinite linear;
-  display: inline-block; /* 이모티콘이 제대로 표시되도록 수정 */
+/* 흔들림 애니메이션 */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  50% { transform: translateX(10px); }
+  75% { transform: translateX(-10px); }
+  100% { transform: translateX(0); }
 }
-
-
-/* 오른쪽 아래에 먹는 밤 이모티콘 */
-.night-right {
-  position: absolute;
-  bottom: -25px; /* 제목 아래쪽으로 이동 */
-  right: -40px; /* 제목 오른쪽으로 이동 */
-  font-size: 1.5em; /* 이모티콘 크기 */
-  animation: nightMoveRight 4s infinite linear;
-  display: inline-block; /* 이모티콘이 제대로 표시되도록 수정 */
-}
-
-/* 왼쪽 먹는 밤 이모티콘 애니메이션 */
-@keyframes nightMoveLeft {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(10px);
-  }
-}
-
-/* 오른쪽 먹는 밤 이모티콘 애니메이션 */
-@keyframes nightMoveRight {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-10px);
-  }
-}
-
 
 /* 로고 스타일 */
 a.logo {
