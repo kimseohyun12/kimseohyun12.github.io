@@ -123,6 +123,49 @@
         opacity: 0.6;
       }
     }
+      /* 프로필 섹션 스타일 */
+    #home {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      padding: 50px 20px;
+      background-color: #FFF5E1;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 800px;
+      margin: 50px auto;
+      gap: 30px;
+    }
+
+    #home img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    #home .info {
+      text-align: left;
+    }
+
+    #home .info .name {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #302516;
+      margin-bottom: 20px;
+    }
+
+    #home .info p {
+      font-size: 1em;
+      margin: 5px 0;
+      color: #3E2723;
+    }
+
+    #home .info p i {
+      margin-right: 10px;
+      color: #D2B48C;
+    }
 
     /* 프로필 텍스트 스타일 */
     h2 {
@@ -204,88 +247,109 @@
       font-family: 'Dongle', sans-serif;
     }
 
-    /* 홈 섹션 */
-    #home {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: left;
-      margin: 50px auto;
-      padding: 20px;
-      max-width: 900px;
-    }
-
-    #home .profile-image {
-      flex: 1;
-      max-width: 200px;
-      margin-right: 20px;
-    }
-
-    #home .profile-image img {
-      width: 100%;
-      border-radius: 50%;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    #home .profile-info {
-      flex: 2;
-    }
-
-    #home .profile-info p {
-      margin: 10px 0;
-      font-size: 1.2em;
-      color: #3E2723;
-    }
-
-    #home .profile-info p i {
-      margin-right: 10px;
-      color: #3E2723;
-    }
   </style>
 </head>
 <body>
-  <!-- 커서 이미지 -->
-  <div class="cursor"></div>
 
-  <!-- 네비게이션 -->
+  <!-- 페이지 맨 위를 표시하는 앵커 -->
+  <button id="scrollToTopBtn" class="scroll-to-top" aria-label="Scroll to top">▲</button>
+
+  <!-- 네비게이션 바 -->
   <nav>
     <ul>
       <li><a href="#home">Home</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
     </ul>
   </nav>
 
-  <!-- 홈 섹션 -->
-  <section id="home">
-    <div class="profile-image">
-      <img src="https://via.placeholder.com/200" alt="Profile Image">
-    </div>
-    <div class="profile-info">
-      <h2>Hello, I'm Kim Seohyun</h2>
-      <p><i class="fas fa-code"></i> Front-End Developer</p>
-      <p><i class="fas fa-map-marker-alt"></i> Seoul, South Korea</p>
-      <p><i class="fas fa-envelope"></i> kimseohyun@example.com</p>
+  <!-- 타자 효과 텍스트 -->
+  <section>
+    <div class="typing">
+      Kim Seohyun Portfolio
     </div>
   </section>
 
-  <!-- 푸터 -->
-  <footer>
-    &copy; 2024 Kim Seohyun. All Rights Reserved.
-  </footer>
+   <!-- 홈 섹션 -->
+  <section id="home">
+    <img src="https://via.placeholder.com/150" alt="Kim Seohyun">
+    <div class="info">
+      <p class="name dongle-text">김서현 Kim Seohyun</p>
+      <p><i class="fas fa-calendar"></i> 2002. 11. 12.</p>
+      <p><i class="fas fa-phone-alt"></i> 010-8423-1363</p>
+      <p><i class="fas fa-envelope"></i> ksh021112@naver.com</p>
+    </div>
+  </section>
 
-  <!-- 스크롤 위로 이동 버튼 -->
-  <a href="#top" class="scroll-to-top"><i class="fas fa-arrow-up"></i></a>
+
+  <!-- About Me 섹션 -->
+  <section id="about" class="about">
+    <h2 class="dongle-text">About Me</h2>
+    <p>I'm a front-end developer with experience in building responsive, user-friendly websites. I have a strong understanding of HTML, CSS, and JavaScript, and I'm always eager to learn new technologies to improve my skills.</p>
+  </section>
+
+  <!-- Projects 섹션 -->
+  <section id="projects" class="projects">
+    <h2 class="dongle-text">My Projects</h2>
+    <div class="project-item">
+      <h3>Project 1: Portfolio Website</h3>
+      <p>A responsive portfolio website that showcases my work and skills as a front-end developer. Built using HTML, CSS, and JavaScript.</p>
+    </div>
+    <div class="project-item">
+      <h3>Project 2: E-commerce Website</h3>
+      <p>An e-commerce website with a modern design and functionality. Includes product listings, cart, and checkout. Built with HTML, CSS, JavaScript, and React.</p>
+    </div>
+  </section>
+
+  <!-- Skills 섹션 -->
+  <section id="skills" class="skills">
+    <h2 class="dongle-text">Skills</h2>
+    <ul>
+      <li>HTML5</li>
+      <li>CSS3</li>
+      <li>JavaScript</li>
+      <li>React</li>
+      <li>Git/GitHub</li>
+    </ul>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Kim Seohyun. All Rights Reserved.</p>
+  </footer>
 
   <!-- 스크립트 -->
   <script>
-    // 커서 따라다니는 효과
-    document.addEventListener("mousemove", function(e) {
-      const cursor = document.querySelector(".cursor");
-      cursor.style.left = e.pageX + "px";
-      cursor.style.top = e.pageY + "px";
+    // 커서 위치 업데이트
+    const cursor = document.createElement('div');
+    cursor.classList.add('cursor');
+    document.body.appendChild(cursor);
+
+    // 커서 위치 추적 (requestAnimationFrame 사용으로 최적화)
+    const moveCursor = (e) => {
+      cursor.style.left = `${e.pageX - cursor.offsetWidth / 2}px`;
+      cursor.style.top = `${e.pageY - cursor.offsetHeight / 2}px`;
+    };
+
+    document.addEventListener('mousemove', (e) => {
+      requestAnimationFrame(() => moveCursor(e)); // 부드럽게 이동
+    });
+
+    // 스크롤 위로 이동하는 버튼
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        scrollToTopBtn.style.display = "block";
+      } else {
+        scrollToTopBtn.style.display = "none";
+      }
+    });
+
+    scrollToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   </script>
+
 </body>
 </html>
-
