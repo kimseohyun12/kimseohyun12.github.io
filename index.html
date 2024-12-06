@@ -23,19 +23,17 @@
       cursor: none; /* 기본 커서를 숨깁니다 */
     }
 
-.cursor {
-  position: fixed;
-  width: 70px;
-  height: 70px;
-  background: url('https://raw.githubusercontent.com/kimseohyun12/kimseohyun12.github.io/main/%EB%AA%A8%EB%A3%A8%EC%B9%B4-removebg-preview.png') no-repeat center center;
-  background-size: contain;
-  pointer-events: none; /* 커서에 이벤트가 발생하지 않도록 */
-  z-index: 99999; /* 다른 요소들보다 위에 표시되도록 매우 높은 z-index 값 설정 */
-  transition: left 0.1s ease, top 0.1s ease;
-  display: block; /* 커서가 보이도록 설정 */
-}
-
-
+    .cursor {
+      position: fixed;
+      width: 70px;
+      height: 70px;
+      background: url('https://raw.githubusercontent.com/kimseohyun12/kimseohyun12.github.io/main/%EB%AA%A8%EB%A3%A8%EC%B9%B4-removebg-preview.png') no-repeat center center;
+      background-size: contain;
+      pointer-events: none; /* 커서에 이벤트가 발생하지 않도록 */
+      z-index: 99999; /* 다른 요소들보다 위에 표시되도록 매우 높은 z-index 값 설정 */
+      transition: left 0.1s ease, top 0.1s ease;
+      display: block; /* 커서가 보이도록 설정 */
+    }
 
     /* 타자 효과 */
     .typing {
@@ -123,41 +121,44 @@
         opacity: 0.6;
       }
     }
-   #home {
-  display: flex; /* flexbox 레이아웃 사용 */
-  flex-direction: row; /* 자식 요소들을 가로로 정렬 */
-  align-items: center; /* 자식 요소들을 세로로 가운데 정렬 */
-  justify-content: flex-start; /* 자식 요소들을 왼쪽으로 정렬 */
-  padding: 50px 20px; /* 상하 50px, 좌우 20px의 여백 추가 */
-  gap: 50px; /* 사진과 텍스트 간의 간격을 50px로 설정 */
-}
 
-#home img {
-  width: 150px; /* 이미지의 너비를 150px로 설정 */
-  height: 150px; /* 이미지의 높이를 150px로 설정 */
-}
+    /* 홈 섹션 */
+    #home {
+      display: flex; /* flexbox 레이아웃 사용 */
+      flex-direction: row; /* 자식 요소들을 가로로 정렬 */
+      align-items: center; /* 자식 요소들을 세로로 가운데 정렬 */
+      justify-content: flex-start; /* 자식 요소들을 왼쪽으로 정렬 */
+      padding: 50px 20px; /* 상하 50px, 좌우 20px의 여백 추가 */
+      gap: 50px; /* 사진과 텍스트 간의 간격을 50px로 설정 */
+    }
 
-#home .info {
-  text-align: left; /* 텍스트를 왼쪽 정렬 */
-}
+    #home img {
+      width: 150px; /* 이미지의 너비를 150px로 설정 */
+      height: 150px; /* 이미지의 높이를 150px로 설정 */
+    }
 
-#home .info .name {
-  font-size: 3em; /* 이름 텍스트 크기를 1.5em으로 설정 */
-  font-weight: bold; /* 이름 텍스트를 굵게 설정 */
-  color: #302516; /* 이름 텍스트 색상 설정 */
-  margin-bottom: 20px; /* 이름 아래에 20px 여백 추가 */
-}
+    #home .info {
+      text-align: left; /* 텍스트를 왼쪽 정렬 */
+    }
 
-#home .info p {
-  font-size: 1.5em; /* 텍스트 크기를 1em으로 설정 */
-  margin: 5px 0; /* 상하 5px 여백 추가 */
-  color: #3E2723; /* 텍스트 색상 설정 */
-}
+    #home .info .name {
+      font-size: 3em; /* 이름 텍스트 크기를 1.5em으로 설정 */
+      font-weight: bold; /* 이름 텍스트를 굵게 설정 */
+      color: #302516; /* 이름 텍스트 색상 설정 */
+      margin-bottom: 20px; /* 이름 아래에 20px 여백 추가 */
+    }
 
-#home .info p i {
-  margin-right: 10px; /* 아이콘 오른쪽에 10px 여백 추가 */
-  color: #D2B48C; /* 아이콘 색상 설정 */
-}
+    #home .info p {
+      font-size: 1.5em; /* 텍스트 크기를 1em으로 설정 */
+      margin: 5px 0; /* 상하 5px 여백 추가 */
+      color: #3E2723; /* 텍스트 색상 설정 */
+    }
+
+    #home .info p i {
+      margin-right: 10px; /* 아이콘 오른쪽에 10px 여백 추가 */
+      color: #D2B48C; /* 아이콘 색상 설정 */
+    }
+
     /* 프로필 텍스트 스타일 */
     h2 {
       text-align: center;
@@ -173,32 +174,16 @@
       z-index: 1;
     }
 
-    nav {
-      background-color: transparent;
-      padding: 10px 0;
-      text-align: right;
-    }
-
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav ul li {
-      display: inline;
-      margin-left: 20px;
-    }
-
-    nav ul li a {
-      color: #3d3020;
-      text-decoration: none;
-      font-size: 1.2em;
-      padding: 10px;
-    }
-
-    nav ul li a:hover {
-      color: #D2B48C;
+    /* 로고 스타일 (왼쪽 상단에 "SH" 추가) */
+    .logo {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      font-size: 2.5em;
+      font-weight: bold;
+      color: #302516;
+      z-index: 10000; /* 로고가 다른 요소들 위에 오도록 설정 */
+      cursor: pointer;
     }
 
     section {
@@ -242,18 +227,11 @@
 </head>
 <body>
 
+  <!-- 로고 추가 -->
+  <div class="logo">SH</div>
+
   <!-- 페이지 맨 위를 표시하는 앵커 -->
   <button id="scrollToTopBtn" class="scroll-to-top" aria-label="Scroll to top">▲</button>
-
-  <!-- 네비게이션 바 -->
-  <nav>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-    </ul>
-  </nav>
 
   <!-- 타자 효과 텍스트 -->
   <section>
@@ -266,93 +244,34 @@
   <section id="home">
     <img src="https://via.placeholder.com/150" alt="Kim Seohyun">
     <div class="info">
-      <p class="name dongle-text">김서현 Kim Seohyun</p>
-      <p><i class="fas fa-calendar"></i> 2002. 11. 12.</p>
-      <p><i class="fas fa-phone-alt"></i> 010-8423-1363</p>
-      <p><i class="fas fa-envelope"></i> ksh021112@naver.com</p>
+      <div class="name">Kim Seohyun</div>
+      <p><i class="fas fa-laptop-code"></i>Front-End Developer</p>
+      <p><i class="fas fa-map-marker-alt"></i>Seoul, Korea</p>
+      <p><i class="fas fa-envelope"></i>Email: contact@seohyun.com</p>
     </div>
   </section>
 
-
-  <!-- About Me 섹션 -->
-  <section id="about" class="about">
-    <h2 class="dongle-text">About Me</h2>
-    <p>I'm a front-end developer with experience in building responsive, user-friendly websites. I have a strong understanding of HTML, CSS, and JavaScript, and I'm always eager to learn new technologies to improve my skills.</p>
-  </section>
-
-  <!-- Projects 섹션 -->
-  <section id="projects" class="projects">
-    <h2 class="dongle-text">My Projects</h2>
-    <div class="project-item">
-      <h3>Project 1: Portfolio Website</h3>
-      <p>A responsive portfolio website that showcases my work and skills as a front-end developer. Built using HTML, CSS, and JavaScript.</p>
-    </div>
-    <div class="project-item">
-      <h3>Project 2: E-commerce Website</h3>
-      <p>An e-commerce website with a modern design and functionality. Includes product listings, cart, and checkout. Built with HTML, CSS, JavaScript, and React.</p>
-    </div>
-  </section>
-
-  <!-- Skills 섹션 -->
-  <section id="skills" class="skills">
-    <h2 class="dongle-text">Skills</h2>
-    <ul>
-      <li>HTML5</li>
-      <li>CSS3</li>
-      <li>JavaScript</li>
-      <li>React</li>
-      <li>Git/GitHub</li>
-    </ul>
-  </section>
-
-  <!-- Footer -->
   <footer>
-    <p>&copy; 2024 Kim Seohyun. All Rights Reserved.</p>
+    <p>&copy; 2024 Kim Seohyun. All rights reserved.</p>
   </footer>
 
-  <!-- 스크립트 -->
+  <!-- 커서 -->
+  <div class="cursor"></div>
+
   <script>
-  // 커서 요소 생성
-    const cursor = document.createElement('div');
-    cursor.classList.add('cursor');
-    document.body.appendChild(cursor);
-
-    // 커서 위치 추적 (mousemove 이벤트 처리)
-    const moveCursor = (e) => {
-      cursor.style.left = ${e.pageX - cursor.offsetWidth / 2}px; // 커서가 마우스 위치에 맞춰 이동
-      cursor.style.top = ${e.pageY - cursor.offsetHeight / 2}px;
-    };
-
-    // 커서 위치 추적 이벤트
-    document.addEventListener('mousemove', (e) => {
-      moveCursor(e); // 마우스를 움직일 때마다 커서 위치 업데이트
+    // 커서 위치 업데이트
+    document.addEventListener('mousemove', function (e) {
+      const cursor = document.querySelector('.cursor');
+      cursor.style.left = e.pageX - cursor.offsetWidth / 2 + 'px';
+      cursor.style.top = e.pageY - cursor.offsetHeight / 2 + 'px';
     });
 
-    // 스크롤 시 커서 보이게 유지
-    window.addEventListener('scroll', () => {
-      cursor.style.display = 'block'; // 스크롤해도 커서가 계속 보이도록 설정
-    });
-
-    // 페이지 로드 시 커서 보이도록 설정
-    window.addEventListener('load', () => {
-      cursor.style.display = 'block'; // 페이지가 로드될 때 커서 표시
-    });
-
-
-    // 스크롤 위로 이동하는 버튼
-    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 100) {
-        scrollToTopBtn.style.display = "block";
-      } else {
-        scrollToTopBtn.style.display = "none";
-      }
-    });
-
-    scrollToTopBtn.addEventListener('click', () => {
+    // 스크롤 버튼 처리
+    document.getElementById('scrollToTopBtn').addEventListener('click', function () {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   </script>
 
 </body>
 </html>
+
