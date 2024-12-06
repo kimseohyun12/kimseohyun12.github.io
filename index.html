@@ -15,7 +15,19 @@
       padding: 0;
       background-color: #f5ebe5;
       color: #3E2723;
-      cursor: none; /* 기본 커서 숨기기 */
+      cursor: none; /* 기본 커서를 숨깁니다 */
+    }
+
+    /* 커서 이미지 스타일 */
+    .cursor {
+      position: fixed;
+      width: 30px;
+      height: 30px;
+      background: url('https://raw.githubusercontent.com/kimseohyun12/kimseohyun12.github.io/main/%EB%AA%A8%EB%A3%A8%EC%B9%B4-removebg-preview.png') no-repeat center center;
+      background-size: contain;
+      pointer-events: none; /* 마우스 이벤트를 차단하여 커서 이미지가 다른 요소 위에 가려지지 않도록 합니다 */
+      z-index: 9999;
+      transition: transform 0.1s ease-in-out;
     }
 
     /* 타자 효과 */
@@ -74,7 +86,6 @@
       z-index: 1;
     }
 
-    /* 네비게이션 바 */
     nav {
       background-color: transparent;
       padding: 10px 0;
@@ -135,23 +146,6 @@
       color: #D2B48C;
     }
 
-    /* 페이지 맨 위 위치에 anchor 추가 */
-    #top {
-      position: absolute;
-      top: 0;
-    }
-
-    /* 커서 이미지 적용 (잔상 제거) */
-    .cursor {
-      position: fixed;
-      width: 30px;
-      height: 30px;
-      background: url('https://raw.githubusercontent.com/kimseohyun12/kimseohyun12.github.io/main/%EB%AA%A8%EB%A3%A8%EC%B9%B4-removebg-preview.png') no-repeat center center;
-      background-size: contain;
-      pointer-events: none;
-      z-index: 9999;
-    }
-
   </style>
 </head>
 <body>
@@ -202,7 +196,6 @@
       <h3>Project 2: E-commerce Website</h3>
       <p>An e-commerce website with a modern design and functionality. Includes product listings, cart, and checkout. Built with HTML, CSS, JavaScript, and React.</p>
     </div>
-    <!-- Add more projects as needed -->
   </section>
 
   <!-- Skills 섹션 -->
@@ -227,8 +220,8 @@
     // 커서 위치 업데이트
     document.addEventListener('mousemove', (e) => {
       const cursor = document.querySelector('.cursor');
-      cursor.style.left = `${e.pageX - 16}px`; // 커서 위치
-      cursor.style.top = `${e.pageY - 16}px`; // 커서 위치
+      cursor.style.left = `${e.pageX - cursor.offsetWidth / 2}px`; // 커서 위치
+      cursor.style.top = `${e.pageY - cursor.offsetHeight / 2}px`; // 커서 위치
     });
 
     // 스크롤 위로 이동하는 버튼
