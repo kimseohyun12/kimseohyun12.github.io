@@ -119,19 +119,27 @@
       color: #D2B48C; /* 아이콘 색상 설정 */
     }
 
-  /* 홈섹션 제목 효과 */
+  /* 홈섹션 제목 */
 #home h2 {
   font-family: 'Quicksand', sans-serif; /* 폰트 설정 */
   font-size: 3em; /* 텍스트 크기 */
-  font-weight: bold; 
+  font-weight: bold;
   color: #302516; /* 텍스트 색상 */
   text-align: center; /* 가운데 정렬 */
   text-transform: uppercase;
   margin-bottom: 20px;
-  animation: shake 1s ease infinite; /* 흔들기 애니메이션 적용 */
+  animation: shake 1s ease infinite; /* 흔들림 애니메이션 */
 }
 
-/* 흔들
+/* 흔들림 애니메이션 */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  50% { transform: translateX(10px); }
+  75% { transform: translateX(-10px); }
+  100% { transform: translateX(0); }
+}
+
 
 
 /* 로고 스타일 */
