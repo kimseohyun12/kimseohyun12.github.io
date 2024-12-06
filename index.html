@@ -17,46 +17,47 @@
       color: #3E2723;
     }
 
-   /* 타자 효과 */
-.typing {
-  font-size: 5em;
-  color: #302516;
-  font-weight: bold;
-  border-right: 2px solid #333;
-  white-space: nowrap;
-  overflow: hidden;
-  display: inline-block;
-  text-align: center;
-  margin-top: 250px;
-  margin-bottom: 300px;
-  transform: translateX(-50%); /* 가운데 정렬 */
-  position: relative;
-  left: 50%; /* 화면 가운데로 위치 */
-  animation: typing 5s steps(40) 1s 1 normal both, blink 0.75s step-end infinite;
-}
+    /* 타자 효과 */
+    .typing {
+      font-size: 5em;
+      color: #302516;
+      font-weight: bold;
+      border-right: 2px solid #333;
+      white-space: nowrap;
+      overflow: hidden;
+      display: inline-block;
+      text-align: center;
+      margin-top: 250px;
+      margin-bottom: 300px;
+      transform: translateX(-50%); /* 가운데 정렬 */
+      position: relative;
+      left: 50%; /* 화면 가운데로 위치 */
+      animation: typing 5s steps(40) 1s 1 normal both, blink 0.75s step-end infinite;
+    }
 
-/* 타자 효과 애니메이션 */
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
+    /* 타자 효과 애니메이션 */
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    }
 
-/* 커서 깜빡이는 효과 */
-@keyframes blink {
-  0% {
-    border-color: transparent;
-  }
-  50% {
-    border-color: #333;
-  }
-  100% {
-    border-color: transparent;
-  }
-}
+    /* 커서 깜빡이는 효과 */
+    @keyframes blink {
+      0% {
+        border-color: transparent;
+      }
+      50% {
+        border-color: #333;
+      }
+      100% {
+        border-color: transparent;
+      }
+    }
+
     /* 프로필 텍스트 스타일 */
     h2 {
       text-align: center;
@@ -72,66 +73,51 @@
       z-index: 1;
     }
 
-/* 프로필 텍스트 스타일 */
-h2 {
-  text-align: center;
-  font-size: 4em;
-  color: #3E2723;
-  font-weight: 700;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  position: relative;
-  display: inline-block;
-  padding: 20px 30px;
-  margin-bottom: 50px;
-  z-index: 1;
-}
+    /* 텍스트 주변에 작은 원들이 나타나는 애니메이션 */
+    h2::before, h2::after, h2 span {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      z-index: -1;
+      background: #D2B48C; /* 색상 변경 */
+      width: 8px;  /* 원 크기 조정 */
+      height: 8px; /* 원 크기 조정 */
+      animation: pulse 2s ease-in-out infinite;
+    }
 
-/* 텍스트 주변에 작은 원들이 나타나는 애니메이션 */
-h2::before, h2::after, h2 span {
-  content: '';
-  position: absolute;
-  border-radius: 50%;
-  z-index: -1;
-  background: #D2B48C; /* 색상 변경 */
-  width: 8px;  /* 원 크기 조정 */
-  height: 8px; /* 원 크기 조정 */
-  animation: pulse 2s ease-in-out infinite;
-}
+    h2::before {
+      top: 5px; /* 글씨에 가까운 위치로 수정 */
+      left: -10px; /* 글씨에 가까운 위치로 수정 */
+      animation-delay: 0s;
+    }
 
-h2::before {
-  top: 5px; /* 글씨에 가까운 위치로 수정 */
-  left: -10px; /* 글씨에 가까운 위치로 수정 */
-  animation-delay: 0s;
-}
+    h2::after {
+      top: 5px; /* 글씨에 가까운 위치로 수정 */  
+      right: -10px; /* 글씨에 가까운 위치로 수정 */
+      animation-delay: 0.5s;
+    }
 
-h2::after {
-  top: 5px; /* 글씨에 가까운 위치로 수정 */  
-  right: -10px; /* 글씨에 가까운 위치로 수정 */
-  animation-delay: 0.5s;
-}
+    h2 span {
+      top: 5px; /* 글씨에 가까운 위치로 수정 */
+      left: 10px; /* 글씨에 가까운 위치로 수정 */
+      animation-delay: 1s;
+    }
 
-h2 span {
-  top: 5px; /* 글씨에 가까운 위치로 수정 */
-  left: 10px; /* 글씨에 가까운 위치로 수정 */
-  animation-delay: 1s;
-}
-
-/* 애니메이션: 원들이 커졌다 작아짐 */
-@keyframes pulse {
-  0% {
-    transform: scale(0.8);
-    opacity: 0.6;
-  }
-  50% {
-    transform: scale(1.2);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(0.8);
-    opacity: 0.6;
-  }
-}
+    /* 애니메이션: 원들이 커졌다 작아짐 */
+    @keyframes pulse {
+      0% {
+        transform: scale(0.8);
+        opacity: 0.6;
+      }
+      50% {
+        transform: scale(1.2);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(0.8);
+        opacity: 0.6;
+      }
+    }
 
     /* 네비게이션 바 */
     nav {
@@ -175,7 +161,7 @@ h2 span {
       padding: 20px;
     }
 
-    /* 화살표 아이콘 */
+    /* 스크롤 위로 이동하는 버튼 */
     .scroll-to-top {
       position: fixed;
       bottom: 30px;
@@ -199,7 +185,8 @@ h2 span {
       position: absolute;
       top: 0;
     }
-     /* 커서 기본 스타일 */
+
+    /* 커서 기본 스타일 */
     .cursor {
       position: absolute;
       width: 12px;
@@ -229,7 +216,7 @@ h2 span {
 <body>
 
   <!-- 페이지 맨 위를 표시하는 앵커 -->
-  <a href="#top" class="scroll-to-top" id="scrollToTopBtn">▲</a> <!-- 화살표를 ▲로 변경 -->
+  <button id="scrollToTopBtn" class="scroll-to-top" aria-label="Scroll to top">▲</button>
 
   <!-- 네비게이션 바 -->
   <nav>
@@ -242,29 +229,20 @@ h2 span {
   </nav>
 
   <!-- 타자 효과 텍스트 -->
-<section>
-  <div class="typing">
-    Kim Seohyun Portfolio
-  </div>
-</section>
+  <section>
+    <div class="typing">
+      Kim Seohyun Portfolio
+    </div>
+  </section>
 
-
-
-
-<!-- 홈 섹션 -->
-<section id="home">
-  <h2>PROFILE</h2>
-   <p class="name" style="font-size: 1.5em; font-weight: bold; color: #302516; margin-bottom: 20px;">김서현 kimseohyun</p> <!-- 이름 부분에 인라인 스타일 추가 -->
-   <!-- 달력 아이콘 및 생일 추가 -->
+  <!-- 홈 섹션 -->
+  <section id="home">
+    <h2>PROFILE</h2>
+    <p class="name" style="font-size: 1.5em; font-weight: bold; color: #302516; margin-bottom: 20px;">김서현 kimseohyun</p>
     <p><i class="fas fa-calendar"></i> 2002. 11. 12.</p>
-  
-  <!-- 전화 아이콘 및 번호 추가 -->
-  <p><i class="fas fa-phone-alt"></i> 010-8423-1363</p>
-  
-  <!-- 이메일 아이콘 및 이메일 주소 추가 -->
-  <p><i class="fas fa-envelope"></i> ksh021112@naver.com</p>
-</section>
-
+    <p><i class="fas fa-phone-alt"></i> 010-8423-1363</p>
+    <p><i class="fas fa-envelope"></i> ksh021112@naver.com</p>
+  </section>
 
   <!-- About Me 섹션 -->
   <section id="about" class="about">
@@ -283,91 +261,71 @@ h2 span {
       <h3>Project 2: E-commerce Website</h3>
       <p>An e-commerce website with a modern design and functionality. Includes product listings, cart, and checkout. Built with HTML, CSS, JavaScript, and React.</p>
     </div>
-    <div class="project-item">
-      <h3>Project 3: To-Do List App</h3>
-      <p>A simple yet functional to-do list app to help users keep track of their tasks. Built using JavaScript and local storage for data persistence.</p>
-    </div>
+    <!-- Add more projects as needed -->
   </section>
 
   <!-- Skills 섹션 -->
   <section id="skills" class="skills">
-    <h2>My Skills</h2>
+    <h2>Skills</h2>
     <ul>
       <li>HTML5</li>
       <li>CSS3</li>
-      <li>GTQ(그래픽기술자격)</li>
-      <li>Adobe</li>
-      <li>GitHub</li>
+      <li>JavaScript</li>
+      <li>React</li>
+      <li>Git/GitHub</li>
     </ul>
   </section>
 
-  <!-- 푸터 -->
+  <!-- Footer -->
   <footer>
-    <p>© 2024 Kim Seohyun - Portfolio</p>
+    <p>&copy; 2024 Kim Seohyun. All Rights Reserved.</p>
   </footer>
 
+  <!-- 스크립트 -->
   <script>
-    // Scroll to top 버튼 기능 추가
-    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+    const cursor = document.createElement('div');
+    cursor.classList.add('cursor');
+    document.body.appendChild(cursor);
 
-    // 스크롤 위치가 일정 부분을 넘으면 버튼을 표시
-    window.addEventListener("scroll", () => {
-      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+    const cursorTrail = document.createElement('div');
+    cursorTrail.classList.add('cursor-trail');
+    document.body.appendChild(cursorTrail);
+
+    let mouseX = 0, mouseY = 0, lastX = 0, lastY = 0, distance = 0, angle = 0;
+
+    window.addEventListener('mousemove', e => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+
+      distance = Math.sqrt(Math.pow(mouseX - lastX, 2) + Math.pow(mouseY - lastY, 2));
+      angle = Math.atan2(mouseY - lastY, mouseX - lastX);
+
+      cursor.style.left = `${mouseX}px`;
+      cursor.style.top = `${mouseY}px`;
+
+      cursorTrail.style.width = `${distance * 2}px`;
+      cursorTrail.style.left = `${lastX}px`;
+      cursorTrail.style.top = `${lastY}px`;
+      cursorTrail.style.transform = `rotate(${angle}rad)`;
+
+      lastX = mouseX;
+      lastY = mouseY;
+    });
+
+    // 스크롤 위로 이동하는 버튼
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
         scrollToTopBtn.style.display = "block";
       } else {
         scrollToTopBtn.style.display = "none";
       }
     });
 
-    // 버튼 클릭 시 페이지 맨 위로 스크롤
-    scrollToTopBtn.addEventListener("click", (event) => {
-      event.preventDefault();
-      window.scrollTo({ top: 0, behavior: "smooth" });
+    scrollToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
-
-  const cursor = document.createElement('div');
-cursor.classList.add('cursor');
-document.body.appendChild(cursor);
-
-// 커서 잔상 선 생성
-const cursorTrail = document.createElement('div');
-cursorTrail.classList.add('cursor-trail');
-document.body.appendChild(cursorTrail);
-
-let lastX = 0;
-let lastY = 0;
-
-// 마우스 이동 추적
-document.addEventListener('mousemove', (e) => {
-  const mouseX = e.pageX;
-  const mouseY = e.pageY;
-
-  // 커서 위치 업데이트
-  cursor.style.left = ${mouseX}px;  // 템플릿 리터럴로 수정
-  cursor.style.top = ${mouseY}px;   // 템플릿 리터럴로 수정
-
-  // 잔상 선 위치와 크기 업데이트
-  const distance = Math.sqrt(Math.pow(mouseX - lastX, 2) + Math.pow(mouseY - lastY, 2));
-  const angle = Math.atan2(mouseY - lastY, mouseX - lastX);
-
-  cursorTrail.style.width = ${distance * 2}px;  // 템플릿 리터럴로 수정
-  cursorTrail.style.left = ${lastX}px;          // 템플릿 리터럴로 수정
-  cursorTrail.style.top = ${lastY}px;           // 템플릿 리터럴로 수정
-  cursorTrail.style.transform = rotate(${angle}rad); // 잔상 선이 마우스를 따라가도록 수정
-
-  // 잔상이 자연스럽게 사라지는 효과
-  cursorTrail.style.opacity = '1'; // 잔상 활성화
-
-  setTimeout(() => {
-    cursorTrail.style.opacity = '0'; // 잔상 서서히 사라짐
-  }, 100); // 잔상의 사라지는 타이밍
-
-  // 마지막 마우스 위치 업데이트
-  lastX = mouseX;
-  lastY = mouseY;
-});
   </script>
 
 </body>
 </html>
-
