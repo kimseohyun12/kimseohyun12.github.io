@@ -323,14 +323,15 @@
     document.body.appendChild(cursor);
 
     // 커서 위치 추적 (requestAnimationFrame 사용으로 최적화)
-    const moveCursor = (e) => {
-      cursor.style.left = ${e.pageX - cursor.offsetWidth / 2}px;
-      cursor.style.top = ${e.pageY - cursor.offsetHeight / 2}px;
-    };
+const moveCursor = (e) => {
+  cursor.style.left = `${e.pageX - cursor.offsetWidth / 2}px`;  // 백틱 추가
+  cursor.style.top = `${e.pageY - cursor.offsetHeight / 2}px`;  // 백틱 추가
+};
 
-    document.addEventListener('mousemove', (e) => {
-      requestAnimationFrame(() => moveCursor(e)); // 부드럽게 이동
-    });
+document.addEventListener('mousemove', (e) => {
+  requestAnimationFrame(() => moveCursor(e)); // 부드럽게 이동
+});
+
 
     // 스크롤 위로 이동하는 버튼
     const scrollToTopBtn = document.getElementById('scrollToTopBtn');
