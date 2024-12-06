@@ -15,6 +15,7 @@
       padding: 0;
       background-color: #f5ebe5;
       color: #3E2723;
+      overflow: hidden; /* 커서 트레일이 화면 밖으로 나가지 않도록 방지 */
     }
 
     /* 타자 효과 */
@@ -186,31 +187,28 @@
       top: 0;
     }
 
-    /* 커서 기본 스타일 */
-    .cursor {
-      position: absolute;
-      width: 12px;
-      height: 12px;
-      background-color: #D2B48C;
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 9999;
-      transform: translate(-50%, -50%);
-    }
+ .cursor {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: #D2B48C;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+}
 
-    /* 커서 잔상 효과 */
-    .cursor-trail {
-      position: absolute;
-      pointer-events: none;
-      z-index: 9998;
-      width: 100px;
-      height: 15px;
-      background: linear-gradient(90deg, rgba(210, 180, 140, 1) 0%, rgba(210, 180, 140, 0) 100%);
-      border-radius: 10px;
-      opacity: 0.5;
-      transition: opacity 0.5s ease-out;
-    }
-    
+.cursor-trail {
+  position: absolute;
+  pointer-events: none;
+  z-index: 9998;
+  width: 100px;
+  height: 15px;
+  background: linear-gradient(90deg, rgba(210, 180, 140, 1) 0%, rgba(210, 180, 140, 0) 100%);
+  border-radius: 10px;
+  opacity: 0.5;
+  transition: opacity 0.5s ease-out;
+}
   </style>
 </head>
 <body>
@@ -293,25 +291,27 @@
 
     let mouseX = 0, mouseY = 0, lastX = 0, lastY = 0, distance = 0, angle = 0;
 
-    window.addEventListener('mousemove', e => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
+ window.addEventListener('mousemove', e => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
 
-      distance = Math.sqrt(Math.pow(mouseX - lastX, 2) + Math.pow(mouseY - lastY, 2));
-      angle = Math.atan2(mouseY - lastY, mouseX - lastX);
+  // 커서의 위치 업데이트
+  cursor.style.left = `${mouseX}px`;
+  cursor.style.top = `${mouseY}px`;
 
-      cursor.style.left = `${mouseX}px`;
-      cursor.style.top = `${mouseY}px`;
+  // 커서 트레일의 위치와 크기 업데이트
+  distance = Math.sqrt(Math.pow(mouseX - lastX, 2) + Math.pow(mouseY - lastY, 2));
+  angle = Math.atan2(mouseY - lastY, mouseX - lastX);
 
-      cursorTrail.style.width = `${distance * 2}px`;
-      cursorTrail.style.left = `${lastX}px`;
-      cursorTrail.style.top = `${lastY}px`;
-      cursorTrail.style.transform = `rotate(${angle}rad)`;
+  cursorTrail.style.width = `${distance * 2}px`;  // 트레일의 길이를 거리로 설정
+  cursorTrail.style.left = `${lastX}px`;
+  cursorTrail.style.top = `${lastY}px`;
+  cursorTrail.style.transform = `rotate(${angle}rad)`; // 트레일의 방향을 커서 이동 방향에 맞게 설정
 
-      lastX = mouseX;
-      lastY = mouseY;
-    });
-
+  // 마지막 위치 업데이트
+  lastX = mouseX;
+  lastY = mouseY;
+});
     // 스크롤 위로 이동하는 버튼
     const scrollToTopBtn = document.getElementById('scrollToTopBtn');
     window.addEventListener('scroll', () => {
