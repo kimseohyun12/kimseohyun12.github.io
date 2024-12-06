@@ -136,35 +136,65 @@
       gap: 30px;
     }
 
-    #home img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
+    /* 홈 섹션 스타일 */
+  #home {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 50px auto;
+    gap: 50px; /* 간격 넓힘 */
+    background-color: transparent; /* 배경 없앰 */
+  }
 
-    #home .info {
-      text-align: left;
-    }
+  #home h2 {
+    font-size: 2.5em; /* 제목 크기 조정 */
+    color: #302516;
+    font-weight: 700;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+  }
 
-    #home .info .name {
-      font-size: 1.5em;
-      font-weight: bold;
-      color: #302516;
-      margin-bottom: 20px;
-    }
+  /* 사진과 정보 간격을 넓히기 위해 flex-direction을 column으로 변경 */
+  .home-content {
+    display: flex;
+    gap: 50px; /* 사진과 정보 간격 넓힘 */
+  }
 
-    #home .info p {
-      font-size: 1em;
-      margin: 5px 0;
-      color: #3E2723;
-    }
+  #home img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
 
-    #home .info p i {
-      margin-right: 10px;
-      color: #D2B48C;
-    }
+  #home .info {
+    text-align: left;
+  }
 
+  #home .info .name {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #302516;
+    margin-bottom: 20px;
+  }
+
+  #home .info p {
+    font-size: 1em;
+    margin: 5px 0;
+    color: #3E2723;
+  }
+
+  #home .info p i {
+    margin-right: 10px;
+    color: #D2B48C;
+  }
+</style>
     /* 프로필 텍스트 스타일 */
     h2 {
       text-align: center;
@@ -271,6 +301,8 @@
 
    <!-- 홈 섹션 -->
   <section id="home">
+  <h2 class="dongle-text">Home</h2> <!-- 제목 추가 -->
+  <div class="home-content">
     <img src="https://via.placeholder.com/150" alt="Kim Seohyun">
     <div class="info">
       <p class="name dongle-text">김서현 Kim Seohyun</p>
@@ -278,7 +310,8 @@
       <p><i class="fas fa-phone-alt"></i> 010-8423-1363</p>
       <p><i class="fas fa-envelope"></i> ksh021112@naver.com</p>
     </div>
-  </section>
+  </div>
+</section>
 
 
   <!-- About Me 섹션 -->
