@@ -136,9 +136,9 @@
 #home h2::before {
   content: "☁️";
   position: absolute;
-  top: 10px; /* 제목 위쪽으로 살짝 이동 */
+  top: -25px; /* 제목 위쪽으로 이동 */
   left: 10%;
-  font-size: 1em; /* 구름 크기 더 작게 설정 */
+  font-size: 1.2em; /* 구름 크기 작게 설정 */
   color: #D1C0A1; /* 구름 색상 (연베이지) */
   animation: cloudMove1 4s infinite linear;
 }
@@ -146,9 +146,9 @@
 #home h2::after {
   content: "☁️";
   position: absolute;
-  top: 10px; /* 제목 위쪽으로 살짝 이동 */
-  left: 90%;
-  font-size: 1em; /* 구름 크기 더 작게 설정 */
+  top: -25px; /* 제목 위쪽으로 이동 */
+  right: 10%;
+  font-size: 1.2em; /* 구름 크기 작게 설정 */
   color: #D1C0A1; /* 구름 색상 */
   animation: cloudMove2 4s infinite linear;
 }
@@ -156,10 +156,10 @@
 #home h2 .cloudBottom {
   content: "☁️";
   position: absolute;
-  top: 30px; /* 제목 아래로 살짝 이동 */
+  top: 35px; /* 제목 아래로 이동 */
   left: 50%;
   transform: translateX(-50%);
-  font-size: 1em; /* 구름 크기 더 작게 설정 */
+  font-size: 1.2em; /* 구름 크기 작게 설정 */
   color: #D1C0A1; /* 구름 색상 */
   animation: cloudMove3 4s infinite linear;
 }
@@ -190,6 +190,7 @@
     transform: translateX(-50%) translateY(10px);
   }
 }
+
 
 /* 로고 스타일 */
 a.logo {
