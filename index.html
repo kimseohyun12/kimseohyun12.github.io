@@ -24,16 +24,18 @@
     }
 
     /* 커서 이미지 스타일 */
-    .cursor {
-      position: fixed;
-      width: 60px; /* 커서 이미지의 크기 */
-      height: 60px;
-      background: url('https://raw.githubusercontent.com/kimseohyun12/kimseohyun12.github.io/main/%EB%AA%A8%EB%A3%A8%EC%B9%B4-removebg-preview.png') no-repeat center center;
-      background-size: contain;
-      pointer-events: none; /* 마우스 이벤트가 커서 위에 영향을 미치지 않도록 */
-      z-index: 9999; /* 다른 요소들보다 위에 표시되도록 */
-      transition: left 0.1s ease, top 0.1s ease;
-    }
+.cursor {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  background: url('https://raw.githubusercontent.com/kimseohyun12/kimseohyun12.github.io/main/%EB%AA%A8%EB%A3%A8%EC%B9%B4-removebg-preview.png') no-repeat center center;
+  background-size: contain;
+  pointer-events: none;
+  z-index: 99999; /* 다른 요소들보다 위에 표시되도록 매우 높은 z-index 값 설정 */
+  transition: left 0.1s ease, top 0.1s ease;
+}
+
+
 
     /* 타자 효과 */
     .typing {
@@ -316,13 +318,24 @@
     document.body.appendChild(cursor);
 
     // 커서 위치 추적 (requestAnimationFrame 사용으로 최적화)
+const cursor = document.createElement('div');
+cursor.classList.add('cursor');
+document.body.appendChild(cursor);
+
+// 커서 위치 추적 함수
 const moveCursor = (e) => {
-  cursor.style.left = `${e.pageX - cursor.offsetWidth / 2}px`;  // 백틱 추가
-  cursor.style.top = `${e.pageY - cursor.offsetHeight / 2}px`;  // 백틱 추가
+  cursor.style.left = `${e.pageX - cursor.offsetWidth / 2}px`; // 템플릿 리터럴로 위치 설정
+  cursor.style.top = `${e.pageY - cursor.offsetHeight / 2}px`;
 };
 
+// 커서 위치 추적 이벤트
 document.addEventListener('mousemove', (e) => {
   requestAnimationFrame(() => moveCursor(e)); // 부드럽게 이동
+});
+
+// 스크롤 시 커서 상태 유지
+window.addEventListener('scroll', () => {
+  cursor.style.display = 'block'; // 스크롤해도 커서가 계속 보이게 설정
 });
 
 
