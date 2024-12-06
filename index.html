@@ -23,16 +23,16 @@
       cursor: none; /* 기본 커서를 숨깁니다 */
     }
 
-    /* 커서 이미지 스타일 */
 .cursor {
   position: fixed;
   width: 60px;
   height: 60px;
   background: url('https://raw.githubusercontent.com/kimseohyun12/kimseohyun12.github.io/main/%EB%AA%A8%EB%A3%A8%EC%B9%B4-removebg-preview.png') no-repeat center center;
   background-size: contain;
-  pointer-events: none;
+  pointer-events: none; /* 커서에 이벤트가 발생하지 않도록 */
   z-index: 99999; /* 다른 요소들보다 위에 표시되도록 매우 높은 z-index 값 설정 */
   transition: left 0.1s ease, top 0.1s ease;
+  display: block; /* 커서가 보이도록 설정 */
 }
 
 
@@ -312,25 +312,20 @@
 
   <!-- 스크립트 -->
   <script>
-    // 커서 위치 업데이트
-    const cursor = document.createElement('div');
-    cursor.classList.add('cursor');
-    document.body.appendChild(cursor);
-
-    // 커서 위치 추적 (requestAnimationFrame 사용으로 최적화)
+  // 커서 요소 생성
 const cursor = document.createElement('div');
 cursor.classList.add('cursor');
 document.body.appendChild(cursor);
 
-// 커서 위치 추적 함수
+// 커서 위치 추적 (mousemove 이벤트 처리)
 const moveCursor = (e) => {
-  cursor.style.left = `${e.pageX - cursor.offsetWidth / 2}px`; // 템플릿 리터럴로 위치 설정
+  cursor.style.left = `${e.pageX - cursor.offsetWidth / 2}px`; // 커서가 마우스 위치에 맞춰 이동
   cursor.style.top = `${e.pageY - cursor.offsetHeight / 2}px`;
 };
 
 // 커서 위치 추적 이벤트
 document.addEventListener('mousemove', (e) => {
-  requestAnimationFrame(() => moveCursor(e)); // 부드럽게 이동
+  moveCursor(e); // 마우스를 움직일 때마다 커서 위치 업데이트
 });
 
 // 스크롤 시 커서 상태 유지
