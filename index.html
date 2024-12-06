@@ -317,33 +317,21 @@ const cursor = document.createElement('div');
 cursor.classList.add('cursor');
 document.body.appendChild(cursor);
 
+// 커서 위치 추적 
+const cursor = document.createElement('div');
+cursor.classList.add('cursor');
+document.body.appendChild(cursor);
+
 // 커서 위치 추적 (mousemove 이벤트 처리)
 const moveCursor = (e) => {
   cursor.style.left = `${e.pageX - cursor.offsetWidth / 2}px`; // 커서가 마우스 위치에 맞춰 이동
   cursor.style.top = `${e.pageY - cursor.offsetHeight / 2}px`;
 };
-
+    
 // 커서 위치 추적 이벤트
 document.addEventListener('mousemove', (e) => {
   moveCursor(e); // 마우스를 움직일 때마다 커서 위치 업데이트
 });
-
-// 스크롤 시 커서 보이게 유지
-window.addEventListener('scroll', () => {
-  // 스크롤 시 커서가 사라지지 않도록 설정
-  cursor.style.display = 'block'; // 커서가 계속 보이도록 display 유지
-});
-
-// 페이지 로드 시 커서 보이도록 설정
-window.addEventListener('load', () => {
-  cursor.style.display = 'block'; // 페이지 로드될 때 커서 표시
-});
-
-// 커서가 사라지지 않도록 보장
-cursor.style.display = 'block';  // 커서를 항상 보이게 설정
-cursor.style.position = 'fixed';  // 커서를 고정 위치에 배치
-cursor.style.zIndex = '999999';   // 다른 요소들보다 위에 표시되도록 설정
-cursor.style.pointerEvents = 'none';  // 커서 위의 요소들과 상호작용 방지
 
   </script>
 
