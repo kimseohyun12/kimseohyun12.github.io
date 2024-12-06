@@ -17,13 +17,14 @@
       color: #3E2723;
       cursor: none; /* 기본 커서를 숨깁니다 */
       overflow-x: hidden; /* 가로 스크롤 방지 */
+      position: relative; /* 위치를 상대적으로 설정하여 커서가 다른 요소에 영향을 받지 않도록 */
     }
 
     /* 커서 이미지 스타일 */
     .cursor {
       position: fixed;
-      width: 60px; /* 커서 이미지의 크기 */
-      height: 60px;
+      width: 50px; /* 커서 이미지의 크기 */
+      height: 50px;
       background: url('https://raw.githubusercontent.com/kimseohyun12/kimseohyun12.github.io/main/%EB%AA%A8%EB%A3%A8%EC%B9%B4-removebg-preview.png') no-repeat center center;
       background-size: contain;
       pointer-events: none; /* 마우스 이벤트가 커서 위에 영향을 미치지 않도록 */
