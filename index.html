@@ -119,7 +119,7 @@
       color: #D2B48C; /* 아이콘 색상 설정 */
     }
 
-/* 텍스트 주위에 구름 효과 */
+/* 제목 스타일 */
 #home h2 {
   font-family: 'Quicksand', sans-serif;
   font-size: 3em;
@@ -132,62 +132,41 @@
   padding: 10px;
 }
 
-/* 구름 애니메이션 */
-#home h2::before {
-  content: "☁️";
+/* 왼쪽 위에 먹는 밤 이모티콘 */
+.night-left {
   position: absolute;
-  top: -25px; /* 제목 위쪽으로 이동 */
-  left: 10%;
-  font-size: 1.0em; /* 구름 크기 작게 설정 */
-  color: #D1C0A1; /* 구름 색상 (연베이지) */
-  animation: cloudMove1 4s infinite linear;
+  top: -30px; /* 제목 위쪽으로 이동 */
+  left: -30px; /* 제목 왼쪽으로 이동 */
+  font-size: 1.5em; /* 이모티콘 크기 */
+  animation: nightMoveLeft 4s infinite linear;
 }
 
-#home h2::after {
-  content: "☁️";
+/* 오른쪽 아래에 먹는 밤 이모티콘 */
+.night-right {
   position: absolute;
-  top: -25px; /* 제목 위쪽으로 이동 */
-  right: 10%;
-  font-size: 1.0em; /* 구름 크기 작게 설정 */
-  color: #D1C0A1; /* 구름 색상 */
-  animation: cloudMove2 4s infinite linear;
+  bottom: -30px; /* 제목 아래쪽으로 이동 */
+  right: -30px; /* 제목 오른쪽으로 이동 */
+  font-size: 1.5em; /* 이모티콘 크기 */
+  animation: nightMoveRight 4s infinite linear;
 }
 
-#home h2 .cloudBottom {
-  content: "☁️";
-  position: absolute;
-  top: 35px; /* 제목 아래로 이동 */
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 1.2em; /* 구름 크기 작게 설정 */
-  color: #D1C0A1; /* 구름 색상 */
-  animation: cloudMove3 4s infinite linear;
-}
-
-@keyframes cloudMove1 {
+/* 왼쪽 먹는 밤 이모티콘 애니메이션 */
+@keyframes nightMoveLeft {
   0% {
-    transform: translateX(-50%) translateY(0);
+    transform: translateY(0);
   }
   100% {
-    transform: translateX(-50%) translateY(-10px);
+    transform: translateY(10px);
   }
 }
 
-@keyframes cloudMove2 {
+/* 오른쪽 먹는 밤 이모티콘 애니메이션 */
+@keyframes nightMoveRight {
   0% {
-    transform: translateX(-50%) translateY(0);
+    transform: translateY(0);
   }
   100% {
-    transform: translateX(-50%) translateY(-10px);
-  }
-}
-
-@keyframes cloudMove3 {
-  0% {
-    transform: translateX(-50%) translateY(0);
-  }
-  100% {
-    transform: translateX(-50%) translateY(10px);
+    transform: translateY(-10px);
   }
 }
 
@@ -267,6 +246,8 @@ a.logo {
  <!-- 홈 섹션 -->
 <section id="home">
   <h2>PROFILE</h2> <!-- 제목 추가 -->
+  <div class="night-left">🌰</div>
+  <div class="night-right">🌰</div>
   <img src="https://github.com/kimseohyun12/kimseohyun12.github.io/blob/main/%EC%9A%B0%EC%82%AC%EA%B8%B0__1_-removebg-preview.png?raw=true" alt="Kim Seohyun" style="width: 150px; height: 150px; object-fit: cover;">
   <div class="info">
     <div class="name">김서현 Kim Seohyun</div>
