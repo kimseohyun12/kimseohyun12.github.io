@@ -13,9 +13,9 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f3ebe2;
+      background-color: #f5ebe5;
       color: #3E2723;
-      cursor: url('https://raw.githubusercontent.com/kimseohyun12/kimseohyun12.github.io/main/%EB%AA%A8%EB%A3%A8%EC%B9%B4-removebg-preview.png') 16 16, pointer;
+      cursor: none; /* 기본 커서 숨기기 */
     }
 
     /* 타자 효과 */
@@ -72,52 +72,6 @@
       padding: 20px 30px;
       margin-bottom: 50px;
       z-index: 1;
-    }
-
-    /* 텍스트 주변에 작은 원들이 나타나는 애니메이션 */
-    h2::before, h2::after, h2 span {
-      content: '';
-      position: absolute;
-      border-radius: 50%;
-      z-index: -1;
-      background: #D2B48C; /* 색상 변경 */
-      width: 8px;  /* 원 크기 조정 */
-      height: 8px; /* 원 크기 조정 */
-      animation: pulse 2s ease-in-out infinite;
-    }
-
-    h2::before {
-      top: 5px; /* 글씨에 가까운 위치로 수정 */
-      left: -10px; /* 글씨에 가까운 위치로 수정 */
-      animation-delay: 0s;
-    }
-
-    h2::after {
-      top: 5px; /* 글씨에 가까운 위치로 수정 */  
-      right: -10px; /* 글씨에 가까운 위치로 수정 */
-      animation-delay: 0.5s;
-    }
-
-    h2 span {
-      top: 5px; /* 글씨에 가까운 위치로 수정 */
-      left: 10px; /* 글씨에 가까운 위치로 수정 */
-      animation-delay: 1s;
-    }
-
-    /* 애니메이션: 원들이 커졌다 작아짐 */
-    @keyframes pulse {
-      0% {
-        transform: scale(0.8);
-        opacity: 0.6;
-      }
-      50% {
-        transform: scale(1.2);
-        opacity: 1;
-      }
-      100% {
-        transform: scale(0.8);
-        opacity: 0.6;
-      }
     }
 
     /* 네비게이션 바 */
@@ -189,7 +143,13 @@
 
     /* 커서 이미지 적용 (잔상 제거) */
     .cursor {
-      display: none; /* 잔상 효과가 필요 없으므로 숨김 처리 */
+      position: fixed;
+      width: 30px;
+      height: 30px;
+      background: url('https://raw.githubusercontent.com/kimseohyun12/kimseohyun12.github.io/main/%EB%AA%A8%EB%A3%A8%EC%B9%B4-removebg-preview.png') no-repeat center center;
+      background-size: contain;
+      pointer-events: none;
+      z-index: 9999;
     }
 
   </style>
@@ -242,6 +202,7 @@
       <h3>Project 2: E-commerce Website</h3>
       <p>An e-commerce website with a modern design and functionality. Includes product listings, cart, and checkout. Built with HTML, CSS, JavaScript, and React.</p>
     </div>
+    <!-- Add more projects as needed -->
   </section>
 
   <!-- Skills 섹션 -->
@@ -263,10 +224,12 @@
 
   <!-- 스크립트 -->
   <script>
-    // 커서 이미지 적용
-    const cursor = document.createElement('div');
-    cursor.classList.add('cursor');
-    document.body.appendChild(cursor);
+    // 커서 위치 업데이트
+    document.addEventListener('mousemove', (e) => {
+      const cursor = document.querySelector('.cursor');
+      cursor.style.left = `${e.pageX - 16}px`; // 커서 위치
+      cursor.style.top = `${e.pageY - 16}px`; // 커서 위치
+    });
 
     // 스크롤 위로 이동하는 버튼
     const scrollToTopBtn = document.getElementById('scrollToTopBtn');
