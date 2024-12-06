@@ -174,18 +174,21 @@
       z-index: 1;
     }
 
-    /* 로고 스타일 (왼쪽 상단에 "SH" 추가) */
-    .logo {
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      font-size: 2.5em;
-      font-weight: bold;
-      color: #302516;
-      z-index: 10000; /* 로고가 다른 요소들 위에 오도록 설정 */
-      cursor: pointer;
-    }
+ /* 로고 스타일 */
+a.logo {
+  position: absolute;
+  top: 20px; /* 상단 여백 */
+  left: 20px; /* 왼쪽 여백 */
+  text-decoration: none;
+  font-size: 2em;
+  font-weight: bold;
+  color: #3E2723; /* 로고 색상 */
+}
 
+.logo-text {
+  font-family: 'Quicksand', sans-serif;
+}
+    
     section {
       padding: 60px 20px;
       margin: 0 auto;
@@ -228,7 +231,9 @@
 <body>
 
   <!-- 로고 추가 -->
-  <div class="logo">SH</div>
+<a href="index.html" class="logo">
+  <div class="logo-text">SH.</div>
+</a>
 
   <!-- 페이지 맨 위를 표시하는 앵커 -->
   <button id="scrollToTopBtn" class="scroll-to-top" aria-label="Scroll to top">▲</button>
