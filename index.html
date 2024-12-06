@@ -6,8 +6,8 @@
   <meta name="description" content="Kim Seohyun Portfolio">
   <title>Kim Seohyun - Front-End Developer</title>
 
-  <!-- Google Fonts에서 Poppins 폰트 추가 -->
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- Google Fonts에서 Quicksand와 Dongle 폰트 추가 -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&family=Dongle:wght@300;400;500&display=swap" rel="stylesheet">
   
   <!-- Font Awesome 링크 추가 (아이콘을 사용하기 위해) -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
@@ -77,52 +77,53 @@
         border-color: transparent;
       }
     }
-    
-/* 텍스트 주변에 작은 원들이 나타나는 애니메이션 */
-h2::before, h2::after, h2 span {
-  content: '';
-  position: absolute;
-  border-radius: 50%;
-  z-index: -1;
-  background: #D2B48C; /* 색상 변경 */
-  width: 8px;  /* 원 크기 조정 */
-  height: 8px; /* 원 크기 조정 */
-  animation: pulse 2s ease-in-out infinite;
-}
 
-h2::before {
-  top: 5px; /* 글씨에 가까운 위치로 수정 */
-  left: -10px; /* 글씨에 가까운 위치로 수정 */
-  animation-delay: 0s;
-}
+    /* 텍스트 주변에 작은 원들이 나타나는 애니메이션 */
+    h2::before, h2::after, h2 span {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      z-index: -1;
+      background: #D2B48C; /* 색상 변경 */
+      width: 8px;  /* 원 크기 조정 */
+      height: 8px; /* 원 크기 조정 */
+      animation: pulse 2s ease-in-out infinite;
+    }
 
-h2::after {
-  top: 5px; /* 글씨에 가까운 위치로 수정 */  
-  right: -10px; /* 글씨에 가까운 위치로 수정 */
-  animation-delay: 0.5s;
-}
+    h2::before {
+      top: 5px; /* 글씨에 가까운 위치로 수정 */
+      left: -10px; /* 글씨에 가까운 위치로 수정 */
+      animation-delay: 0s;
+    }
 
-h2 span {
-  top: 5px; /* 글씨에 가까운 위치로 수정 */
-  left: 10px; /* 글씨에 가까운 위치로 수정 */
-  animation-delay: 1s;
-}
+    h2::after {
+      top: 5px; /* 글씨에 가까운 위치로 수정 */  
+      right: -10px; /* 글씨에 가까운 위치로 수정 */
+      animation-delay: 0.5s;
+    }
 
-/* 애니메이션: 원들이 커졌다 작아짐 */
-@keyframes pulse {
-  0% {
-    transform: scale(0.8);
-    opacity: 0.6;
-  }
-  50% {
-    transform: scale(1.2);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(0.8);
-    opacity: 0.6;
-  }
-}
+    h2 span {
+      top: 5px; /* 글씨에 가까운 위치로 수정 */
+      left: 10px; /* 글씨에 가까운 위치로 수정 */
+      animation-delay: 1s;
+    }
+
+    /* 애니메이션: 원들이 커졌다 작아짐 */
+    @keyframes pulse {
+      0% {
+        transform: scale(0.8);
+        opacity: 0.6;
+      }
+      50% {
+        transform: scale(1.2);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(0.8);
+        opacity: 0.6;
+      }
+    }
+
     /* 프로필 텍스트 스타일 */
     h2 {
       text-align: center;
@@ -198,6 +199,11 @@ h2 span {
       color: #D2B48C;
     }
 
+    /* 한글 텍스트에 Dongle 폰트 적용 */
+    .dongle-text {
+      font-family: 'Dongle', sans-serif;
+    }
+
   </style>
 </head>
 <body>
@@ -224,8 +230,8 @@ h2 span {
 
   <!-- 홈 섹션 -->
   <section id="home">
-    <h2>PROFILE</h2>
-    <p class="name" style="font-size: 1.5em; font-weight: bold; color: #302516; margin-bottom: 20px;">김서현 kimseohyun</p>
+    <h2 class="dongle-text">PROFILE</h2>
+    <p class="name dongle-text" style="font-size: 1.5em; font-weight: bold; color: #302516; margin-bottom: 20px;">김서현 kimseohyun</p>
     <p><i class="fas fa-calendar"></i> 2002. 11. 12.</p>
     <p><i class="fas fa-phone-alt"></i> 010-8423-1363</p>
     <p><i class="fas fa-envelope"></i> ksh021112@naver.com</p>
@@ -233,13 +239,13 @@ h2 span {
 
   <!-- About Me 섹션 -->
   <section id="about" class="about">
-    <h2>About Me</h2>
+    <h2 class="dongle-text">About Me</h2>
     <p>I'm a front-end developer with experience in building responsive, user-friendly websites. I have a strong understanding of HTML, CSS, and JavaScript, and I'm always eager to learn new technologies to improve my skills.</p>
   </section>
 
   <!-- Projects 섹션 -->
   <section id="projects" class="projects">
-    <h2>My Projects</h2>
+    <h2 class="dongle-text">My Projects</h2>
     <div class="project-item">
       <h3>Project 1: Portfolio Website</h3>
       <p>A responsive portfolio website that showcases my work and skills as a front-end developer. Built using HTML, CSS, and JavaScript.</p>
@@ -252,7 +258,7 @@ h2 span {
 
   <!-- Skills 섹션 -->
   <section id="skills" class="skills">
-    <h2>Skills</h2>
+    <h2 class="dongle-text">Skills</h2>
     <ul>
       <li>HTML5</li>
       <li>CSS3</li>
@@ -276,8 +282,8 @@ h2 span {
 
     // 커서 위치 추적 (requestAnimationFrame 사용으로 최적화)
     const moveCursor = (e) => {
-      cursor.style.left = ${e.pageX - cursor.offsetWidth / 2}px;
-      cursor.style.top = ${e.pageY - cursor.offsetHeight / 2}px;
+      cursor.style.left = `${e.pageX - cursor.offsetWidth / 2}px`;
+      cursor.style.top = `${e.pageY - cursor.offsetHeight / 2}px`;
     };
 
     document.addEventListener('mousemove', (e) => {
