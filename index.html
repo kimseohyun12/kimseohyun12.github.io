@@ -313,25 +313,30 @@
   <!-- 스크립트 -->
   <script>
   // 커서 요소 생성
-const cursor = document.createElement('div');
-cursor.classList.add('cursor');
-document.body.appendChild(cursor);
+    const cursor = document.createElement('div');
+    cursor.classList.add('cursor');
+    document.body.appendChild(cursor);
 
-// 커서 위치 추적 (mousemove 이벤트 처리)
-const moveCursor = (e) => {
-  cursor.style.left = `${e.pageX - cursor.offsetWidth / 2}px`; // 커서가 마우스 위치에 맞춰 이동
-  cursor.style.top = `${e.pageY - cursor.offsetHeight / 2}px`;
-};
+    // 커서 위치 추적 (mousemove 이벤트 처리)
+    const moveCursor = (e) => {
+      cursor.style.left = `${e.pageX - cursor.offsetWidth / 2}px`; // 커서가 마우스 위치에 맞춰 이동
+      cursor.style.top = `${e.pageY - cursor.offsetHeight / 2}px`;
+    };
 
-// 커서 위치 추적 이벤트
-document.addEventListener('mousemove', (e) => {
-  moveCursor(e); // 마우스를 움직일 때마다 커서 위치 업데이트
-});
+    // 커서 위치 추적 이벤트
+    document.addEventListener('mousemove', (e) => {
+      moveCursor(e); // 마우스를 움직일 때마다 커서 위치 업데이트
+    });
 
-// 스크롤 시 커서 상태 유지
-window.addEventListener('scroll', () => {
-  cursor.style.display = 'block'; // 스크롤해도 커서가 계속 보이게 설정
-});
+    // 스크롤 시 커서 보이게 유지
+    window.addEventListener('scroll', () => {
+      cursor.style.display = 'block'; // 스크롤해도 커서가 계속 보이도록 설정
+    });
+
+    // 페이지 로드 시 커서 보이도록 설정
+    window.addEventListener('load', () => {
+      cursor.style.display = 'block'; // 페이지가 로드될 때 커서 표시
+    });
 
 
     // 스크롤 위로 이동하는 버튼
