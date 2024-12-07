@@ -156,13 +156,17 @@
 
 /* 카드 스타일 */
 .card {
-  width: 200px; /* 카드 크기 키움 */
+  width: 200px; /* 카드 크기 */
   height: 250px;
   perspective: 1000px; /* 3D 효과를 위한 관점 */
-  background: none;
-  opacity: 0; /* 스크롤 시 숨김 */
-  transform: translateY(50px); /* 초기 위치 아래로 이동 */
-  transition: transform 0.6s ease, opacity 0.6s ease; /* 부드러운 이동 효과 */
+  opacity: 0; /* 기본적으로 숨김 */
+  transform: translateY(50px); /* 초기 위치 */
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.card.visible {
+  opacity: 1; /* 가시화 */
+  transform: translateY(0); /* 정상 위치 */
 }
 
 .card-inner {
@@ -190,30 +194,7 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   color: #fff;
   font-family: 'Quicksand', sans-serif;
-  font-weight: bold;
-  font-size: 1.2em;
-  text-align: center;
-}
-
-/* 카드 앞면 */
-.card-front {
-  background-color: #3E2723;
-}
-
-/* 카드 뒷면 */
-.card-back {
-  background-color: #D2B48C;
-  transform: rotateY(180deg); /* 뒷면 뒤집기 */
-  color: #302516;
-  padding: 10px;
-}
-
-/* 스크롤 시 카드 활성화 */
-.card.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
+  font-
 
 
 /* 로고 스타일 */
@@ -385,8 +366,7 @@ a.logo {
     document.getElementById('scrollToTopBtn').addEventListener('click', function () {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
-    <script>
-      
+    
   // 스크롤 시 카드를 활성화하는 함수
   function activateCardsOnScroll() {
     const cards = document.querySelectorAll('.card');
@@ -397,18 +377,21 @@ a.logo {
 
       if (cardTop < windowHeight - 100) { // 카드가 화면에 들어오면 활성화
         card.classList.add('visible');
-      } else {
-        card.classList.remove('visible'); // 화면에서 벗어나면 비활성화
       }
     });
   }
 
+  // DOM이 로드된 후 초기 호출 및 이벤트 추가
+  document.addEventListener('DOMContentLoaded', () => {
+    activateCardsOnScroll();
+    window.addEventListener('scroll', activateCardsOnScroll);
+  });
   // 스크롤 이벤트에 함수 연결
   window.addEventListener('scroll', activateCardsOnScroll);
   activateCardsOnScroll(); // 초기 호출
 </script>
 
-  </script>
+  
 
 </body>
 </html>
