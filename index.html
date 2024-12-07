@@ -77,11 +77,11 @@
       }
     }
 
-/* 홈 섹션 */
+ /* 홈 섹션 */
   #home {
     display: flex;
     flex-direction: row; /* 가로 방향으로 배치 */
-    align-items: center; /* 수직 중앙 정렬 */
+    align-items: flex-start; /* 수직 상단 정렬 */
     justify-content: flex-start; /* 왼쪽 정렬 */
     padding: 50px 20px;
     gap: 40px; /* 홈 섹션 요소들 간의 간격 */
@@ -122,36 +122,13 @@
     color: #D2B48C;
   }
 
-   /* 타이틀과 자격증을 옆에 배치 */
+  /* 타이틀과 자격증을 옆에 배치 */
   .title-and-cert {
     display: flex;
     gap: 20px; /* 아이템들 간의 간격 */
     align-items: center; /* 수직 정렬 */
   }
-
-  /* 자격증 섹션 */
-  .certifications {
-    display: flex;
-    flex-direction: column; /* 세로 방향으로 배치 */
-    padding-left: 40px;
-    font-size: 1.3em;
-    gap: 10px; /* 자격증 정보 간의 간격 */
-  }
-
-  .certification {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* 아이콘과 텍스트 간의 간격 */
-  }
-
-  .certification i {
-    color: #D2B48C; /* 아이콘 색상 */
-  }
-
-  .certification p {
-    color: #3E2723; /* 텍스트 색상 */
-  }
-
+    
 /* 홈섹션 제목 */
 #home h2 {
   font-family: 'Quicksand', sans-serif;
@@ -322,15 +299,20 @@ a.logo {
 <!-- 홈 섹션 -->
 <section id="home">
   <h2>PROFILE</h2> <!-- 제목 추가 -->
-  <img src="https://github.com/kimseohyun12/kimseohyun12.github.io/blob/main/%EC%9A%B0%EC%82%AC%EA%B8%B0__1_-removebg-preview.png?raw=true" alt="Kim Seohyun" style="width: 150px; height: 150px; object-fit: cover;">
+  <img src="https://github.com/kimseohyun12/kimseohyun12.github.io/blob/main/%EC%9A%B0%EC%82%AC%EA%B8%B0__1_-removebg-preview.png?raw=true" alt="Kim Seohyun" style="width: 180px; height: 180px; object-fit: cover; border-radius: 50%;">
+  
   <div class="info">
     <div class="name">김서현 Kim Seohyun</div>
-    <p><i class="fas fa-laptop-code"></i> Front-End Developer</p>
+    <div class="title-and-cert">
+      <p><i class="fas fa-laptop-code"></i> Front-End Developer</p>
+      <p><i class="fas fa-certificate"></i> GTQ 1급</p>
+    </div>
     <p><i class="fas fa-map-marker-alt"></i> Seoul, Korea</p>
     <p><i class="fas fa-envelope"></i> ksh021112@naver.com</p>
     <p><i class="fas fa-phone"></i> 010-8423-1363</p> <!-- 전화번호 추가 -->
   </div>
-  
+</section>
+
   <!-- 자격증 정보 추가 -->
   <div class="certifications">
     <div class="certification">
