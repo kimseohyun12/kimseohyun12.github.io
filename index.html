@@ -78,10 +78,11 @@
 
 #home {
   display: flex;
-  align-items: center;  /* 수직 중앙 정렬 */
-  justify-content: flex-start;  /* 왼쪽 정렬 */
+  flex-direction: row; /* 요소들을 가로로 배치 */
+  align-items: center; /* 수직 중앙 정렬 */
+  justify-content: flex-start; /* 왼쪽 정렬 */
   padding: 80px 20px;
-  gap: 20px;  /* 요소 간의 간격 */
+  gap: 40px; /* 요소 간 간격 */
 }
 
 #home img {
@@ -91,9 +92,28 @@
   border-radius: 50%;
 }
 
+#home .profile-container {
+  display: flex;
+  flex-direction: row; /* 수평 배치 */
+  align-items: center; /* 수직 정렬 */
+}
+
+.name-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#home #name {
+  font-family: 'Jua', sans-serif;
+  font-size: 2em;
+  color: #302516;
+  margin-left: 20px; /* 이름과 이미지 사이 간격 */
+}
+
 #home .info {
   display: flex;
-  flex-direction: column;  /* 텍스트는 세로로 배치 */
+  flex-direction: column; /* 세로로 배치 */
   gap: 10px;
 }
 
@@ -101,7 +121,7 @@
 #home .right-info {
   display: flex;
   flex-direction: column;
-  gap: 5px;  /* 각 항목 간의 간격 */
+  gap: 5px; /* 각 항목 간의 간격 */
 }
 
 #home .left-info p,
@@ -125,13 +145,6 @@
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 35px;
-}
-
-.profile-container {
-  display: flex;
-  flex-direction: row;  /* 이미지와 텍스트를 수평으로 배치 */
-  align-items: center;  /* 수직 중앙 정렬 */
-  text-align: left;  /* 텍스트 왼쪽 정렬 */
 }
 
 
@@ -352,12 +365,14 @@ a.logo {
 
 <section id="home">
   <h2>PROFILE</h2> <!-- 제목 추가 -->
-   <div class="profile-container">
+    <div class="profile-container">
+    <!-- 김서현 이름 -->
+    <div class="name-container">
+      <p id="name">김서현</p>
+    </div>
   <img src="https://github.com/kimseohyun12/kimseohyun12.github.io/blob/main/%EC%9A%B0%EC%82%AC%EA%B8%B0__1_-removebg-preview.png?raw=true" alt="Kim Seohyun" style="width: 180px; height: 180px; object-fit: cover; border-radius: 50%;">
 
- <!-- 김서현 텍스트 추가 -->
-  <p id="name">김서현</p>
-  
+
   <div class="info">
     <div class="left-info">
       <p><i class="fas fa-code"></i> Web Publisher</p>
