@@ -77,14 +77,14 @@
       }
     }
 
-/* 홈 섹션 */
+ /* 홈 섹션 */
 #home {
   display: flex;
-  flex-direction: row; /* 가로 방향으로 배치 */
-  align-items: center; /* 수직 중앙 정렬 */
-  justify-content: flex-start; /* 왼쪽 정렬 */
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
   padding: 50px 20px;
-  position: relative; /* 제목을 사진 위에 올리기 위한 기준 설정 */
+  gap: 50px;
 }
 
 #home img {
@@ -96,7 +96,6 @@
 
 #home .info {
   text-align: left;
-  padding-left: 20px;
 }
 
 #home .info .name {
@@ -116,16 +115,19 @@
 #home .info p i {
   margin-right: 10px;
   color: #D2B48C;
-}  
-/* 제목을 사진 아래로 배치 */
-#home h2 {
-    font-family: 'Quicksand', sans-serif;
-    font-size: 3em;
-    font-weight: bold;
-    color: #302516;
-    margin-bottom: 40px;
-    text-align: left;
 }
+
+/* 홈섹션 제목 */
+#home h2 {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 3em;
+  font-weight: bold;
+  color: #302516;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
 
  /* Skills 섹션 스타일 */
   #skills {
@@ -282,7 +284,7 @@ a.logo {
     </div>
   </section>
 
- <!-- 홈 섹션 -->
+<!-- 홈 섹션 -->
 <section id="home">
   <h2>PROFILE</h2> <!-- 제목 추가 -->
   <img src="https://github.com/kimseohyun12/kimseohyun12.github.io/blob/main/%EC%9A%B0%EC%82%AC%EA%B8%B0__1_-removebg-preview.png?raw=true" alt="Kim Seohyun" style="width: 150px; height: 150px; object-fit: cover;">
@@ -294,6 +296,7 @@ a.logo {
     <p><i class="fas fa-phone"></i>010-8423-1363</p> <!-- 전화번호 추가 -->
   </div>
 </section>
+
 
 <!-- Skills 섹션 -->
 <section id="skills">
