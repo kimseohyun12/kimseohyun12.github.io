@@ -344,29 +344,36 @@ a.logo {
 </section>
 
 
+<footer>
+  <p>&copy; 2024 Kim Seohyun. All rights reserved.</p>
+</footer>
 
+<!-- 커서 -->
+<div class="cursor"></div>
 
+<script>
+  // 커서 위치 업데이트 (requestAnimationFrame으로 최적화)
+  let mouseX = 0, mouseY = 0;
+  const cursor = document.querySelector('.cursor');
 
- <footer>
-    <p>&copy; 2024 Kim Seohyun. All rights reserved.</p>
-  </footer>
+  document.addEventListener('mousemove', function (e) {
+    mouseX = e.pageX - cursor.offsetWidth / 2;
+    mouseY = e.pageY - cursor.offsetHeight / 2;
+  });
 
-  <!-- 커서 -->
-  <div class="cursor"></div>
+  function moveCursor() {
+    cursor.style.left = mouseX + 'px';
+    cursor.style.top = mouseY + 'px';
+    requestAnimationFrame(moveCursor);
+  }
 
-  <script>
-    // 커서 위치 업데이트
-    document.addEventListener('mousemove', function (e) {
-      const cursor = document.querySelector('.cursor');
-      cursor.style.left = e.pageX - cursor.offsetWidth / 2 + 'px';
-      cursor.style.top = e.pageY - cursor.offsetHeight / 2 + 'px';
-    });
+  moveCursor();
 
-    // 스크롤 버튼 처리
-    document.getElementById('scrollToTopBtn').addEventListener('click', function () {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-    
+  // 스크롤 버튼 처리
+  document.getElementById('scrollToTopBtn').addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
   // 스크롤 시 카드를 활성화하는 함수
   function activateCardsOnScroll() {
     const cards = document.querySelectorAll('.card');
@@ -374,8 +381,7 @@ a.logo {
 
     cards.forEach(card => {
       const cardTop = card.getBoundingClientRect().top;
-
-      if (cardTop < windowHeight - 100) { // 카드가 화면에 들어오면 활성화
+      if (cardTop < windowHeight - 100) {
         card.classList.add('visible');
       }
     });
@@ -386,12 +392,7 @@ a.logo {
     activateCardsOnScroll();
     window.addEventListener('scroll', activateCardsOnScroll);
   });
-  // 스크롤 이벤트에 함수 연결
-  window.addEventListener('scroll', activateCardsOnScroll);
-  activateCardsOnScroll(); // 초기 호출
 </script>
-
-  
 
 </body>
 </html>
