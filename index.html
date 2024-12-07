@@ -181,10 +181,11 @@
 
  .card.visible {
   opacity: 1;
-  transform: translateY(0) scale(0.8); /* 카드가 보일 때 점점 작아지도록 설정 */
+  transform: translateY(0); /* translateY(0)으로 위치를 설정하고 */
   visibility: visible;
   transition: transform 0.6s ease, opacity 0.6s ease, visibility 0s 0.6s;
 }
+
     .card.final {
   transform: scale(1) translateY(0); /* 최종적으로 카드가 하나로 모였을 때 */
   z-index: 10; /* 카드가 맨 위로 올라오도록 설정 */
