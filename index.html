@@ -373,6 +373,23 @@ a.logo {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
+  // DOM이 로드된 후 초기 호출 및 이벤트 추가
+  document.addEventListener('DOMContentLoaded', () => {
+    activateCardsOnScroll(); // 초기 카드 활성화
+    window.addEventListener('scroll', activateCardsOnScroll); // 스크롤 시 카드 활성화
+  });
+
+  function activateCardsOnScroll() {
+    const cards = document.querySelectorAll('.card');
+    const windowHeight = window.innerHeight;
+
+    cards.forEach(card => {
+      const cardTop = card.getBoundingClientRect().top;
+      if (cardTop < windowHeight - 150) {  // 카드가 화면에 들어올 때
+        card.classList.add('visible');
+      }
+    });
+  }
 
 </script>
 
