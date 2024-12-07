@@ -98,6 +98,8 @@
   #home .info {
     text-align: left;
     padding-left: 20px;
+    display: flex; /* flexbox를 사용해 수평으로 배치 */
+    flex-direction: column; /* 세로로 배치 */
     max-width: 400px; /* 텍스트 정보의 최대 너비 제한 */
   }
 
@@ -120,6 +122,13 @@
     color: #D2B48C;
   }
 
+   /* 타이틀과 자격증을 옆에 배치 */
+  .title-and-cert {
+    display: flex;
+    gap: 20px; /* 아이템들 간의 간격 */
+    align-items: center; /* 수직 정렬 */
+  }
+
   /* 자격증 섹션 */
   .certifications {
     display: flex;
@@ -130,13 +139,12 @@
   }
 
   .certification {
-    gap: 10px; /* 아이콘과 텍스트 간의 간격 */
     display: flex;
     align-items: center;
+    gap: 10px; /* 아이콘과 텍스트 간의 간격 */
   }
 
   .certification i {
-    margin-right: 10px;
     color: #D2B48C; /* 아이콘 색상 */
   }
 
