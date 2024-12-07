@@ -128,7 +128,20 @@
     gap: 20px; /* 아이템들 간의 간격 */
     align-items: center; /* 수직 정렬 */
   }
-    
+
+  /* 위치와 자격증을 한 줄로 배치 */
+  .location-and-cert p {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* 아이콘과 텍스트 간격 */
+  }
+
+  /* 이메일과 자격증을 한 줄로 배치 */
+  .email-and-cert p {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* 아이콘과 텍스트 간격 */
+  }
 /* 홈섹션 제목 */
 #home h2 {
   font-family: 'Quicksand', sans-serif;
@@ -307,26 +320,13 @@ a.logo {
       <p><i class="fas fa-laptop-code"></i> Front-End Developer</p>
       <p><i class="fas fa-certificate"></i> GTQ 1급</p>
     </div>
-    <p><i class="fas fa-map-marker-alt"></i> Seoul, Korea</p>
-    <p><i class="fas fa-envelope"></i> ksh021112@naver.com</p>
+    <div class="location-and-cert">
+      <p><i class="fas fa-map-marker-alt"></i> Seoul, Korea <i class="fas fa-laptop"></i> 컴퓨터 활용 능력 1급</p>
+    </div>
+    <div class="email-and-cert">
+      <p><i class="fas fa-envelope"></i> ksh021112@naver.com <i class="fas fa-file-word"></i> 워드프로세서 1급</p>
+    </div>
     <p><i class="fas fa-phone"></i> 010-8423-1363</p> <!-- 전화번호 추가 -->
-  </div>
-</section>
-
-  <!-- 자격증 정보 추가 -->
-  <div class="certifications">
-    <div class="certification">
-      <i class="fas fa-certificate"></i>
-      <p>GTQ 1급</p>
-    </div>
-    <div class="certification">
-      <i class="fas fa-laptop"></i>
-      <p>컴퓨터 활용 능력 1급</p>
-    </div>
-    <div class="certification">
-      <i class="fas fa-file-word"></i>
-      <p>워드프로세서 1급</p>
-    </div>
   </div>
 </section>
 
