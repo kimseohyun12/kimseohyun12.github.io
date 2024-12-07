@@ -234,6 +234,60 @@
     border-image: linear-gradient(45deg, #D2B48C, #6F4F37) 1; /* 색감이 다른 그라데이션 테두리 */
   }
 
+  /* Project 섹션 스타일 */
+#project {
+  padding: 60px 20px;
+}
+
+#project h2 {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 3em;
+  font-weight: bold;
+  color: #302516;
+  margin-bottom: 40px;
+}
+
+.project-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.project-item {
+  margin-bottom: 30px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.project-item:hover {
+  background-color: #f9f9f9;
+  transform: scale(1.02);
+}
+
+.project-item h3 {
+  font-size: 1.5em;
+  margin: 0 0 10px;
+}
+
+.project-item p {
+  margin: 0 0 15px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.project-link {
+  font-size: 1em;
+  color: #0073e6;
+  text-decoration: none;
+}
+
+.project-link:hover {
+  text-decoration: underline;
+}
+
+
 /* 로고 스타일 */
 a.logo {
   position: absolute;
@@ -385,6 +439,34 @@ a.logo {
     </div>
   </div>
 </section>
+
+  <!-- Project 섹션 -->
+<section id="project">
+  <h2>PROJECT</h2>
+  <ul class="project-list">
+    <!-- 첫 번째 프로젝트 -->
+    <li class="project-item">
+      <h3>Project Title 1</h3>
+      <p>A brief description of Project 1 goes here. Mention key features and technologies used.</p>
+      <a href="https://example.com/project1" target="_blank" class="project-link">View Project</a>
+    </li>
+
+    <!-- 두 번째 프로젝트 -->
+    <li class="project-item">
+      <h3>Project Title 2</h3>
+      <p>A brief description of Project 2 goes here. Mention key features and technologies used.</p>
+      <a href="https://example.com/project2" target="_blank" class="project-link">View Project</a>
+    </li>
+
+    <!-- 세 번째 프로젝트 -->
+    <li class="project-item">
+      <h3>Project Title 3</h3>
+      <p>A brief description of Project 3 goes here. Mention key features and technologies used.</p>
+      <a href="https://example.com/project3" target="_blank" class="project-link">View Project</a>
+    </li>
+  </ul>
+</section>
+
 
 
 <footer>
