@@ -25,8 +25,8 @@
 
     .cursor {
       position: fixed;
-      width: 70px;
-      height: 70px;
+      width: 80px;
+      height: 80px;
       background: url('https://raw.githubusercontent.com/kimseohyun12/kimseohyun12.github.io/main/%EB%AA%A8%EB%A3%A8%EC%B9%B4-removebg-preview.png') no-repeat center center;
       background-size: contain;
       pointer-events: none; /* 커서에 이벤트가 발생하지 않도록 */
@@ -76,73 +76,46 @@
       }
     }
 
- /* 홈 섹션 */
-  #home {
-    display: flex;
-    flex-direction: row; /* 가로 방향으로 배치 */
-    align-items: flex-start; /* 수직 상단 정렬 */
-    justify-content: flex-start; /* 왼쪽 정렬 */
-    padding: 50px 20px;
-    gap: 40px; /* 홈 섹션 요소들 간의 간격 */
-    position: relative; /* 제목을 사진 위에 올리기 위한 기준 설정 */
-  }
+/* 홈 섹션 */
+#home {
+  display: flex;
+  flex-direction: row; /* 가로 방향으로 배치 */
+  align-items: flex-start; /* 수직 상단 정렬 */
+  justify-content: flex-start; /* 왼쪽 정렬 */
+  padding: 50px 20px;
+  gap: 40px; /* 홈 섹션 요소들 간의 간격 */
+  position: relative; /* 제목을 사진 위에 올리기 위한 기준 설정 */
+}
 
-  #home img {
-    width: 180px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 50%;
-  }
+#home img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+}
 
-  #home .info {
-    text-align: left;
-    padding-left: 20px;
-    display: flex; /* flexbox를 사용해 수평으로 배치 */
-    flex-direction: column; /* 세로로 배치 */
-    max-width: 400px; /* 텍스트 정보의 최대 너비 제한 */
-  }
+#home .info {
+  display: flex;
+  gap: 40px;
+}
 
-  #home .info .name {
-    font-family: 'Jua', sans-serif;
-    font-size: 1.9em;
-    font-weight: 300;
-    color: #302516;
-    margin-bottom: 20px;
-  }
+#home .left-info,
+#home .right-info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* 각 항목 간의 간격 */
+}
 
-  #home .info p {
-    font-size: 1.3em;
-    margin: 5px 0;
-    color: #3E2723;
-  }
+#home .left-info p,
+#home .right-info p {
+  font-size: 1.3em;
+  color: #3E2723;
+}
 
-  #home .info p i {
-    margin-right: 10px;
-    color: #D2B48C;
-  }
-
-  /* 위치와 자격증을 한 줄로 배치 */
-  .location-and-cert p {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* 아이콘과 텍스트 간격 */
-  }
-
-  /* 이메일과 자격증을 한 줄로 배치 */
-  .email-and-cert p {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* 아이콘과 텍스트 간격 */
-  }
-/* 홈섹션 제목 */
-#home h2 {
-  font-family: 'Quicksand', sans-serif;
-  font-size: 3em;
-  font-weight: bold;
-  color: #302516;
-  text-align: center;
-  text-transform: uppercase;
-  margin-bottom: 20px;
+#home .left-info i,
+#home .right-info i {
+  margin-right: 10px;
+  color: #D2B48C;
 }
 
 
@@ -360,26 +333,26 @@ a.logo {
     </div>
   </section>
 
-<!-- 홈 섹션 -->
 <section id="home">
   <h2>PROFILE</h2> <!-- 제목 추가 -->
   <img src="https://github.com/kimseohyun12/kimseohyun12.github.io/blob/main/%EC%9A%B0%EC%82%AC%EA%B8%B0__1_-removebg-preview.png?raw=true" alt="Kim Seohyun" style="width: 180px; height: 180px; object-fit: cover; border-radius: 50%;">
   
   <div class="info">
-    <div class="name">김서현 Kim Seohyun</div>
-    <div class="title-and-cert">
+    <div class="left-info">
       <p><i class="fas fa-laptop-code"></i> Front-End Developer</p>
+      <p><i class="fas fa-map-marker-alt"></i> Seoul, Korea</p>
+      <p><i class="fas fa-envelope"></i> ksh021112@naver.com</p>
+      <p><i class="fas fa-phone"></i> 010-8423-1363</p>
+    </div>
+
+    <div class="right-info">
       <p><i class="fas fa-certificate"></i> GTQ 1급</p>
+      <p><i class="fas fa-laptop"></i> 컴퓨터 활용 능력 1급</p>
+      <p><i class="fas fa-file-word"></i> 워드프로세서 1급</p>
     </div>
-    <div class="location-and-cert">
-      <p><i class="fas fa-map-marker-alt"></i> Seoul, Korea <i class="fas fa-laptop"></i> 컴퓨터 활용 능력 1급</p>
-    </div>
-    <div class="email-and-cert">
-      <p><i class="fas fa-envelope"></i> ksh021112@naver.com <i class="fas fa-file-word"></i> 워드프로세서 1급</p>
-    </div>
-    <p><i class="fas fa-phone"></i> 010-8423-1363</p> <!-- 전화번호 추가 -->
   </div>
 </section>
+
 
 
 <!-- Skills 섹션 -->
