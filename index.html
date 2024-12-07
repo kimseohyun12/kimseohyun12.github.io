@@ -373,24 +373,7 @@ a.logo {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  // 스크롤 시 카드를 활성화하는 함수
-  function activateCardsOnScroll() {
-    const cards = document.querySelectorAll('.card');
-    const windowHeight = window.innerHeight;
 
-    cards.forEach(card => {
-      const cardTop = card.getBoundingClientRect().top;
-      if (cardTop < windowHeight - 100) {
-        card.classList.add('visible');
-      }
-    });
-  }
-
-  // DOM이 로드된 후 초기 호출 및 이벤트 추가
-  document.addEventListener('DOMContentLoaded', () => {
-    activateCardsOnScroll();
-    window.addEventListener('scroll', activateCardsOnScroll);
-  });
 </script>
 
 </body>
