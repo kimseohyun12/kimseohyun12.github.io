@@ -77,62 +77,58 @@
       }
     }
 
-   /* 홈 섹션 */
-    #home {
-      display: flex; /* flexbox 레이아웃 사용 */
-      flex-direction: row; /* 자식 요소들을 가로로 정렬 */
-      align-items: center; /* 자식 요소들을 세로로 가운데 정렬 */
-      justify-content: left; /* 자식 요소들을 가운데 정렬 */
-      padding: 50px 20px; /* 상하 50px, 좌우 20px의 여백 추가 */
-      gap: 50px; /* 사진과 텍스트 간의 간격을 50px로 설정 */
-    }
+ /* 홈 섹션 */
+#home {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 50px 20px;
+  gap: 50px;
+}
 
-  /* 홈 섹션 */
 #home img {
-  width: 180px !important; /* 이미지 크기 강제 설정 */
-  height: 180px !important; /* 이미지 크기 강제 설정 */
-  object-fit: cover; /* 이미지 비율을 유지하며 영역 채우기 */
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
-
-    #home .info {
-      text-align: left; /* 텍스트를 정렬 */
-    }
-
-    #home .info .name {
-  font-family: 'Jua', sans-serif; /* 한글은 Jua 폰트를 사용 */
-  font-size: 1.9em; /* 이름 텍스트 크기를 1.5em으로 설정 */
-  font-weight: 300; /* 이름 텍스트를 얇게 설정 */
-  color: #302516; /* 이름 텍스트 색상 설정 */
-  margin-bottom: 20px; /* 이름 아래에 20px 여백 추가 */
+#home .info {
+  text-align: left;
 }
 
+#home .info .name {
+  font-family: 'Jua', sans-serif;
+  font-size: 1.9em;
+  font-weight: 300;
+  color: #302516;
+  margin-bottom: 20px;
+}
 
-    #home .info p {
-      font-size: 1.3em; /* 텍스트 크기를 1em으로 설정 */
-      margin: 5px 0; /* 상하 5px 여백 추가 */
-      color: #3E2723; /* 텍스트 색상 설정 */
-    }
+#home .info p {
+  font-size: 1.3em;
+  margin: 5px 0;
+  color: #3E2723;
+}
 
-    #home .info p i {
-      margin-right: 10px; /* 아이콘 오른쪽에 10px 여백 추가 */
-      color: #D2B48C; /* 아이콘 색상 설정 */
-    }
+#home .info p i {
+  margin-right: 10px;
+  color: #D2B48C;
+}
 
 /* 홈섹션 제목 */
 #home h2 {
-  font-family: 'Quicksand', sans-serif; /* 폰트 설정 */
-  font-size: 3em; /* 텍스트 크기 */
+  font-family: 'Quicksand', sans-serif;
+  font-size: 3em;
   font-weight: bold;
-  color: #302516; /* 텍스트 색상 */
-  text-align: center; /* 가운데 정렬 */
+  color: #302516;
+  text-align: center;
   text-transform: uppercase;
   margin-bottom: 20px;
 }
 
-
-
-/* Skills 섹션 스타일 */
+/* Skills 섹션 */
 #skills {
   padding: 60px 20px;
 }
@@ -143,30 +139,30 @@
   font-weight: bold;
   color: #302516;
   margin-bottom: 40px;
-  text-align: left; /* 제목 왼쪽 정렬 */
+  text-align: left;
 }
 
-/* 카드 컨테이너 */
 .cards {
   display: flex;
-  flex-direction: column; /* 일자로 정렬 */
-  align-items: center; /* 가운데 정렬 */
-  gap: 30px; /* 카드 간격 */
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
 }
 
-/* 카드 스타일 */
 .card {
-  width: 200px; /* 카드 크기 */
+  width: 200px;
   height: 250px;
-  perspective: 1000px; /* 3D 효과를 위한 관점 */
-  opacity: 0; /* 기본적으로 숨김 */
-  transform: translateY(50px); /* 초기 위치 */
+  perspective: 1000px;
+  opacity: 0;
+  transform: translateY(50px);
+  visibility: hidden;
   transition: transform 0.6s ease, opacity 0.6s ease;
 }
 
 .card.visible {
-  opacity: 1; /* 가시화 */
-  transform: translateY(0); /* 정상 위치 */
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
 }
 
 .card-inner {
@@ -178,7 +174,7 @@
 }
 
 .card:hover .card-inner {
-  transform: rotateY(180deg); /* 커서 올리면 카드 뒤집힘 */
+  transform: rotateY(180deg);
 }
 
 .card-front,
@@ -194,8 +190,9 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   color: #fff;
   font-family: 'Quicksand', sans-serif;
-  font-
-
+  font-size: 1.2em;
+  font-weight: bold;
+}
 
 /* 로고 스타일 */
 a.logo {
