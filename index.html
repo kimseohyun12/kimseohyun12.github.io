@@ -140,9 +140,9 @@
   100% { transform: translateX(0); }
 }
 
-    /* Skills 섹션 스타일 */
+ /* Skills 섹션 스타일 */
 #skills {
-  text-align: left;
+  text-align: center;
   padding: 60px 20px;
   background-color: #f7f2e9;
 }
@@ -161,7 +161,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 40px; /* 카드 간격 조정 */
+  margin-bottom: 20px; /* 카드 그룹 간격 */
 }
 
 /* 카드 스타일 */
@@ -213,6 +214,7 @@
   color: #302516;
   padding: 10px;
 }
+
 
 /* 로고 스타일 */
 a.logo {
@@ -301,9 +303,9 @@ a.logo {
 
 <!-- Skills 섹션 -->
 <section id="skills">
-  <h2>SKILLS</h2>
+  <h2>Skills</h2>
   <div class="cards">
-    <!-- 카드 1 -->
+    <!-- 첫 번째 줄 카드 -->
     <div class="card">
       <div class="card-inner">
         <div class="card-front">
@@ -314,7 +316,6 @@ a.logo {
         </div>
       </div>
     </div>
-    <!-- 카드 2 -->
     <div class="card">
       <div class="card-inner">
         <div class="card-front">
@@ -325,7 +326,6 @@ a.logo {
         </div>
       </div>
     </div>
-    <!-- 카드 3 -->
     <div class="card">
       <div class="card-inner">
         <div class="card-front">
@@ -333,6 +333,29 @@ a.logo {
         </div>
         <div class="card-back">
           <p>A programming language to make websites interactive.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cards">
+    <!-- 두 번째 줄 카드 -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <p>PhotoShop</p>
+        </div>
+        <div class="card-back">
+          <p>Adobe PhotoShop. Used for image editing and graphic design.</p>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <p>WordPress</p>
+        </div>
+        <div class="card-back">
+          <p>A popular content management system for building websites.</p>
         </div>
       </div>
     </div>
