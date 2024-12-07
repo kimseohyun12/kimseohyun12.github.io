@@ -80,11 +80,11 @@
 /* 홈 섹션 */
 #home {
   display: flex;
-  flex-direction: column; /* 세로 방향으로 배치 */
-  align-items: center; /* 가운데 정렬 */
-  justify-content: center; /* 가운데 정렬 */
+  flex-direction: row; /* 가로 방향으로 배치 */
+  align-items: center; /* 수직 중앙 정렬 */
+  justify-content: flex-start; /* 왼쪽 정렬 */
   padding: 50px 20px;
-  gap: 20px; /* 제목과 이미지 간격 */
+  position: relative; /* 제목을 사진 위에 올리기 위한 기준 설정 */
 }
 
 #home img {
@@ -95,7 +95,23 @@
 }
 
 #home .info {
-  text-align: center; /* 텍스트 중앙 정렬 */
+  text-align: left;
+  padding-left: 20px;
+}
+
+/* 제목을 사진 위에 배치 */
+#home h2 {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 3em;
+  font-weight: bold;
+  color: #302516;
+  text-align: center;
+  text-transform: uppercase;
+  position: absolute; /* 제목을 절대 위치로 설정 */
+  top: 0; /* 상단에 위치 */
+  left: 50%; /* 가로 중앙에 배치 */
+  transform: translateX(-50%); /* 정확히 중앙 정렬 */
+  margin-bottom: 20px;
 }
 
 #home .info .name {
@@ -115,17 +131,6 @@
 #home .info p i {
   margin-right: 10px;
   color: #D2B48C;
-}
-
-/* 홈섹션 제목 */
-#home h2 {
-  font-family: 'Quicksand', sans-serif;
-  font-size: 3em;
-  font-weight: bold;
-  color: #302516;
-  text-align: center;
-  text-transform: uppercase;
-  margin-bottom: 20px;
 }
 
 /* Skills 섹션 스타일 */
