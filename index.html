@@ -128,72 +128,89 @@
   margin-bottom: 20px;
 }
 
-/* Skills 섹션 */
-#skills {
-  padding: 60px 20px;
-}
+/* Skills 섹션 스타일 */
+  #skills {
+    padding: 60px 20px;
+  }
 
-#skills h2 {
-  font-family: 'Quicksand', sans-serif;
-  font-size: 3em;
-  font-weight: bold;
-  color: #302516;
-  margin-bottom: 40px;
-  text-align: left;
-}
+  #skills h2 {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 3em;
+    font-weight: bold;
+    color: #302516;
+    margin-bottom: 40px;
+    text-align: left;
+  }
 
-.cards {
-  display: flex;
-  flex-direction: row; /* 가로 정렬 */
-  flex-wrap: nowrap; /* 한 줄로만 배치 */
-  justify-content: flex-start; /* 왼쪽 정렬 */
-  gap: 30px; /* 카드 간격 */
-}
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5개 카드 가로로 배치 */
+    gap: 30px; /* 카드 간격 */
+    justify-items: center;
+    margin-top: 20px;
+  }
 
-.card {
-  width: 200px;
-  height: 250px;
-  perspective: 1000px;
-  opacity: 0;
-  transform: translateY(50px);
-  visibility: hidden;
-  transition: transform 0.6s ease, opacity 0.6s ease, visibility 0s 0.6s;
-}
+  .card {
+    width: 200px;
+    height: 250px;
+    perspective: 1000px;
+    opacity: 0;
+    transform: translateY(50px);
+    visibility: hidden;
+    transition: transform 0.6s ease, opacity 0.6s ease, visibility 0s 0.6s;
+    cursor: pointer;
+  }
 
-.card.visible {
-  opacity: 1;
-  transform: translateY(0);
-  visibility: visible;
-  transition: transform 0.6s ease, opacity 0.6s ease; /* 이 경우 visibility는 즉시 보이게 설정 */
-}
-.card-inner {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transform-style: preserve-3d;
-  transition: transform 0.6s ease;
-}
+  .card.visible {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+  }
 
-.card:hover .card-inner {
-  transform: rotateY(180deg);
-}
+  .card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
 
-.card-front,
-.card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  color: #fff;
-  font-family: 'Quicksand', sans-serif;
-  font-size: 1.2em;
-  font-weight: bold;
-}
+  .card:hover .card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .card-front,
+  .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .card-front {
+    background-color: #D2B48C;
+  }
+
+  .card-back {
+    background-color: #302516;
+    transform: rotateY(180deg);
+    text-align: center;
+    font-size: 1em;
+    padding: 20px;
+  }
+
 
 
 /* 로고 스타일 */
@@ -316,9 +333,6 @@ a.logo {
         </div>
       </div>
     </div>
-  </div>
-  <div class="cards">
-    <!-- 두 번째 줄 카드 -->
     <div class="card">
       <div class="card-inner">
         <div class="card-front">
@@ -373,10 +387,10 @@ a.logo {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  // DOM이 로드된 후 초기 호출 및 이벤트 추가
+  // 스크롤에 따라 카드 활성화
   document.addEventListener('DOMContentLoaded', () => {
-    activateCardsOnScroll(); // 초기 카드 활성화
-    window.addEventListener('scroll', activateCardsOnScroll); // 스크롤 시 카드 활성화
+    activateCardsOnScroll();
+    window.addEventListener('scroll', activateCardsOnScroll);
   });
 
   function activateCardsOnScroll() {
@@ -385,12 +399,11 @@ a.logo {
 
     cards.forEach(card => {
       const cardTop = card.getBoundingClientRect().top;
-      if (cardTop < windowHeight - 150) {  // 카드가 화면에 들어올 때
+      if (cardTop < windowHeight - 150) {
         card.classList.add('visible');
       }
     });
   }
-
 </script>
 
 </body>
