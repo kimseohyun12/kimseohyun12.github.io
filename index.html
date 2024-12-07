@@ -128,23 +128,13 @@
   text-align: center; /* 가운데 정렬 */
   text-transform: uppercase;
   margin-bottom: 20px;
-  animation: shake 1s ease 3; /* 3번 흔들리고 멈추게 설정 */
 }
 
-/* 흔들림 애니메이션 */
-@keyframes shake {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(-10px); }
-  50% { transform: translateX(10px); }
-  75% { transform: translateX(-10px); }
-  100% { transform: translateX(0); }
-}
 
- /* Skills 섹션 스타일 */
+
+/* Skills 섹션 스타일 */
 #skills {
-  text-align: center;
   padding: 60px 20px;
-  background-color: #f7f2e9;
 }
 
 #skills h2 {
@@ -153,7 +143,7 @@
   font-weight: bold;
   color: #302516;
   margin-bottom: 40px;
-  position: relative;
+  text-align: left; /* 제목 왼쪽 정렬 */
 }
 
 /* 카드 컨테이너 */
@@ -170,6 +160,7 @@
   width: 150px;
   height: 200px;
   perspective: 1000px; /* 3D 효과를 위한 관점 */
+  background: none; /* 카드 배경 제거 */
 }
 
 .card-inner {
