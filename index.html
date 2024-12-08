@@ -23,6 +23,38 @@
       cursor: none; /* 기본 커서를 숨깁니다 */
     }
 
+    /* 별 반짝이는 애니메이션 */
+.stars {
+  position: relative;
+  background: #000;
+  width: 100%;
+  height: 100vh;
+}
+
+.stars::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('stars.png') repeat;
+  animation: twinkling 1s infinite;
+}
+
+@keyframes twinkling {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+
     .cursor {
       position: fixed;
       width: 80px;
