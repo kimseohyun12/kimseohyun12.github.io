@@ -75,10 +75,11 @@
         border-color: transparent;
       }
     }
-/* 홈 섹션 스타일 */
 #home {
   display: flex;
-  align-items: left;
+  flex-direction: column; /* 요소들을 세로로 배치 */
+  align-items: left; /* 수평 중앙 정렬 */
+  justify-content: left; /* 수직 중앙 정렬 */
   padding: 80px 20px;
 }
 
@@ -87,57 +88,53 @@
   height: 180px;
   object-fit: cover;
   border-radius: 50%;
-  margin-right: 30px; /* 이미지와 텍스트 사이에 간격 추가 */
+  margin-bottom: 20px; /* 사진과 이름 사이 간격 */
 }
 
-.profile-container {
+#home .name-container {
   display: flex;
-  flex-direction: column;
-  flex-grow: 1;
+  flex-direction: column; /* 이름을 세로로 배치 */
+  align-items: left; 
+  gap: 2px; /* 이름과 영어 이름 간의 간격을 좁힘 */
 }
 
-.name-info-container {
-  display: flex;
-  align-items: center; /* 이미지와 이름, 정보가 수평으로 정렬되도록 설정 */
-}
-
-.name-container {
-  text-align: left; /* 이름을 왼쪽 정렬 */
-  margin-right: 30px; /* 이름과 info 사이에 간격 추가 */
-}
-
-#name {
+#home #name {
   font-family: 'Jua', sans-serif;
-  font-size: 1.5em;
+  font-size: 1.8em;
   color: #302516;
 }
 
-#name-en {
+#home #name-en {
   font-family: 'Quicksand', sans-serif;
-  font-size: 1.2em;
-  color: #302516;
-  margin-top: 5px;
+  font-size: 1.5em;
+  color: #3E2723;
 }
 
-.info {
+  #home .info {
   display: flex;
-  flex-direction: row; /* 정보를 가로로 배치 */
-  gap: 30px; /* 왼쪽 정보와 오른쪽 정보 사이 간격 */
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1000px;
+  margin-top: 30px;
 }
 
-.left-info, .right-info {
+#home .left-info,
+#home .right-info {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  width: 45%; /* 각 칸이 화면의 45% 너비를 차지하도록 설정 */
 }
 
-.left-info p, .right-info p {
+#home .left-info p,
+#home .right-info p {
   font-size: 1.3em;
   color: #3E2723;
   font-family: 'Jua', sans-serif;
 }
 
-.left-info i, .right-info i {
+#home .left-info i,
+#home .right-info i {
   margin-right: 10px;
   color: #D2B48C;
 }
