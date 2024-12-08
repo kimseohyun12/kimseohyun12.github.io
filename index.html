@@ -95,7 +95,7 @@
   display: flex;
   flex-direction: column; /* 이름을 세로로 배치 */
   align-items: left; 
-  gap: 20px; /* 이름과 영어 이름 간의 간격을 좁힘 */
+  gap: 2px; /* 이름과 영어 이름 간의 간격을 좁힘 */
 }
 
 #home #name {
@@ -108,6 +108,35 @@
   font-family: 'Quicksand', sans-serif;
   font-size: 1.5em;
   color: #3E2723;
+}
+
+  #home .info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1000px;
+  margin-top: 30px;
+}
+
+#home .left-info,
+#home .right-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 45%; /* 각 칸이 화면의 45% 너비를 차지하도록 설정 */
+}
+
+#home .left-info p,
+#home .right-info p {
+  font-size: 1.3em;
+  color: #3E2723;
+  font-family: 'Jua', sans-serif;
+}
+
+#home .left-info i,
+#home .right-info i {
+  margin-right: 10px;
+  color: #D2B48C;
 }
 
 
@@ -344,6 +373,20 @@ a.logo {
     <div class="name-container">
       <p id="name">김서현</p>
       <p id="name-en">Kim Seohyun</p> <!-- 영어 이름 추가 -->
+    </div>
+     <!-- 추가된 info 섹션 -->
+  <div class="info">
+    <div class="left-info">
+      <p><i class="fas fa-code"></i> Web Publisher</p>
+      <p><i class="fas fa-map-marker-alt"></i> Seoul, Korea</p>
+      <p><i class="fas fa-envelope"></i> ksh021112@naver.com</p>
+      <p><i class="fas fa-phone"></i> 010-8423-1363</p>
+    </div>
+
+    <div class="right-info">
+      <p><i class="fas fa-certificate"></i> GTQ 1급</p>
+      <p><i class="fas fa-laptop"></i> 컴퓨터 활용 능력 1급</p>
+      <p><i class="fas fa-file-word"></i> 워드프로세서 1급</p>
     </div>
   </div>
 </section>
