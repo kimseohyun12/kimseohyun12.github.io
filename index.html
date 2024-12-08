@@ -76,66 +76,6 @@
       }
     }
 
-#home {
-  display: flex;
-  flex-direction: row; /* 요소들을 가로로 배치 */
-  align-items: center; /* 수직 중앙 정렬 */
-  justify-content: flex-start; /* 왼쪽 정렬 */
-  padding: 80px 20px;
-  gap: 40px; /* 요소 간 간격 */
-}
-
-#home img {
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 50%;
-}
-
-#home .profile-container {
-  display: flex;
-  flex-direction: row; /* 수평 배치 */
-  align-items: center; /* 수직 정렬 */
-}
-
-.name-container {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-#home #name {
-  font-family: 'Jua', sans-serif;
-  font-size: 2em;
-  color: #302516;
-  margin-left: 20px; /* 이름과 이미지 사이 간격 */
-}
-
-#home .info {
-  display: flex;
-  flex-direction: column; /* 세로로 배치 */
-  gap: 10px;
-}
-
-#home .left-info,
-#home .right-info {
-  display: flex;
-  flex-direction: column;
-  gap: 5px; /* 각 항목 간의 간격 */
-}
-
-#home .left-info p,
-#home .right-info p {
-  font-size: 1.5em;
-  color: #3E2723;
-  font-family: 'Jua', sans-serif;
-}
-
-#home .left-info i,
-#home .right-info i {
-  margin-right: 10px;
-  color: #D2B48C;
-}
 
 #home h2 {
   font-family: 'Quicksand', sans-serif;
@@ -365,29 +305,16 @@ a.logo {
 
 <section id="home">
   <h2>PROFILE</h2> <!-- 제목 추가 -->
-    <div class="profile-container">
+  <div class="profile-container">
     <!-- 김서현 이름 -->
     <div class="name-container">
       <p id="name">김서현</p>
+      <p id="name-en">Kim Seohyun</p> <!-- 영어 이름 추가 -->
     </div>
-  <img src="https://github.com/kimseohyun12/kimseohyun12.github.io/blob/main/%EC%9A%B0%EC%82%AC%EA%B8%B0__1_-removebg-preview.png?raw=true" alt="Kim Seohyun" style="width: 180px; height: 180px; object-fit: cover; border-radius: 50%;">
-
-
-  <div class="info">
-    <div class="left-info">
-      <p><i class="fas fa-code"></i> Web Publisher</p>
-      <p><i class="fas fa-map-marker-alt"></i> Seoul, Korea</p>
-      <p><i class="fas fa-envelope"></i> ksh021112@naver.com</p>
-      <p><i class="fas fa-phone"></i> 010-8423-1363</p>
-    </div>
-
-    <div class="right-info">
-      <p><i class="fas fa-certificate"></i> GTQ 1급</p>
-      <p><i class="fas fa-laptop"></i> 컴퓨터 활용 능력 1급</p>
-      <p><i class="fas fa-file-word"></i> 워드프로세서 1급</p>
-    </div>
+    <img src="https://github.com/kimseohyun12/kimseohyun12.github.io/blob/main/%EC%9A%B0%EC%82%AC%EA%B8%B0__1_-removebg-preview.png?raw=true" alt="Kim Seohyun" style="width: 180px; height: 180px; object-fit: cover; border-radius: 50%;">
   </div>
 </section>
+
 
 
 
