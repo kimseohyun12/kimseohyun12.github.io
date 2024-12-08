@@ -27,18 +27,17 @@
     .snow {
       position: fixed;
       top: -10px;
-      left: 50%;
       width: 5px;
       height: 5px;
-      background-color: #6B4F3F; /* 갈색 눈송이 색 */
+      background-color: #f5f5dc; /* 갈색 눈송이 색 */
       border-radius: 50%;
       opacity: 0.8;
       animation: snow-fall 5s linear infinite;
     }
 
-    @keyframes snow-fall {
+  @keyframes snow-fall {
       0% {
-        transform: translateX(0) translateY(0);
+        transform: translateX(var(--x)) translateY(0);
       }
       100% {
         transform: translateX(var(--x)) translateY(100vh);
@@ -645,12 +644,13 @@ function activateAboutOnScroll() {
     aboutSection.classList.add('visible');
   }
 }
-  // 눈송이 추가하기
+  
+ // 눈송이 추가하기
     function createSnow() {
       const snow = document.createElement('div');
       snow.classList.add('snow');
       
-      // 눈송이의 X 이동 범위 설정
+      // 눈송이의 랜덤 X 위치 설정 (전체 화면 너비 범위에서)
       const xPos = Math.random() * 100 - 50;  // -50에서 50 사이 랜덤
       snow.style.setProperty('--x', `${xPos}vw`);
       
