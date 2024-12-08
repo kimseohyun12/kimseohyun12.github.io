@@ -25,11 +25,14 @@
 
 /* 별 반짝이는 애니메이션 */
 .stars {
-  position: relative;
-  background: #000;
+  position: fixed; /* fixed로 화면에 고정 */
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100vh;
+  background: #000;
   overflow: hidden;
+  z-index: -1; /* 다른 요소들이 별 위에 오도록 함 */
 }
 
 .stars::before {
@@ -39,9 +42,9 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle, white 1px, transparent 1px);
-  background-size: 10px 10px;
-  animation: twinkling 1s infinite;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.7) 1px, transparent 1px);
+  background-size: 10px 10px; /* 별 크기 조절 */
+  animation: twinkling 1s infinite; /* 애니메이션 효과 */
 }
 
 @keyframes twinkling {
@@ -459,6 +462,10 @@ a.logo {
       Kim Seohyun Portfolio
     </div>
   </section>
+
+
+  <div class="stars"></div>
+
 
 <section id="home">
   <h2>PROFILE</h2> <!-- 제목 추가 -->
