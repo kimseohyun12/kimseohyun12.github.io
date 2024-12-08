@@ -650,9 +650,9 @@ function activateAboutOnScroll() {
       const snow = document.createElement('div');
       snow.classList.add('snow');
       
-      // 눈송이의 랜덤 X 위치 설정 (전체 화면 너비 범위에서)
-      const xPos = Math.random() * 100 - 50;  // -50에서 50 사이 랜덤
-      snow.style.setProperty('--x', `${xPos}vw`);
+      // 전체 화면 너비에서 랜덤 X 위치 설정
+    const xPos = Math.random() * window.innerWidth;  // 0에서 화면 너비 사이의 랜덤 값
+    snow.style.setProperty('--x', `${xPos}px`);
       
       // 눈송이를 화면에 추가
       document.body.appendChild(snow);
