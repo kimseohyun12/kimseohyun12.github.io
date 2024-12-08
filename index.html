@@ -115,7 +115,7 @@
   flex-wrap: wrap; /* 자동으로 줄 바꿈을 허용 */
   justify-content: space-between; /* 각 항목 간격을 균등하게 */
   width: 100%;
-  max-width: 1000px;
+  max-width: 1200px;
   margin-top: 30px;
 }
 
@@ -123,15 +123,27 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  width: 30%; /* 첫 번째, 두 번째 컬럼의 너비를 30%로 설정 */
+  width: 23%; /* 첫 번째, 두 번째 컬럼의 너비를 23%로 설정 */
 }
 
 #home .right-info {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  width: 30%; /* 세 번째 컬럼의 너비도 30%로 설정 */
+  width: 23%; /* 세 번째 컬럼의 너비도 23%로 설정 */
 }
+
+#home .word-processor {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 30%; /* 네 번째 칸의 너비를 조금 더 크게 설정 */
+}
+
+#home .word-processor p {
+  display: inline; /* 텍스트가 한 줄로 배치되도록 설정 */
+}
+
 
 
 #home h2 {
@@ -387,6 +399,10 @@ a.logo {
     <div class="right-info">
       <p><i class="fas fa-certificate"></i> GTQ 1급</p>
       <p><i class="fas fa-laptop"></i> 컴퓨터 활용 능력 1급</p>
+    </div>
+
+    <!-- 네 번째 칸 (워드프로세서 항목을 옆으로 배치) -->
+    <div class="right-info word-processor">
       <p><i class="fas fa-file-word"></i> 워드프로세서 1급</p>
     </div>
   </div>
