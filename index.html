@@ -170,8 +170,14 @@
   #about {
     padding: 60px 20px;
     font-family: 'Jua', sans-serif; /* 글씨체를 Jua로 변경 */
+    transform: translateX(-100%); /* 시작 위치를 화면 왼쪽으로 설정 */
+    transition: all 1s ease-out; /* 애니메이션 효과 */
   }
-
+/* 애니메이션이 활성화되면 왼쪽에서 오른쪽으로 슬라이드 */
+#about.visible {
+  opacity: 1;
+  transform: translateX(0); /* 원래 위치로 돌아오게 설정 */
+}
   #about h2 {
     font-size: 2em;
     color: #302516;
@@ -576,6 +582,23 @@ a.logo {
       }
     });
   }
+
+  // 스크롤 시 애니메이션 활성화
+document.addEventListener('DOMContentLoaded', () => {
+  activateAboutOnScroll();
+  window.addEventListener('scroll', activateAboutOnScroll);
+});
+
+function activateAboutOnScroll() {
+  const aboutSection = document.querySelector('#about');
+  const windowHeight = window.innerHeight;
+  const aboutTop = aboutSection.getBoundingClientRect().top;
+
+  if (aboutTop < windowHeight - 100) {
+    aboutSection.classList.add('visible');
+  }
+}
+
 </script>
 
 
