@@ -23,12 +23,13 @@
       cursor: none; /* 기본 커서를 숨깁니다 */
     }
 
-    /* 별 반짝이는 애니메이션 */
+/* 별 반짝이는 애니메이션 */
 .stars {
   position: relative;
   background: #000;
   width: 100%;
   height: 100vh;
+  overflow: hidden;
 }
 
 .stars::before {
@@ -38,7 +39,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('stars.png') repeat;
+  background: radial-gradient(circle, white 1px, transparent 1px);
+  background-size: 10px 10px;
   animation: twinkling 1s infinite;
 }
 
@@ -53,6 +55,7 @@
     opacity: 0.5;
   }
 }
+
 
 
     .cursor {
