@@ -75,6 +75,39 @@
         border-color: transparent;
       }
     }
+#home {
+  display: flex;
+  flex-direction: column; /* 요소들을 세로로 배치 */
+  align-items: center; /* 수평 중앙 정렬 */
+  justify-content: center; /* 수직 중앙 정렬 */
+  padding: 80px 20px;
+}
+
+#home img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 20px; /* 사진과 이름 사이 간격 */
+}
+
+#home .name-container {
+  display: flex;
+  flex-direction: column; /* 이름을 세로로 배치 */
+  align-items: center; /* 이름을 중앙 정렬 */
+}
+
+#home #name {
+  font-family: 'Jua', sans-serif;
+  font-size: 2.5em;
+  color: #302516;
+}
+
+#home #name-en {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.5em;
+  color: #3E2723;
+}
 
 
 #home h2 {
@@ -306,14 +339,14 @@ a.logo {
 <section id="home">
   <h2>PROFILE</h2> <!-- 제목 추가 -->
   <div class="profile-container">
-    <!-- 김서현 이름 -->
+    <img src="https://github.com/kimseohyun12/kimseohyun12.github.io/blob/main/%EC%9A%B0%EC%82%AC%EA%B8%B0__1_-removebg-preview.png?raw=true" alt="Kim Seohyun" style="width: 180px; height: 180px; object-fit: cover; border-radius: 50%;">
     <div class="name-container">
       <p id="name">김서현</p>
       <p id="name-en">Kim Seohyun</p> <!-- 영어 이름 추가 -->
     </div>
-    <img src="https://github.com/kimseohyun12/kimseohyun12.github.io/blob/main/%EC%9A%B0%EC%82%AC%EA%B8%B0__1_-removebg-preview.png?raw=true" alt="Kim Seohyun" style="width: 180px; height: 180px; object-fit: cover; border-radius: 50%;">
   </div>
 </section>
+
 
 
 
