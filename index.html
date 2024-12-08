@@ -20,47 +20,32 @@
       padding: 0;
       background-color: #f0e1d0;
       color: #3E2723;
-      cursor: none; /* 기본 커서를 숨깁니다 */
+      overflow: hidden; /* 화면 밖으로 나가는 요소들 숨기기 */
     }
 
-/* 별 반짝이는 애니메이션 */
-.stars {
-  position: fixed; /* fixed로 화면에 고정 */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background: #000;
-  overflow: hidden;
-  z-index: -1; /* 다른 요소들이 별 위에 오도록 함 */
-}
+/* 눈송이 애니메이션 */
+    .snow {
+      position: fixed;
+      top: -10px;
+      left: 50%;
+      width: 5px;
+      height: 5px;
+      background-color: #6B4F3F; /* 갈색 눈송이 색 */
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: snow-fall 5s linear infinite;
+    }
 
-.stars::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.7) 1px, transparent 1px);
-  background-size: 10px 10px; /* 별 크기 조절 */
-  animation: twinkling 1s infinite; /* 애니메이션 효과 */
-}
+    @keyframes snow-fall {
+      0% {
+        transform: translateX(0) translateY(0);
+      }
+      100% {
+        transform: translateX(var(--x)) translateY(100vh);
+      }
+    }
 
-@keyframes twinkling {
-  0% {
-    opacity: 0.5;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0.5;
-  }
-}
-
-
-
+    
     .cursor {
       position: fixed;
       width: 80px;
@@ -660,6 +645,26 @@ function activateAboutOnScroll() {
     aboutSection.classList.add('visible');
   }
 }
+  // 눈송이 추가하기
+    function createSnow() {
+      const snow = document.createElement('div');
+      snow.classList.add('snow');
+      
+      // 눈송이의 X 이동 범위 설정
+      const xPos = Math.random() * 100 - 50;  // -50에서 50 사이 랜덤
+      snow.style.setProperty('--x', `${xPos}vw`);
+      
+      // 눈송이를 화면에 추가
+      document.body.appendChild(snow);
+
+      // 일정 시간 후 눈송이 제거
+      setTimeout(() => {
+        snow.remove();
+      }, 5000); // 5초 후 제거
+    }
+
+    // 주기적으로 눈송이 생성
+    setInterval(createSnow, 100); // 100ms마다 눈송이 생성
 
 </script>
 
