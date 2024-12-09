@@ -98,6 +98,16 @@
       }
     }
 
+
+       /* 눈사람 */
+    .snowman {
+      font-size: 5em;
+      text-align: center;
+      margin-top: 20px;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
 section {
       padding: 60px 20px;
       margin-bottom: 80px; /* 각 섹션 사이에 아래쪽 마진을 추가하여 간격을 넓힘 */
@@ -433,6 +443,8 @@ a.logo {
 
   
 <div class="stars"></div>
+<div class="snowman">☃️</div>
+
 
 <!-- 로고 추가 -->
 <a href="index.html" class="logo">
@@ -665,6 +677,15 @@ function activateAboutOnScroll() {
 
     // 주기적으로 눈송이 생성
     setInterval(createSnow, 100); // 100ms마다 눈송이 생성
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const typingElement = document.querySelector(".typing");
+      const snowmanElement = document.querySelector(".snowman");
+
+      typingElement.addEventListener("animationend", () => {
+        snowmanElement.style.opacity = 1; // 눈사람 보이기
+      });
+    });
 
 </script>
 
