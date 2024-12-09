@@ -118,6 +118,27 @@
     }
 
 
+    /* 슬라이드 인 애니메이션 */
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%); /* 왼쪽 밖에서 시작 */
+  }
+  to {
+    transform: translateX(0); /* 원래 위치로 이동 */
+  }
+}
+
+/* 문장 추가 */
+.intro-text {
+  font-family: 'Jua', sans-serif; /* 서체 설정 */
+  font-size: 2em; /* 글자 크기 설정 */
+  color: #7E5C4E; /* 색상 설정 */
+  margin-top: 20px;
+  animation: slideIn 3s ease-out 5s forwards; /* 5초 후 시작하여 3초 동안 슬라이드 */
+  display: block;
+}
+
+
 section {
       padding: 60px 20px;
       margin-bottom: 80px; /* 각 섹션 사이에 아래쪽 마진을 추가하여 간격을 넓힘 */
@@ -524,6 +545,8 @@ a.logo {
     </div>
     <script src="script.js"></script>
   
+<div class="intro-text">안녕하세요, 김서현의 포트폴리오입니다!</div>
+
   
 <!-- 로고 추가 -->
 <a href="index.html" class="logo">
