@@ -117,21 +117,29 @@
       }
     }
 /* 문장 추가 */
-.intro-text {
-  font-family: 'Jua', sans-serif; /* 서체 설정 */
-  font-size: 2em; /* 글자 크기 설정 */
-  color: #7E5C4E; /* 색상 설정 */
-  text-align: center; /* 중앙 정렬 */
+.intro-container {
+  display: flex;
+  align-items: center; /* 세로로 중앙 정렬 */
+  justify-content: center; /* 가로로 중앙 정렬 */
+  gap: 20px; /* 텍스트와 이미지 사이 간격 */
   margin-top: 0px;
   margin-bottom: 100px;
   animation: slideIn 3s ease-out 5s forwards; /* 5초 후 시작하여 3초 동안 슬라이드 */
-  display: block;
-  position: relative; /* 중앙 정렬을 위해 필요 */
-  left: 50%; /* 화면 가운데로 위치 */
-  transform: translateX(-50%); /* 정확한 중앙 정렬 */
 }
-    
 
+.intro-text {
+  font-family: 'Jua', sans-serif;
+  font-size: 2em;
+  color: #7E5C4E;
+  text-align: center;
+  display: block;
+}
+
+.intro-image {
+  width: 150px; /* 이미지 크기 조정 */
+  height: auto; /* 비율에 맞게 자동 조정 */
+  border-radius: 10px; /* 이미지에 모서리 둥글게 */
+}
 
 section {
       padding: 60px 20px;
@@ -549,15 +557,18 @@ a.logo {
   <!-- 페이지 맨 위를 표시하는 앵커 -->
   <button id="scrollToTopBtn" class="scroll-to-top" aria-label="Scroll to top">▲</button>
 
-  <!-- 타자 효과 텍스트 -->
-  <section>
-    <div class="typing">
-      Kim Seohyun Portfolio
-    </div>
-   <div class="intro-text">
-    안녕하세요, 김서현의 포트폴리오입니다!
+  <!-- 타자 효과 텍스트와 이미지 -->
+<section>
+  <div class="typing">
+    Kim Seohyun Portfolio
   </div>
-  </section>
+  <div class="intro-container">
+    <div class="intro-text">
+      안녕하세요, 김서현의 포트폴리오입니다!
+    </div>
+    <img src="https://github.com/kimseohyun12/kimseohyun12.github.io/blob/main/%EC%A0%9C%EB%AA%A9%EC%9D%84-%EC%9E%85%EB%A0%A5%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94_-001%20(2).png?raw=true" alt="김서현 이미지" class="intro-image">
+  </div>
+</section>
 
 
 
