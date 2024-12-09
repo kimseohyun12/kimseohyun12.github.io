@@ -98,14 +98,99 @@
       }
     }
 
-
-       /* 눈사람 */
+/* 눈사람 숨기기 */
     .snowman {
-      font-size: 5em;
-      text-align: center;
-      margin-top: 20px;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
+      display: none;
+      position: relative;
+    }
+
+    /* 눈사람 원들 */
+    .circle {
+      background-color: #fff;
+      border: 2px solid #ddd;
+      border-radius: 50%;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .head {
+      width: 60px;
+      height: 60px;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .body {
+      width: 90px;
+      height: 90px;
+      position: absolute;
+      top: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .bottom {
+      width: 120px;
+      height: 120px;
+      position: absolute;
+      top: 130px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    /* 눈사람 얼굴 */
+    .eye {
+      width: 8px;
+      height: 8px;
+      background-color: #333;
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    .eye.left {
+      top: 15px;
+      left: 20px;
+    }
+
+    .eye.right {
+      top: 15px;
+      right: 20px;
+    }
+
+    .nose {
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-top: 15px solid orange;
+      position: absolute;
+      top: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    /* 눈사람 버튼 */
+    .button {
+      width: 10px;
+      height: 10px;
+      background-color: #333;
+      border-radius: 50%;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .button:nth-child(1) {
+      top: 20px;
+    }
+
+    .button:nth-child(2) {
+      top: 40px;
+    }
+
+    .button:nth-child(3) {
+      top: 60px;
     }
 
 section {
@@ -441,7 +526,23 @@ a.logo {
 </head>
 <body>
 
-  <div class="snowman">☃️</div>
+<!-- 눈사람 -->
+  <div class="snowman">
+    <!-- 원 3개 -->
+    <div class="circle head"></div>
+    <div class="circle body"></div>
+    <div class="circle bottom"></div>
+
+    <!-- 얼굴 -->
+    <div class="eye left"></div>
+    <div class="eye right"></div>
+    <div class="nose"></div>
+
+    <!-- 버튼 -->
+    <div class="button"></div>
+    <div class="button"></div>
+    <div class="button"></div>
+  </div>
 
 
 <!-- 로고 추가 -->
@@ -676,14 +777,11 @@ function activateAboutOnScroll() {
     // 주기적으로 눈송이 생성
     setInterval(createSnow, 100); // 100ms마다 눈송이 생성
 
-    document.addEventListener("DOMContentLoaded", () => {
-      const typingElement = document.querySelector(".typing");
-      const snowmanElement = document.querySelector(".snowman");
-
-      typingElement.addEventListener("animationend", () => {
-        snowmanElement.style.opacity = 1; // 눈사람 보이기
-      });
-    });
+   // 타이핑 효과 후 눈사람 표시
+    setTimeout(() => {
+      const snowman = document.querySelector('.snowman');
+      snowman.style.display = 'block'; // 눈사람 보이게
+    }, 6000); // 타이핑 효과 (5s) + 1s 대기 후 실행
 
 </script>
 
