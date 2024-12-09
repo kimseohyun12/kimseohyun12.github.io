@@ -102,25 +102,34 @@
     }
 
 
-    /* 눈 쌓이는 효과 */
-.snow-pile {
-  position: absolute;
-  top: 0; /* 타자 텍스트 바로 위에 쌓이도록 */
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: -1; /* 텍스트 위로 눈이 쌓이도록 */
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-    @keyframes snow-pile {
+/* 타자 효과 끝난 후 눈 쌓이는 효과 */
+@keyframes snow-pile {
   0% {
-    transform: translateX(var(--x)) translateY(0);
+    opacity: 0;
+    transform: translateY(-20px); /* 시작할 때 약간 위에서 시작 */
   }
   100% {
-    transform: translateX(var(--x)) translateY(100%); /* 눈이 아래로 쌓임 */
+    opacity: 1;
+    transform: translateY(0); /* 자연스럽게 눈이 쌓이게 */
   }
+}
+
+/* 눈이 쌓이는 영역 */
+.snow-pile {
+  position: absolute;
+  top: 0; /* 타자 텍스트 바로 위에 위치 */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: none; /* 타자 효과가 끝난 후에만 보이도록 설정 */
+  animation: snow-pile 1s forwards;
+}
+
+/* 타자 효과 끝난 후 눈 쌓이기 */
+.typing.done + .snow-pile {
+  display: block;
 }
 
 section {
@@ -692,9 +701,12 @@ function activateAboutOnScroll() {
     setInterval(createSnow, 100); // 100ms마다 눈송이 생성
 
 
-   document.querySelector('.typing').addEventListener('animationend', function() {
-      // 추가적인 작업이 필요하다면 여기서 처리
-    });
+  // 타자 효과가 끝난 후 'done' 클래스를 추가하여 눈 쌓이는 효과 시작
+const typingElement = document.querySelector('.typing');
+typingElement.addEventListener('animationend', function() {
+  typingElement.classList.add('done'); // 타자 효과가 끝나면 'done' 클래스 추가
+});
+
 
 
 </script>
