@@ -75,23 +75,7 @@
       animation: typing 5s steps(40) 1s 1 normal both, blink 0.75s step-end infinite;
     }
 
- /* 눈사람 이미지 숨기기 */
-.snowman {
-  display: none;
-  width: 100px;  /* 크기 설정 */
-  height: 100px;
-  margin-top: 20px;
-  margin-bottom: 50px;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-}
 
-/* 애니메이션 */
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
 
     /* 타자 효과 애니메이션 */
     @keyframes typing {
@@ -115,26 +99,7 @@
         border-color: transparent;
       }
     }
-/* 타자 효과 끝난 후 눈사람 보이게 하기 */
-@keyframes showSnowman {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 
-/* 타자 효과 후 눈사람 보이게 하기 */
-.show-snowman {
-  animation: showSnowman 1s forwards;
-}
-
-/* 타자 효과 후 눈사람 이미지가 나타날 때 */
-.typing.done + .snowman {
-  display: block;
-  animation: showSnowman 1s forwards;
-}
 section {
       padding: 60px 20px;
       margin-bottom: 80px; /* 각 섹션 사이에 아래쪽 마진을 추가하여 간격을 넓힘 */
@@ -468,8 +433,6 @@ a.logo {
 </head>
 <body>
 
-<img src="https://cdn-icons-png.flaticon.com/512/2904/290409.png" alt="Snowman" class="snowman">
-
 
 
 <!-- 로고 추가 -->
@@ -704,10 +667,6 @@ function activateAboutOnScroll() {
     // 주기적으로 눈송이 생성
     setInterval(createSnow, 100); // 100ms마다 눈송이 생성
 
- // 타자 효과가 끝난 후 눈사람을 보이게 하는 JavaScript
- document.querySelector('.typing').addEventListener('animationend', function() {
-    document.querySelector('.snowman').classList.add('show-snowman');
-  });
 
 </script>
 
