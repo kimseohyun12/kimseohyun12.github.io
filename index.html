@@ -102,6 +102,7 @@
     .snowman {
       display: none;
       position: relative;
+      margin-top: 20px;
     }
 
     /* 눈사람 원들 */
@@ -113,8 +114,8 @@
     }
 
     .head {
-      width: 60px;
-      height: 60px;
+      width: 40px;
+      height: 40px;
       position: absolute;
       top: 0;
       left: 50%;
@@ -122,76 +123,46 @@
     }
 
     .body {
-      width: 90px;
-      height: 90px;
+      width: 60px;
+      height: 60px;
       position: absolute;
-      top: 50px;
+      top: 40px;
       left: 50%;
       transform: translateX(-50%);
     }
 
-    .bottom {
-      width: 120px;
-      height: 120px;
-      position: absolute;
-      top: 130px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
 
     /* 눈사람 얼굴 */
     .eye {
-      width: 8px;
-      height: 8px;
+      width: 5px;
+      height: 5px;
       background-color: #333;
       border-radius: 50%;
       position: absolute;
     }
 
     .eye.left {
-      top: 15px;
-      left: 20px;
+      top: 10px;
+      left: 10px;
     }
 
     .eye.right {
-      top: 15px;
-      right: 20px;
+      top: 10px;
+      right: 10px;
     }
 
     .nose {
       width: 0;
       height: 0;
-      border-left: 10px solid transparent;
-      border-right: 10px solid transparent;
-      border-top: 15px solid orange;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 8px solid orange;
       position: absolute;
-      top: 30px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    /* 눈사람 버튼 */
-    .button {
-      width: 10px;
-      height: 10px;
-      background-color: #333;
-      border-radius: 50%;
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .button:nth-child(1) {
       top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
-    .button:nth-child(2) {
-      top: 40px;
-    }
-
-    .button:nth-child(3) {
-      top: 60px;
-    }
 
 section {
       padding: 60px 20px;
@@ -528,20 +499,14 @@ a.logo {
 
 <!-- 눈사람 -->
   <div class="snowman">
-    <!-- 원 3개 -->
+    <!-- 원 2개 -->
     <div class="circle head"></div>
     <div class="circle body"></div>
-    <div class="circle bottom"></div>
 
     <!-- 얼굴 -->
     <div class="eye left"></div>
     <div class="eye right"></div>
     <div class="nose"></div>
-
-    <!-- 버튼 -->
-    <div class="button"></div>
-    <div class="button"></div>
-    <div class="button"></div>
   </div>
 
 
