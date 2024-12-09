@@ -130,6 +130,7 @@
 /* 타자 효과 끝난 후 눈 쌓이기 */
 .typing.done + .snow-pile {
   display: block;
+  animation: snow-pile 1s forwards;
 }
 
 section {
@@ -701,7 +702,7 @@ function activateAboutOnScroll() {
     setInterval(createSnow, 100); // 100ms마다 눈송이 생성
 
 
-  // 타자 효과가 끝난 후 'done' 클래스를 추가하여 눈 쌓이는 효과 시작
+ // 타자 효과가 끝난 후 'done' 클래스를 추가하여 눈 쌓이는 효과 시작
 const typingElement = document.querySelector('.typing');
 typingElement.addEventListener('animationend', function() {
   typingElement.classList.add('done'); // 타자 효과가 끝나면 'done' 클래스 추가
