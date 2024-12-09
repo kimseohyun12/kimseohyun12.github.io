@@ -812,13 +812,17 @@ window.addEventListener('scroll', () => {
 
     // 이미지 위치 업데이트
     image.style.left = `${currentLeft}%`;
+
     // 선 업데이트: 선을 이미지 이동 경로에 따라 길이와 각도를 설정
     const lineHeight = scrollFraction * 100; // 선의 길이를 스크롤 비율에 맞게 설정
     const angle = (scrollFraction * 30) - 15; // 선의 기울기 (±15도 범위 내에서 변경)
 
+    console.log(`scrollFraction: ${scrollFraction}, Line Height: ${lineHeight}, Angle: ${angle}`); // 디버깅 로그
+
     line.style.height = `${lineHeight}vh`;
     line.style.transform = `rotate(${angle}deg)`; // 선의 기울기 설정
 });
+
 
 
 
