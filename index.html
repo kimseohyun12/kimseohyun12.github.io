@@ -111,13 +111,14 @@
   width: 100%;
   height: 100%;
   z-index: 1;
-  display: none; /* 타자 효과가 끝난 후에만 보이도록 설정 */
+  opacity: 0;  /* 처음에는 투명 상태 */
+  pointer-events: none; /* 마우스 이벤트 차단 */
   animation: snow-pile 1s forwards;
 }
 
 /* 타자 효과 끝난 후 눈 쌓이기 */
 .typing.done + .snow-pile {
-  display: block;
+  opacity: 1; /* 타자 효과가 끝나면 눈이 보이도록 설정 */
   animation: snow-pile 1s forwards;
 }
 
