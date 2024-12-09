@@ -78,9 +78,9 @@
    /* 처음에는 눈사람 숨기기 */
 .snowman {
   display: none;  /* 처음에는 보이지 않도록 설정 */
-  position: relative;
+  width: 100px;  /* 이미지 크기 조정 */
+  height: auto;  /* 높이는 자동으로 맞추기 */
   margin-top: 20px;
-  width: 80px; /* 적당한 크기로 설정 */
 }
 
 .snowman.show {
@@ -457,6 +457,7 @@ a.logo {
 <body>
 
 <img src="https://cdn-icons-png.flaticon.com/512/2904/290409.png" alt="Snowman" class="snowman">
+
 
 
 <!-- 로고 추가 -->
