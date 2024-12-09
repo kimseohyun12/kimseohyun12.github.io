@@ -75,18 +75,16 @@
       animation: typing 5s steps(40) 1s 1 normal both, blink 0.75s step-end infinite;
     }
 
-   /* 처음에는 눈사람 숨기기 */
+ /* 눈사람 이미지 숨기기 */
 .snowman {
-  display: none;  /* 처음에는 보이지 않도록 설정 */
-  width: 128px;  /* 이미지 크기 조정 */
-  height: 128px;
+  display: none;
+  width: 100px;  /* 크기 설정 */
+  height: 100px;
   margin-top: 20px;
-}
-
-.snowman.show {
-  display: block; /* show 클래스가 추가되면 보이게 설정 */
-  margin-top: 20px;  /* 위치 조정 */
-  animation: fadeIn 1s ease-out; /* 애니메이션 효과 */
+  margin-bottom: 50px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 /* 애니메이션 */
@@ -117,12 +115,26 @@
         border-color: transparent;
       }
     }
-/* 타자효과 끝난 후 눈사람 보이게 하기 */
-.typing.done + .snowman {
-  display: block;
-  opacity: 1;
+/* 타자 효과 끝난 후 눈사람 보이게 하기 */
+@keyframes showSnowman {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
+/* 타자 효과 후 눈사람 보이게 하기 */
+.show-snowman {
+  animation: showSnowman 1s forwards;
+}
+
+/* 타자 효과 후 눈사람 이미지가 나타날 때 */
+.typing.done + .snowman {
+  display: block;
+  animation: showSnowman 1s forwards;
+}
 section {
       padding: 60px 20px;
       margin-bottom: 80px; /* 각 섹션 사이에 아래쪽 마진을 추가하여 간격을 넓힘 */
@@ -693,10 +705,8 @@ function activateAboutOnScroll() {
     setInterval(createSnow, 100); // 100ms마다 눈송이 생성
 
  // 타자 효과가 끝난 후 눈사람을 보이게 하는 JavaScript
-  document.addEventListener('animationend', function(e) {
-    if (e.animationName === 'typing') {  // 타자 효과가 끝났을 때
-      document.querySelector('.snowman').classList.add('show');
-    }
+ document.querySelector('.typing').addEventListener('animationend', function() {
+    document.querySelector('.snowman').classList.add('show-snowman');
   });
 
 </script>
