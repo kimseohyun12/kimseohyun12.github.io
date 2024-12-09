@@ -38,6 +38,18 @@
     transition: transform 0.1s linear; /* 부드러운 움직임 */
 }
 
+    .line {
+    position: absolute;
+    top: 50%; /* 이미지 중앙에 맞추기 */
+    left: 0%;
+    width: 2px; /* 선 두께 */
+    background-color: #7E5C4E; /* 선 색상 */
+    height: 0; /* 선 높이는 초기화 */
+    transform-origin: top center; /* 선의 시작 위치 */
+    z-index: -1; /* 이미지 뒤에 놓이도록 설정 */
+    transition: height 0.1s, transform 0.1s linear;
+}
+
      .cursor {
       position: fixed;
       width: 80px;
@@ -780,6 +792,11 @@ function activateAboutOnScroll() {
 
 // script.js
 const image = document.querySelector('.moving-image');
+const line = document.createElement('div'); // 선을 동적으로 생성
+line.classList.add('line'); // 클래스 추가
+document.body.appendChild(line); // 문서에 선 추가
+
+let previousPosition = 0; // 이전 이미지 위치 추적
 
 window.addEventListener('scroll', () => {
     const scrollTop = window.scrollY; // 스크롤된 픽셀 수
@@ -795,6 +812,12 @@ window.addEventListener('scroll', () => {
 
     // 이미지 위치 업데이트
     image.style.left = `${currentLeft}%`;
+    // 선 업데이트: 선을 이미지 이동 경로에 따라 길이와 각도를 설정
+    const lineHeight = scrollFraction * 100; // 선의 길이를 스크롤 비율에 맞게 설정
+    const angle = (scrollFraction * 30) - 15; // 선의 기울기 (±15도 범위 내에서 변경)
+
+    line.style.height = `${lineHeight}vh`;
+    line.style.transform = `rotate(${angle}deg)`; // 선의 기울기 설정
 });
 
 
