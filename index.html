@@ -102,18 +102,6 @@
     }
 
 
-/* 타자 효과 끝난 후 눈 쌓이는 효과 */
-@keyframes snow-pile {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px); /* 시작할 때 약간 위에서 시작 */
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0); /* 자연스럽게 눈이 쌓이게 */
-  }
-}
-
 /* 눈이 쌓이는 영역 */
 .snow-pile {
   position: absolute;
@@ -131,6 +119,18 @@
 .typing.done + .snow-pile {
   display: block;
   animation: snow-pile 1s forwards;
+}
+
+/* 눈 쌓이는 애니메이션 */
+@keyframes snow-pile {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px); /* 눈이 위에서 내려오는 효과 */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* 눈이 쌓여서 완전히 표시되는 상태 */
+  }
 }
 
 section {
