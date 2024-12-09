@@ -324,11 +324,12 @@ section {
     border-image: linear-gradient(45deg, #D2B48C, #6F4F37) 1; /* 색감이 다른 그라데이션 테두리 */
   }
 
-  /* Project 섹션 스타일 */
+/* Project 섹션 스타일 */
 #project {
   padding: 60px 20px;
 }
 
+/* 제목 스타일 */
 #project h2 {
   font-family: 'Quicksand', sans-serif;
   font-size: 3em;
@@ -337,12 +338,14 @@ section {
   margin-bottom: 40px;
 }
 
+/* 프로젝트 리스트 스타일 */
 .project-list {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
+/* 개별 프로젝트 스타일 */
 .project-item {
   margin-bottom: 30px;
   padding: 20px;
@@ -351,22 +354,26 @@ section {
   transition: background-color 0.3s, transform 0.2s;
 }
 
+/* Hover 시 효과 */
 .project-item:hover {
   background-color: #f9f9f9;
   transform: scale(1.02);
 }
 
+/* 프로젝트 제목 스타일 */
 .project-item h3 {
   font-size: 1.5em;
   margin: 0 0 10px;
 }
 
+/* 프로젝트 설명 스타일 */
 .project-item p {
   margin: 0 0 15px;
   line-height: 1.6;
   color: #555;
 }
 
+/* 프로젝트 링크 스타일 */
 .project-link {
   font-size: 1em;
   color: #0073e6;
@@ -376,6 +383,33 @@ section {
 .project-link:hover {
   text-decoration: underline;
 }
+
+/* Flexbox로 좌우 분할 */
+.project-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* 프로젝트 텍스트 영역 */
+.project-text {
+  flex: 1;
+  margin-right: 20px;
+}
+
+/* 모니터 이미지 스타일 */
+.project-display {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.monitor-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
 
 
 /* 로고 스타일 */
@@ -553,32 +587,25 @@ a.logo {
   </div>
 </section>
 
-  <!-- Project 섹션 -->
+  
 <section id="project">
-  <h2>PROJECT</h2>
-  <ul class="project-list">
-    <!-- 첫 번째 프로젝트 -->
-    <li class="project-item">
-      <h3>Project Title 1</h3>
-      <p>A brief description of Project 1 goes here. Mention key features and technologies used.</p>
-      <a href="https://example.com/project1" target="_blank" class="project-link">View Project</a>
-    </li>
-
-    <!-- 두 번째 프로젝트 -->
-    <li class="project-item">
-      <h3>Project Title 2</h3>
-      <p>A brief description of Project 2 goes here. Mention key features and technologies used.</p>
-      <a href="https://example.com/project2" target="_blank" class="project-link">View Project</a>
-    </li>
-
-    <!-- 세 번째 프로젝트 -->
-    <li class="project-item">
-      <h3>Project Title 3</h3>
-      <p>A brief description of Project 3 goes here. Mention key features and technologies used.</p>
-      <a href="https://example.com/project3" target="_blank" class="project-link">View Project</a>
-    </li>
-  </ul>
+  <h2>My Projects</h2>
+  <div class="project-list">
+    <div class="project-item">
+      <div class="project-content">
+        <div class="project-text">
+          <h3>Project Title</h3>
+          <p>This is a brief description of the project. It explains the main features and goals.</p>
+          <a href="#" class="project-link">View Project</a>
+        </div>
+        <div class="project-display">
+          <img src="path_to_your_monitor_image.jpg" alt="Project Display" class="monitor-image" />
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
+
 
 
 
