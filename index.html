@@ -338,24 +338,24 @@ section {
   margin-bottom: 40px;
 }
 
-/* 프로젝트 리스트 스타일 */
+/* 프로젝트 리스트 스타일 (3개의 프로젝트) */
 .project-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr; /* 3개 컬럼으로 나누기 */
-  gap: 20px;
+  display: flex;
+  flex-direction: column; /* 세로 방향으로 배치 */
+  gap: 20px; /* 각 프로젝트 간의 간격 */
   padding: 0;
   margin: 0;
 }
 
 /* 개별 프로젝트 스타일 */
 .project-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* 좌우로 배치 */
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 10px;
   transition: background-color 0.3s, transform 0.2s;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 /* Hover 시 효과 */
@@ -366,21 +366,20 @@ section {
 
 /* 프로젝트 아이콘 스타일 (모니터 아이콘) */
 .project-icon {
-  width: 100px;
-  height: 100px;
-  margin-bottom: 20px;
+  width: 200px; /* 아이콘 크기 설정 */
+  height: 150px;
+  background-color: #f0f0f0;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid #ccc;
   border-radius: 10px;
-  background-color: #f0f0f0;
+  overflow: hidden; /* 이미지가 컨테이너를 넘지 않도록 */
 }
 
-.monitor-icon {
-  max-width: 80%;
-  max-height: 80%;
-  object-fit: contain;
+.monitor-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 이미지가 모니터 아이콘 안에 꽉 차도록 설정 */
 }
 
 /* 프로젝트 제목 스타일 */
@@ -394,7 +393,7 @@ section {
   margin: 0 0 15px;
   line-height: 1.6;
   color: #555;
-  text-align: center;
+  text-align: left;
 }
 
 /* 프로젝트 링크 스타일 (필요 시 추가) */
@@ -587,12 +586,12 @@ a.logo {
   
 <section id="project">
   <h2>PROJECT</h2>
-  <div class="project-list">
+ <div class="project-list">
     <!-- 첫 번째 프로젝트 -->
     <div class="project-item">
       <div class="project-content">
         <div class="project-icon">
-          <img src="path_to_your_monitor_image.jpg" alt="Monitor Icon" class="monitor-icon" />
+          <img src="path_to_your_image.jpg" alt="Project Screenshot" class="monitor-image" />
         </div>
         <div class="project-text">
           <h3>Project Title 1</h3>
@@ -605,7 +604,7 @@ a.logo {
     <div class="project-item">
       <div class="project-content">
         <div class="project-icon">
-          <img src="path_to_your_monitor_image.jpg" alt="Monitor Icon" class="monitor-icon" />
+          <img src="path_to_your_image.jpg" alt="Project Screenshot" class="monitor-image" />
         </div>
         <div class="project-text">
           <h3>Project Title 2</h3>
@@ -618,7 +617,7 @@ a.logo {
     <div class="project-item">
       <div class="project-content">
         <div class="project-icon">
-          <img src="path_to_your_monitor_image.jpg" alt="Monitor Icon" class="monitor-icon" />
+          <img src="path_to_your_image.jpg" alt="Project Screenshot" class="monitor-image" />
         </div>
         <div class="project-text">
           <h3>Project Title 3</h3>
@@ -628,7 +627,6 @@ a.logo {
     </div>
   </div>
 </section>
-
 
 
 
