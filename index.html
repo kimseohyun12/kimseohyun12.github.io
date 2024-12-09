@@ -100,6 +100,28 @@
       }
     }
 
+
+    /* 눈 쌓이는 효과 */
+.snow-pile {
+  position: absolute;
+  top: 50%; /* 타자 텍스트 바로 위에 쌓이도록 */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1; /* 텍스트 위로 눈이 쌓이도록 */
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+    @keyframes snow-pile {
+  0% {
+    transform: translateX(var(--x)) translateY(0);
+  }
+  100% {
+    transform: translateX(var(--x)) translateY(100%); /* 눈이 아래로 쌓임 */
+  }
+}
+
 section {
       padding: 60px 20px;
       margin-bottom: 80px; /* 각 섹션 사이에 아래쪽 마진을 추가하여 간격을 넓힘 */
@@ -433,7 +455,8 @@ a.logo {
 </head>
 <body>
 
-
+<!-- 눈 쌓이는 효과 -->
+  <div class="snow-pile"></div
 
 <!-- 로고 추가 -->
 <a href="index.html" class="logo">
@@ -666,6 +689,11 @@ function activateAboutOnScroll() {
 
     // 주기적으로 눈송이 생성
     setInterval(createSnow, 100); // 100ms마다 눈송이 생성
+
+
+   document.querySelector('.typing').addEventListener('animationend', function() {
+      // 추가적인 작업이 필요하다면 여기서 처리
+    });
 
 
 </script>
