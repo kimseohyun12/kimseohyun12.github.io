@@ -340,18 +340,22 @@ section {
 
 /* 프로젝트 리스트 스타일 */
 .project-list {
-  list-style-type: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* 3개 컬럼으로 나누기 */
+  gap: 20px;
   padding: 0;
   margin: 0;
 }
 
 /* 개별 프로젝트 스타일 */
 .project-item {
-  margin-bottom: 30px;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 10px;
   transition: background-color 0.3s, transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Hover 시 효과 */
@@ -360,20 +364,40 @@ section {
   transform: scale(1.02);
 }
 
+/* 프로젝트 아이콘 스타일 (모니터 아이콘) */
+.project-icon {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-color: #f0f0f0;
+}
+
+.monitor-icon {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+}
+
 /* 프로젝트 제목 스타일 */
-.project-item h3 {
+.project-text h3 {
   font-size: 1.5em;
-  margin: 0 0 10px;
+  margin: 10px 0;
 }
 
 /* 프로젝트 설명 스타일 */
-.project-item p {
+.project-text p {
   margin: 0 0 15px;
   line-height: 1.6;
   color: #555;
+  text-align: center;
 }
 
-/* 프로젝트 링크 스타일 */
+/* 프로젝트 링크 스타일 (필요 시 추가) */
 .project-link {
   font-size: 1em;
   color: #0073e6;
@@ -383,33 +407,6 @@ section {
 .project-link:hover {
   text-decoration: underline;
 }
-
-/* Flexbox로 좌우 분할 */
-.project-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-/* 프로젝트 텍스트 영역 */
-.project-text {
-  flex: 1;
-  margin-right: 20px;
-}
-
-/* 모니터 이미지 스타일 */
-.project-display {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-}
-
-.monitor-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-
 
 
 /* 로고 스타일 */
@@ -589,17 +586,43 @@ a.logo {
 
   
 <section id="project">
-  <h2>My Projects</h2>
+  <h2>PROJECT</h2>
   <div class="project-list">
+    <!-- 첫 번째 프로젝트 -->
     <div class="project-item">
       <div class="project-content">
-        <div class="project-text">
-          <h3>Project Title</h3>
-          <p>This is a brief description of the project. It explains the main features and goals.</p>
-          <a href="#" class="project-link">View Project</a>
+        <div class="project-icon">
+          <img src="path_to_your_monitor_image.jpg" alt="Monitor Icon" class="monitor-icon" />
         </div>
-        <div class="project-display">
-          <img src="path_to_your_monitor_image.jpg" alt="Project Display" class="monitor-image" />
+        <div class="project-text">
+          <h3>Project Title 1</h3>
+          <p>This is a brief description of Project 1. It explains the main features and goals.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 두 번째 프로젝트 -->
+    <div class="project-item">
+      <div class="project-content">
+        <div class="project-icon">
+          <img src="path_to_your_monitor_image.jpg" alt="Monitor Icon" class="monitor-icon" />
+        </div>
+        <div class="project-text">
+          <h3>Project Title 2</h3>
+          <p>This is a brief description of Project 2. It explains the main features and goals.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 세 번째 프로젝트 -->
+    <div class="project-item">
+      <div class="project-content">
+        <div class="project-icon">
+          <img src="path_to_your_monitor_image.jpg" alt="Monitor Icon" class="monitor-icon" />
+        </div>
+        <div class="project-text">
+          <h3>Project Title 3</h3>
+          <p>This is a brief description of Project 3. It explains the main features and goals.</p>
         </div>
       </div>
     </div>
