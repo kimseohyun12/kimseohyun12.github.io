@@ -418,16 +418,13 @@ section {
 /* 프로젝트 아이템 스타일 */
 .project-item {
   display: flex; /* 좌우 배치 */
-  flex-direction: row; /* 행 방향 배치 */
-  align-items: center; /* 세로 정렬 */
-  justify-content: space-between; /* 양쪽 정렬 */
-  margin-bottom: 0; /* 아래 간격 제거 */
+  margin-bottom: 30px;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 10px;
-  height: 300px; /* 모든 프로젝트 항목 높이 통일 */
+  transition: background-color 0.3s, transform 0.2s;
+  align-items: center; /* 아이콘과 텍스트 세로 정렬 */
 }
-
 
 .project-list {
   list-style-type: none;
