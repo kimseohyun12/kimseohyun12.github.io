@@ -23,6 +23,18 @@
      overflow: auto; /* 스크롤 가능하도록 설정 */
     }
 
+     .cursor {
+      position: fixed;
+      width: 80px;
+      height: 80px;
+      background: url('https://raw.githubusercontent.com/kimseohyun12/kimseohyun12.github.io/main/%EB%AA%A8%EB%A3%A8%EC%B9%B4-removebg-preview.png') no-repeat center center;
+      background-size: contain;
+      pointer-events: none; /* 커서에 이벤트가 발생하지 않도록 */
+      z-index: 99999; /* 다른 요소들보다 위에 표시되도록 매우 높은 z-index 값 설정 */
+      transition: left 0.1s ease, top 0.1s ease;
+      display: block; /* 커서가 보이도록 설정 */
+    }
+
 /* 눈송이 애니메이션 */
     .snow {
       position: fixed;
@@ -33,6 +45,7 @@
       border-radius: 50%;
       opacity: 0.8;
       animation: snow-fall 5s linear infinite;
+      z-index: 999; /* 타자 텍스트 위로 눈송이가 오게 설정 */
     }
 
   @keyframes snow-fall {
@@ -45,18 +58,6 @@
     }
 
     
-    .cursor {
-      position: fixed;
-      width: 80px;
-      height: 80px;
-      background: url('https://raw.githubusercontent.com/kimseohyun12/kimseohyun12.github.io/main/%EB%AA%A8%EB%A3%A8%EC%B9%B4-removebg-preview.png') no-repeat center center;
-      background-size: contain;
-      pointer-events: none; /* 커서에 이벤트가 발생하지 않도록 */
-      z-index: 99999; /* 다른 요소들보다 위에 표시되도록 매우 높은 z-index 값 설정 */
-      transition: left 0.1s ease, top 0.1s ease;
-      display: block; /* 커서가 보이도록 설정 */
-    }
-
     /* 타자 효과 */
     .typing {
       font-size: 5em;
