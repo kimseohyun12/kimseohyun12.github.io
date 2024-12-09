@@ -26,12 +26,12 @@
 
 .scroll-container {
     position: relative;
-    min-height: 100vh; /* 화면 크기만큼의 높이 */
+    min-height: 200vh; /* 화면 크기만큼의 높이 */
 }
 
 .moving-image {
     position: fixed;
-    top: 0%; /* 화면 중앙에서 시작 */
+    top: 10%; /* 화면 중앙에서 시작 */
     left: 0%; /* 화면 왼쪽에서 시작 */
     transform: translateY(-50%); /* 수직 중심으로 정렬 */
     width: 100px; /* 이미지 크기 조정 */
@@ -782,28 +782,21 @@ function activateAboutOnScroll() {
 const image = document.querySelector('.moving-image');
 
 window.addEventListener('scroll', () => {
-    const scrollTop = window.scrollY;
-    const windowHeight = window.innerHeight;
+    const scrollTop = window.scrollY; // 스크롤된 픽셀 수
+    const windowHeight = window.innerHeight; // 창 높이
+    const maxScroll = document.documentElement.scrollHeight - windowHeight; // 최대 스크롤 거리
 
-    // 최대 스크롤 거리 계산
-    const maxScroll = document.documentElement.scrollHeight - windowHeight;
-
-    // 스크롤 비율 계산
+    // 스크롤 비율 (0에서 1 사이의 값)
     const scrollFraction = scrollTop / maxScroll;
 
-    // 이미지 이동 경로 설정
-    const finalTop = 10; // 상단에서 10% 지점
-    const finalLeft = 90; // 오른쪽에서 90% 지점
-
-    const startX = 0; // 초기 left (%)
-    const startY = 50; // 초기 top (%)
-
-    const currentX = startX + (finalLeft - startX) * scrollFraction;
-    const currentY = startY + (finalTop - startY) * scrollFraction;
+    // 이미지의 left 값을 스크롤 비율에 따라 설정
+    const maxLeft = 100; // 화면 오른쪽 끝 (%)
+    const currentLeft = scrollFraction * maxLeft;
 
     // 이미지 위치 업데이트
-    image.style.transform = `translate(${currentX}%, -50%)`;
+    image.style.left = `${currentLeft}%`;
 });
+
 
 
 </script>
