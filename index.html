@@ -121,7 +121,7 @@
   display: flex;
   align-items: center; /* 세로로 중앙 정렬 */
   justify-content: center; /* 가로로 중앙 정렬 */
-  gap: 5px; /* 텍스트와 이미지 사이 간격 */
+  gap: 10px; /* 텍스트와 이미지 사이 간격 좁히기 */
   margin-top: 0px;
   margin-bottom: 100px;
   animation: slideIn 3s ease-out 5s forwards; /* 5초 후 시작하여 3초 동안 슬라이드 */
@@ -131,15 +131,17 @@
   font-family: 'Jua', sans-serif;
   font-size: 2em;
   color: #7E5C4E;
-  text-align: center;
+  text-align: center; /* 텍스트 중앙 정렬 */
   display: block;
+  margin: 0; /* 텍스트 여백 제거 */
 }
 
 .intro-image {
-  width: 150px; /* 이미지 크기 조정 */
+  width: 120px; /* 이미지 크기 조정 */
   height: auto; /* 비율에 맞게 자동 조정 */
   border-radius: 10px; /* 이미지에 모서리 둥글게 */
 }
+
 
 section {
       padding: 60px 20px;
