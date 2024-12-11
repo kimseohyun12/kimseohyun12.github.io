@@ -407,12 +407,11 @@ section {
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 */
   margin-right: 30px; /* 오른쪽 간격 추가 */
   overflow: hidden; /* 확장될 때 영역 밖으로 넘어가지 않도록 */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* 애니메이션 효과 */
+  transition: box-shadow 0.3s ease; /* 그림자 애니메이션 */
 }
 
 .project-icon:hover {
-  transform: scale(1.1); /* 1.1배 확대 */
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); /* 그림자 강화 */
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); /* 호버 시 그림자 강화 */
 }
 
 .project-icon:hover .monitor-screen {
