@@ -31,14 +31,48 @@
 
 .moving-image {
     position: fixed;
-    top: 6%; /* 화면 중앙에서 시작 */
-    left: 5%; /* 화면 왼쪽에서 시작 */
-    transform: translateY(-50%); /* 수직 중심으로 정렬 */
-    width: 85px; /* 이미지 크기 조정 */
-    transition: transform 0.1s linear; /* 부드러운 움직임 */
+    top: 6%;
+    left: 5%; /* 초기 위치 */
+    transform: translateY(-50%);
+    width: 85px;
+    transition: transform 0.1s linear, left 0.1s linear;
+    z-index: 10;
 }
 
-   
+/* 삐뚤삐뚤한 선 효과 */
+.moving-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -10px; /* 이미지 왼쪽에 삐뚤삐뚤 선 추가 */
+    width: 10px; /* 선의 너비 */
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.2) 25%,
+        rgba(0, 0, 0, 0.5) 50%,
+        rgba(0, 0, 0, 0.2) 75%
+    );
+    clip-path: polygon(
+        0% 0%,
+        50% 10%,
+        0% 20%,
+        50% 30%,
+        0% 40%,
+        50% 50%,
+        0% 60%,
+        50% 70%,
+        0% 80%,
+        50% 90%,
+        0% 100%
+    ); /* 지그재그 모양 */
+    z-index: 9; /* 이미지 바로 위 */
+    pointer-events: none; /* 상호작용 차단 */
+}
+
+
+
+    
      .cursor {
       position: fixed;
       width: 80px;
