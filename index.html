@@ -1044,6 +1044,28 @@ window.addEventListener('scroll', () => {
 });
 
 
+  // 스크롤 시 요소가 화면에 들어오면 .in-view 클래스를 추가하는 함수
+function handleScroll() {
+  const leftSection = document.querySelector('.left-section');
+  const h2 = document.querySelector('.left-section h2');
+  const p = document.querySelector('.left-section p');
+  
+  // 요소가 화면에 들어오는지 확인 (스크롤 위치 + 화면 높이를 기준으로)
+  const rect = leftSection.getBoundingClientRect();
+  
+  if (rect.top <= window.innerHeight * 0.8) { // 화면에 약간 들어오면 효과 시작
+    leftSection.classList.add('in-view');
+  }
+}
+
+// 스크롤 이벤트 추가
+window.addEventListener('scroll', handleScroll);
+
+// 페이지 로드 시 한 번 호출하여 초기 상태 체크
+handleScroll();
+
+
+
 
 </script>
 
