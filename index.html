@@ -866,7 +866,7 @@ window.addEventListener('scroll', () => {
 
     // 이미지의 left 값을 스크롤 비율에 따라 계산
     const maxLeft = 95; // 화면 오른쪽 끝 (%) - 100%까지 이동
-    const currentLeft = 5 + (scrollFraction * maxLeft); // 5%에서 시작, 최대 100%까지 이동
+    const currentLeft = (scrollFraction * maxLeft); // 5%에서 시작, 최대 100%까지 이동
 
     // 이미지 위치 업데이트
     image.style.left = `${currentLeft}%`; // 이미지가 스크롤에 맞춰 이동
