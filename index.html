@@ -944,28 +944,28 @@ a.logo {
 <div class="cursor"></div>
 
 <script>
-  // 커서 위치 업데이트 (requestAnimationFrame으로 최적화)
-  let mouseX = 0, mouseY = 0;
-  let currentX = 0, currentY = 0;
-  const cursor = document.querySelector('.cursor');
+ // 커서 위치 업데이트 (requestAnimationFrame으로 최적화)
+let mouseX = 0, mouseY = 0;
+const cursor = document.querySelector('.cursor');
 
-  document.addEventListener('mousemove', function (e) {
-    mouseX = e.pageX - cursor.offsetWidth / 2;
-    mouseY = e.pageY - cursor.offsetHeight / 2;
-  });
+// 마우스 움직임 이벤트 리스너
+document.addEventListener('mousemove', function (e) {
+  mouseX = e.pageX - cursor.offsetWidth / 2;  // 커서의 X 위치
+  mouseY = e.pageY - cursor.offsetHeight / 2; // 커서의 Y 위치
+});
 
-  function moveCursor() {
-    // 커서의 이동을 부드럽게 하기 위해 조금씩 이동
-    currentX += (mouseX - currentX) * 0.1;  // 0.1로 부드러운 이동을 위한 가중치 적용
-    currentY += (mouseY - currentY) * 0.1;
+// 커서 이동 함수
+function moveCursor() {
+  cursor.style.left = mouseX + 'px'; // X 위치 설정
+  cursor.style.top = mouseY + 'px';  // Y 위치 설정
+  
+  // 애니메이션을 최적화하기 위해 requestAnimationFrame 사용
+  requestAnimationFrame(moveCursor);
+}
 
-    cursor.style.left = currentX + 'px';
-    cursor.style.top = currentY + 'px';
+// 커서 이동 시작
+moveCursor();
 
-    requestAnimationFrame(moveCursor);
-  }
-
-  moveCursor(); // 커서 이동 시작
 
   // 스크롤 버튼 처리
   document.getElementById('scrollToTopBtn').addEventListener('click', function () {
