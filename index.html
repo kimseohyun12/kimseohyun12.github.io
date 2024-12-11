@@ -558,25 +558,57 @@ section {
   font-family: 'Jua', sans-serif;
 }
 
-/* 손글씨 애니메이션 효과 */
-.handwriting-animation {
-  position: relative;
-  display: inline-block;
-  font-size: 3em;
-  color: #3E2723;
-  animation: handwriting 3s ease-in-out forwards;
+/* 기본 상태: 처음에는 보이지 않도록 설정 */
+.left-section h2, .left-section p {
+  opacity: 0;
+  transform: translateY(30px); /* 아래에서 위로 이동하는 효과 */
+  transition: opacity 1s ease, transform 1s ease; /* 서서히 나타나고 이동하는 효과 */
 }
 
-@keyframes handwriting {
+/* 스크롤 시 나타날 때의 상태 */
+.left-section.in-view h2 {
+  opacity: 1;  /* h2가 보이도록 설정 */
+  transform: translateY(0); /* 원래 위치로 이동 */
+}
+
+.left-section.in-view p {
+  opacity: 1;  /* p가 보이도록 설정 */
+  transform: translateY(0); /* 원래 위치로 이동 */
+}
+
+/* 애니메이션 효과 */
+@keyframes fadeInH2 {
   0% {
-    width: 0;
     opacity: 0;
+    transform: translateY(30px);
   }
   100% {
-    width: 100%;
     opacity: 1;
+    transform: translateY(0);
   }
 }
+
+@keyframes fadeInP {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* h2에 대한 애니메이션 적용 */
+.left-section h2 {
+  animation: fadeInH2 1s ease forwards;
+}
+
+/* p에 대한 애니메이션 적용 */
+.left-section p {
+  animation: fadeInP 1s ease forwards;
+}
+
 
 /* 오른쪽 구역 스타일 */
 .right-section {
