@@ -530,6 +530,8 @@ a.logo {
   top: 20px; /* 상단 여백 */
   left: 20px; /* 왼쪽 여백 */
   text-decoration: none;
+  text-decoration: none;
+  transition: top 0.3s ease-out; /* 스크롤 시 부드럽게 이동 */
 }
 
 .logo-text {
@@ -865,7 +867,7 @@ window.addEventListener('scroll', () => {
     const scrollFraction = scrollTop / maxScroll;
 
     // 이미지의 left 값을 스크롤 비율에 따라 계산
-    const maxLeft = 100; // 화면 오른쪽 끝 (%) - 100%까지 이동
+    const maxLeft = 98; // 화면 오른쪽 끝 (%) - 100%까지 이동
     const currentLeft = (scrollFraction * maxLeft); // 5%에서 시작, 최대 100%까지 이동
 
     // 이미지 위치 업데이트
@@ -873,6 +875,12 @@ window.addEventListener('scroll', () => {
 
     // 선의 길이를 스크롤 비율에 따라 증가시키기
     progressLine.style.width = `${scrollFraction * 100}%`; // 선 길이 증가
+});
+
+  window.addEventListener('scroll', () => {
+    const logo = document.querySelector('.logo'); // 로고 요소를 선택
+    const scrollTop = window.scrollY; // 현재 스크롤 위치
+    logo.style.top = `${20 + scrollTop}px`; // 로고의 상단 위치를 스크롤 위치에 맞춰 변경
 });
 
 
