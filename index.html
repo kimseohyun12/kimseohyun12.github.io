@@ -406,6 +406,17 @@ section {
   align-items: center;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 */
   margin-right: 30px; /* 오른쪽 간격 추가 */
+  overflow: hidden; /* 확장될 때 영역 밖으로 넘어가지 않도록 */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* 애니메이션 효과 */
+}
+
+.project-icon:hover {
+  transform: scale(1.1); /* 1.1배 확대 */
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); /* 그림자 강화 */
+}
+
+.project-icon:hover .monitor-screen {
+  transform: scale(1.1); /* 내부 이미지 확대 */
 }
 
 /* 노트북 화면 */
@@ -416,6 +427,7 @@ section {
   border-radius: 4px; /* 화면 모서리 둥글게 */
   background-size: cover; /* 이미지가 화면에 맞게 크기 조정 */
   background-position: center; /* 이미지를 화면 중앙에 배치 */
+  transition: transform 0.3s ease; /* 이미지도 애니메이션 적용 */
 }
 
 /* 노트북 하단 부분 */
