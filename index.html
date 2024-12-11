@@ -30,13 +30,14 @@
 }
 
 .moving-image {
+.moving-image {
     position: fixed;
-    top: 6%; /* 화면에 고정된 위치 */
+    top: 6%; /* 화면 상단에서 6% 위치 */
     left: 5%; /* 초기 위치 */
     transform: translateY(-50%); /* 수직 중앙 정렬 */
     width: 85px; /* 이미지 크기 */
-    transition: left 0.1s linear; /* 이동할 때 부드러운 전환 */
-    z-index: 10; /* 이미지가 선 위에 표시되도록 */
+    transition: left 0.1s linear; /* 이동 시 부드러운 전환 */
+    z-index: 10; /* 이미지가 선 위에 위치 */
 }
 
 /* 삐뚤삐뚤한 선 효과 */
@@ -44,7 +45,7 @@
     content: '';
     position: absolute;
     top: 0;
-    left: -10px; /* 이미지 왼쪽에 선을 추가 */
+    left: -10px; /* 이미지 왼쪽에 선 */
     width: 10px; /* 선의 너비 */
     height: 100%; /* 선의 높이 */
     background: linear-gradient(
@@ -66,9 +67,10 @@
         50% 90%,
         0% 100%
     ); /* 지그재그 모양 */
-    z-index: 9; /* 이미지 바로 위에 위치 */
-    pointer-events: none; /* 클릭을 방지 */
+    z-index: 9; /* 선이 이미지 아래로 오지 않게 */
+    pointer-events: none; /* 클릭 방지 */
 }
+
 
     
      .cursor {
@@ -863,19 +865,20 @@ const image = document.querySelector('.moving-image');
 
 window.addEventListener('scroll', () => {
     const scrollTop = window.scrollY; // 스크롤된 픽셀 수
-    const windowHeight = window.innerHeight; // 창 높이
+    const windowHeight = window.innerHeight; // 창의 높이
     const maxScroll = document.documentElement.scrollHeight - windowHeight; // 최대 스크롤 거리
 
     // 스크롤 비율 (0에서 1 사이의 값)
     const scrollFraction = scrollTop / maxScroll;
 
     // 이미지의 left 값을 스크롤 비율에 따라 설정
-    const maxLeft = 95; // 화면 오른쪽 끝 (%) - 100%까지 이동
-    const currentLeft = 5 + (scrollFraction * maxLeft); // 5%에서 시작, 최대 100%까지 이동
+    const maxLeft = 95; // 화면 오른쪽 끝까지 이동
+    const currentLeft = 5 + (scrollFraction * maxLeft); // 5%에서 시작해서 최대 100%까지 이동
 
     // 이미지 위치 업데이트
-    image.style.left = `${currentLeft}%`;
+    image.style.left = `${currentLeft}%`; // 이미지의 left 값 업데이트
 });
+
 
 
 </script>
