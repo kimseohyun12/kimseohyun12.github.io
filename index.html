@@ -1067,6 +1067,8 @@ function handleScroll() {
   
   if (rect.top <= window.innerHeight * 0.8) { // 화면에 약간 들어오면 효과 시작
     leftSection.classList.add('in-view');
+  } else {
+    leftSection.classList.remove('in-view'); // 화면에서 나가면 클래스를 제거
   }
 }
 
