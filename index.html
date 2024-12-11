@@ -531,37 +531,38 @@ section {
   justify-content: space-between;
   align-items: flex-start;
   padding: 50px 20px;
-  background-color: #f4f4f4;
 }
 
 .contact-container {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  gap: 50px;
+  gap: 80px;
 }
 
 .left-section {
   flex: 1;
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Jua', sans-serif;
 }
 
 .left-section h2 {
   font-size: 2.5em;
   color: #302516;
   margin-bottom: 20px;
+  font-family: 'Jua', sans-serif;
 }
 
 .left-section p {
   font-size: 1.2em;
   color: #7E5C4E;
+  font-family: 'Jua', sans-serif;
 }
 
 /* 손글씨 애니메이션 효과 */
 .handwriting-animation {
   position: relative;
   display: inline-block;
-  font-family: 'Dancing Script', cursive; /* 손글씨 느낌을 주기 위해 다른 폰트 사용 */
+  font-family: 'Quicksand', cursive; 
   font-size: 3em;
   color: #3E2723;
   animation: handwriting 3s ease-in-out forwards;
@@ -596,6 +597,7 @@ form {
 form label {
   font-size: 1.2em;
   color: #302516;
+  font-family: 'Quicksand', cursive; 
 }
 
 form input, form textarea {
@@ -604,6 +606,7 @@ form input, form textarea {
   border: 1px solid #ddd;
   border-radius: 5px;
   width: 100%;
+  font-family: 'Quicksand', cursive; 
 }
 
 form button {
@@ -615,10 +618,12 @@ form button {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
+  font-family: 'Quicksand', cursive; 
 }
 
 form button:hover {
   background-color: #5C4033;
+  font-family: 'Quicksand', cursive; 
 }
 
 
@@ -879,16 +884,16 @@ a.logo {
     <!-- 오른쪽 구역 -->
     <div class="right-section">
       <form action="mailto:your-email@example.com" method="POST" enctype="text/plain">
-        <label for="name">이름:</label>
+        <label for="name">name:</label>
         <input type="text" id="name" name="name" placeholder="이름을 입력하세요" required>
         
-        <label for="email">이메일:</label>
+        <label for="email">email:</label>
         <input type="email" id="email" name="email" placeholder="이메일을 입력하세요" required>
         
-        <label for="message">메시지:</label>
+        <label for="message">message:</label>
         <textarea id="message" name="message" placeholder="메시지를 입력하세요" required></textarea>
         
-        <button type="submit">보내기</button>
+        <button type="submit">send</button>
       </form>
     </div>
   </div>
