@@ -31,12 +31,12 @@
 
 .moving-image {
     position: fixed;
-    top: 6%;
+    top: 6%; /* 화면에 고정된 위치 */
     left: 5%; /* 초기 위치 */
-    transform: translateY(-50%);
+    transform: translateY(-50%); /* 수직 중앙 정렬 */
     width: 85px; /* 이미지 크기 */
-    transition: transform 0.1s linear, left 0.1s linear;
-    z-index: 10;
+    transition: left 0.1s linear; /* 이동할 때 부드러운 전환 */
+    z-index: 10; /* 이미지가 선 위에 표시되도록 */
 }
 
 /* 삐뚤삐뚤한 선 효과 */
@@ -44,7 +44,7 @@
     content: '';
     position: absolute;
     top: 0;
-    left: -10px; /* 이미지 왼쪽에 삐뚤삐뚤 선 */
+    left: -10px; /* 이미지 왼쪽에 선을 추가 */
     width: 10px; /* 선의 너비 */
     height: 100%; /* 선의 높이 */
     background: linear-gradient(
@@ -67,7 +67,7 @@
         0% 100%
     ); /* 지그재그 모양 */
     z-index: 9; /* 이미지 바로 위에 위치 */
-    pointer-events: none; /* 마우스 이벤트 차단 */
+    pointer-events: none; /* 클릭을 방지 */
 }
 
     
