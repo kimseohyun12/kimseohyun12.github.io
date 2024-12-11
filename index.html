@@ -26,7 +26,6 @@
     .scroll-container {
     position: relative;
     height: 0vh; /* 스크롤을 위해 충분히 긴 컨테이너 */
-    padding: 20px;
 }
 
 .progress-wrapper {
@@ -45,7 +44,9 @@
     width: 85px; /* 이미지 크기 */
     height: auto;
     position: relative;
-    left: 0%; /* 이미지가 처음에는 맨 왼쪽에 위치 */
+    top: 6%; /* 이미지가 고정된 위치 */
+    left: 5%; /* 이미지가 처음에는 맨 왼쪽에 위치 */
+    transform: translateY(-50%); /* 수직 중심으로 정렬 */
     transition: left 0.1s ease-out; /* 부드러운 이동 */
 }
 
