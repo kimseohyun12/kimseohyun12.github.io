@@ -559,20 +559,15 @@ section {
 }
 
 /* 기본 상태: 처음에는 보이지 않도록 설정 */
-.left-section h2, .left-section p {
+.left-section {
   opacity: 0;
   transform: translateY(30px); /* 아래에서 위로 이동하는 효과 */
   transition: opacity 1s ease, transform 1s ease; /* 서서히 나타나고 이동하는 효과 */
 }
 
 /* 스크롤 시 나타날 때의 상태 */
-.left-section.in-view h2 {
+.left-section.in-view {
   opacity: 1;  /* h2가 보이도록 설정 */
-  transform: translateY(0); /* 원래 위치로 이동 */
-}
-
-.left-section.in-view p {
-  opacity: 1;  /* p가 보이도록 설정 */
   transform: translateY(0); /* 원래 위치로 이동 */
 }
 
@@ -1056,16 +1051,15 @@ window.addEventListener('scroll', () => {
 });
 
 
-  // 스크롤 시 요소가 화면에 들어오면 .in-view 클래스를 추가하는 함수
+ // 스크롤 시 요소가 화면에 들어오면 .in-view 클래스를 추가하는 함수
 function handleScroll() {
   const leftSection = document.querySelector('.left-section');
-  const h2 = document.querySelector('.left-section h2');
-  const p = document.querySelector('.left-section p');
   
   // 요소가 화면에 들어오는지 확인 (스크롤 위치 + 화면 높이를 기준으로)
   const rect = leftSection.getBoundingClientRect();
   
-  if (rect.top <= window.innerHeight * 0.8) { // 화면에 약간 들어오면 효과 시작
+  // 요소가 화면에 보이면 클래스를 추가
+  if (rect.top <= window.innerHeight * 0.8 && rect.bottom >= 0) { // 화면에 조금이라도 들어오면 효과 시작
     leftSection.classList.add('in-view');
   } else {
     leftSection.classList.remove('in-view'); // 화면에서 나가면 클래스를 제거
