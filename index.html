@@ -527,10 +527,11 @@ section {
 
 /* 로고 스타일 */
 a.logo {
-  position: absolute;
+  position: fixed; /* 고정 위치 */
   top: 20px; /* 상단 여백 */
   left: 20px; /* 왼쪽 여백 */
   text-decoration: none;
+  z-index: 10; /* 다른 콘텐츠들 위에 표시되도록 설정 */
 }
 
 .logo-text {
@@ -874,12 +875,6 @@ window.addEventListener('scroll', () => {
 
     // 선의 길이를 스크롤 비율에 따라 증가시키기
     progressLine.style.width = `${scrollFraction * 100}%`; // 선 길이 증가
-});
-
-  window.addEventListener('scroll', () => {
-    const logo = document.querySelector('.logo'); // 로고 요소를 선택
-    const scrollTop = window.scrollY; // 현재 스크롤 위치
-    logo.style.top = `${20 + scrollTop}px`; // 로고의 상단 위치를 스크롤 위치에 맞춰 변경
 });
 
 
