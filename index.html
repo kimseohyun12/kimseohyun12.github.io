@@ -30,7 +30,7 @@
 
 .progress-wrapper {
     position: fixed;
-    top: 12%; /* 이미지가 고정된 위치 */
+    top: 10%; /* 이미지가 고정된 위치 */
     left: 0%; /* 시작 위치 */
     z-index: 10;
     display: flex;
@@ -44,7 +44,7 @@
     width: 85px; /* 이미지 크기 */
     height: auto;
     position: relative;
-    top: 12%; /* 이미지가 고정된 위치 */
+    top: 10%; /* 이미지가 고정된 위치 */
     left: 0%; /* 이미지가 처음에는 맨 왼쪽에 위치 */
     transform: translateY(-50%); /* 수직 중심으로 정렬 */
     transition: left 0.1s ease-out; /* 부드러운 이동 */
@@ -52,7 +52,7 @@
 
 .progress-line {
     position: absolute;
-    top: 20%;
+    top: 17%;
     left: 0;
     width: 0; /* 선의 너비는 처음에 0으로 설정 */
     height: 2px;
@@ -1040,7 +1040,7 @@ window.addEventListener('scroll', () => {
     const scrollFraction = scrollTop / maxScroll;
 
     // 이미지의 left 값을 스크롤 비율에 따라 계산
-    const maxLeft = 96; // 화면 오른쪽 끝 (%) - 100%까지 이동
+    const maxLeft = 100; // 화면 오른쪽 끝 (%) - 100%까지 이동
     const currentLeft = (scrollFraction * maxLeft); // 5%에서 시작, 최대 100%까지 이동
 
     // 이미지 위치 업데이트
